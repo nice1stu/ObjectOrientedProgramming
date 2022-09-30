@@ -26,30 +26,17 @@ Only returns "Ship detected" or "No ship detected"*/
 Console.WriteLine("Lets try to make Battleship");
 
 //declare arrays & variables
-char[,] player1FleetMap = new char[9, 9];
-char[,] player1AttackMap = new char[9, 9];
-char[,] player2FleetMap = new char[9, 9];
-char[,] player2AttackMap = new char[9, 9];
-string[,] paintToolArray = new String[5,5];
+char[,] player1DeployMap = new char[9, 9];
+char[,] player1AttackPlot = new char[9, 9];
+char[,] player2DeployMap = new char[9, 9];
+char[,] player2AttackPlot = new char[9, 9];
 int bearing;
+int attackPlotX;
+int attackPlotY;
 
-/*for (int x = 0; x < player1AttackMap.Length; x++)
-{
-    for (int y = 0; y < player1AttackMap.Length; y++)
-    {
-        player1AttackMap[x, y] = 'O';
-    }
-}*/
-
-//initialize all values of array
-for (int y = 0; y < 5; y++)
-{
-    for (int x = 0; x < 5; x++)
-    {
-        paintToolArray[x, y] = " ";
-    }
-}
 Maps();
+CompPlayerAttack();
+
 //draw maps
 void Maps()
 {
@@ -69,6 +56,7 @@ void Maps()
         Console.Write($"{x} ");
     }
     Console.Write("(X)");
+    Console.WriteLine();
 }
 
 //generate random Bearing (veritcal or horizontal)
@@ -79,9 +67,32 @@ void Bearing()
     if (bearing % 2 == 0)
     {
         //vertical (y Axis)
+        Console.WriteLine(bearing);
     }
     else
     {
         //horizontal (x Axis)
+        Console.WriteLine(bearing);
     }
 }
+
+//AI player random attack
+void CompPlayerAttack()
+{
+    Random random = new Random();
+    int attackPlotX = random.Next(0, 9);
+    int attackPlotY = random.Next(0, 9);
+    Console.WriteLine($"{attackPlotX}, {attackPlotY}"); //CompPlayerAttack co-ordinates
+}
+
+Console.WriteLine("<¤");
+Console.WriteLine("<¤-");
+Console.WriteLine("<¤>");
+Console.WriteLine("<¤¤-");
+Console.WriteLine("<¤¤¤-");
+Console.WriteLine();
+Console.WriteLine("^");
+Console.WriteLine("¤");
+Console.WriteLine("¤");
+Console.WriteLine("¤");
+Console.WriteLine("|");

@@ -8,7 +8,7 @@ units[1] = new Unit("Skeleton");
 units[2] = new Unit("Necromancer");
 units[3] = new Unit("LivingHand");
 
-for (int i = 0; i < Unit.NextId; i++)
+for (int i = 0; i < Unit.nextId; i++)
 {
     units[i].ReportStatus();
 }
@@ -22,12 +22,14 @@ public class Unit
 {
     public string name;
     public int id;
-    public static int NextId;
+    public static int nextId;
+    private int health;
+    private int maxHealth;
     public Unit(string name)
     {
         this.name = name;
-        id = NextId;
-        NextId++;
+        id = nextId;
+        nextId++;
     }
     public void ReportStatus()
     {

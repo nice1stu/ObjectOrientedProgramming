@@ -3,10 +3,10 @@
 
 Unit[] units = new Unit[5];
 
-units[0] = new Unit("Zombie", maxHealth:);
-units[1] = new Unit("Skeleton", maxHealth:);
-units[2] = new Unit("Necromancer", maxHealth:);
-units[3] = new Unit("LivingHand", maxHealth:);
+units[0] = new Unit("Zombie", int maxHealth);
+units[1] = new Unit("Skeleton", int maxHealth);
+units[2] = new Unit("Necromancer", int maxHealth);
+units[3] = new Unit("LivingHand", int maxHealth);
 
 for (int i = 0; i < Unit.nextId; i++)
 {
@@ -23,20 +23,21 @@ public class Unit
     public string name;
     public int id;
     public static int nextId;
-    private static int health;
+    public static int health;
     public static int maxHealth;
     public Unit(string name, int maxHealth)
     {
         this.name = name;
         id = nextId;
         nextId++;
-        health = maxHealth;
+        health = (int)maxHealth;
     }
 
     public int SetHealth()
     {
         int newHealth;
         health = newHealth;
+        return health;
     }
     /*Modify ReportStatus, to show not only the Id and Name, but also Health and MaxHealth:
 Unit #27: Zombie - 127/200 Health

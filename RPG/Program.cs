@@ -32,6 +32,12 @@ public class Unit
         nextId++;
         health = maxHealth;
     }
+
+    public int SetHealth()
+    {
+        int newHealth;
+        health = newHealth;
+    }
     /*Modify ReportStatus, to show not only the Id and Name, but also Health and MaxHealth:
 Unit #27: Zombie - 127/200 Health
 27 is the id

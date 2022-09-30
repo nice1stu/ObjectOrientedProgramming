@@ -91,7 +91,7 @@ Console.WriteLine("<¤>");
 Console.WriteLine("<¤¤-");
 Console.WriteLine("<¤¤¤-");
 Console.WriteLine();
-Console.WriteLine("^");
+Console.WriteLine("A");
 Console.WriteLine("¤");
 Console.WriteLine("¤");
 Console.WriteLine("¤");

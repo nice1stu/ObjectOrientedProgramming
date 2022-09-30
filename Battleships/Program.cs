@@ -31,6 +31,7 @@ char[,] player1AttackMap = new char[9, 9];
 char[,] player2FleetMap = new char[9, 9];
 char[,] player2AttackMap = new char[9, 9];
 string[,] paintToolArray = new String[5,5];
+int bearing;
 
 /*for (int x = 0; x < player1AttackMap.Length; x++)
 {
@@ -68,4 +69,19 @@ void Maps()
         Console.Write($"{x} ");
     }
     Console.Write("(X)");
+}
+
+//generate random Bearing (veritcal or horizontal)
+void Bearing()
+{
+    Random random = new Random();
+    bearing = random.Next(0, 2);
+    if (bearing % 2 == 0)
+    {
+        //vertical (y Axis)
+    }
+    else
+    {
+        //horizontal (x Axis)
+    }
 }

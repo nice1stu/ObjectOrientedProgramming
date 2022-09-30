@@ -3,10 +3,10 @@
 
 Unit[] units = new Unit[5];
 
-units[0] = new Unit("Zombie");
-units[1] = new Unit("Skeleton");
-units[2] = new Unit("Necromancer");
-units[3] = new Unit("LivingHand");
+units[0] = new Unit("Zombie", maxHealth:);
+units[1] = new Unit("Skeleton", maxHealth:);
+units[2] = new Unit("Necromancer", maxHealth:);
+units[3] = new Unit("LivingHand", maxHealth:);
 
 for (int i = 0; i < Unit.nextId; i++)
 {
@@ -23,17 +23,28 @@ public class Unit
     public string name;
     public int id;
     public static int nextId;
-    private int health;
-    private int maxHealth;
-    public Unit(string name)
+    private static int health;
+    public static int maxHealth;
+    public Unit(string name, int maxHealth)
     {
         this.name = name;
         id = nextId;
         nextId++;
+        health = maxHealth;
     }
+    /*Modify ReportStatus, to show not only the Id and Name, but also Health and MaxHealth:
+Unit #27: Zombie - 127/200 Health
+27 is the id
+Zombie is the name
+127 is the health
+200 is the maxHealth*/
     public void ReportStatus()
     {
         Console.WriteLine($"Unit #{id}: {name}");
+        Console.WriteLine($"{id} is the ID");
+        Console.WriteLine($"{name} is the Name");
+        Console.WriteLine($"{health} is the Health");
+        Console.WriteLine($"{maxHealth} is the Maximum Health");
     }
     //Add a Finalizer to the Unit Class
     //Make it say print Unit #2: Zombie got finalized." to the Console.

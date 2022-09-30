@@ -55,17 +55,17 @@ void Maps()
     Console.WriteLine("(Y)");
     for (int x = 0; x < 10; x++)
     {
-        Console.Write(9-x);
+        Console.Write($"{9-x} ");
         for (int y = 0; y < 10; y++)
         {
-            Console.Write("~");
+            Console.Write("~ ");
         }
         Console.WriteLine();
     }
-    Console.Write("\\");
+    Console.Write("\\ ");
     for (int x = 0; x < 10; x++)
     {
-        Console.Write(x);
+        Console.Write($"{x} ");
     }
     Console.Write("(X)");
 }

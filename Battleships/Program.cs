@@ -34,10 +34,11 @@ int bearing;
 int attackPlotX;
 int attackPlotY;
 
-Maps();
+ArrayMap();
+//Maps();
 //CompPlayerAttack();
 
-//draw maps
+/*draw maps
 void Maps()
 {
     Console.WriteLine("(Y)");
@@ -57,24 +58,41 @@ void Maps()
     }
     Console.Write("(X)");
     Console.WriteLine();
-}
-//Create Map Array
-for (int x = 0; x < player1DeployMap.GetLength(0); x++)
+}*/
+    
+//Create Array Map
+void ArrayMap()
 {
-    for (int y = 0; y < player1DeployMap.GetLength(1); y++)
+    for (int x = 0; x < player1DeployMap.GetLength(0); x++)
     {
-        player1DeployMap[x, y] = '~';
+        for (int y = 0; y < player1DeployMap.GetLength(1); y++)
+        {
+            player1DeployMap[x, y] = '~';
+        }
     }
-}
-Console.WriteLine("(Y)");
-for (int x = 0; x < player1DeployMap.GetLength(0); x++)
-{
-    for (int y = 0; y < player1DeployMap.GetLength(1); y++)
+
+    Console.WriteLine("(Y)");
+    for (int x = 0; x < player1DeployMap.GetLength(0); x++)
     {
-        Console.Write($"{player1DeployMap[x,y]} ");
+        Console.Write($"{9 - x} ");
+        for (int y = 0; y < player1DeployMap.GetLength(1); y++)
+        {
+
+            Console.Write($"{player1DeployMap[x, y]} ");
+        }
+
+        Console.WriteLine();
     }
-    Console.WriteLine();
+
+    Console.Write("\\ ");
+    for (int x = 0; x < 10; x++)
+    {
+        Console.Write($"{x} ");
+    }
+
+    Console.Write("(X)");
 }
+
 //generate random Bearing (veritcal or horizontal)
 void Bearing()
 {

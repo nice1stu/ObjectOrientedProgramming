@@ -77,8 +77,9 @@ void ArrayMap()
         Console.Write($"{9 - x} ");
         for (int y = 0; y < player1DeployMap.GetLength(1); y++)
         {
-
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.Write($"{player1DeployMap[x, y]} ");
+            Console.ResetColor();
         }
 
         Console.WriteLine();

@@ -119,3 +119,21 @@ void CompPlayerAttack()
     int attackPlotY = random.Next(0, 9);
     Console.WriteLine($"{attackPlotX}, {attackPlotY}"); //CompPlayerAttack co-ordinates
 }
+
+Ships aircraftCarrier = new Ships("aircraftCarrier", 5);
+Ships cruiser = new Ships("cruiser", 4);
+Ships destroyer = new Ships("Destroyer", 3);
+Ships submarine = new Ships("Submarine", 3);
+Ships corvette = new Ships("Corvette", 2);
+
+public class Ships
+{
+    public string shipType;
+    public int shipLength;
+
+    public Ships(string shipType, int shipLength)
+    {
+        this.shipType = shipType;
+        this.shipLength = shipLength;
+    }
+}

@@ -34,10 +34,10 @@ int bearing;
 int attackPlotX;
 int attackPlotY;
 
-//Maps();
+Maps();
 //CompPlayerAttack();
 
-/*draw maps
+//draw maps
 void Maps()
 {
     Console.WriteLine("(Y)");
@@ -57,7 +57,7 @@ void Maps()
     }
     Console.Write("(X)");
     Console.WriteLine();
-}*/
+}
 //Create Map Array
 for (int x = 0; x < player1DeployMap.GetLength(0); x++)
 {
@@ -66,7 +66,7 @@ for (int x = 0; x < player1DeployMap.GetLength(0); x++)
         player1DeployMap[x, y] = '~';
     }
 }
-
+Console.WriteLine("(Y)");
 for (int x = 0; x < player1DeployMap.GetLength(0); x++)
 {
     for (int y = 0; y < player1DeployMap.GetLength(1); y++)
@@ -100,15 +100,3 @@ void CompPlayerAttack()
     int attackPlotY = random.Next(0, 9);
     Console.WriteLine($"{attackPlotX}, {attackPlotY}"); //CompPlayerAttack co-ordinates
 }
-
-Console.WriteLine("<¤");
-Console.WriteLine("<¤-");
-Console.WriteLine("<¤>");
-Console.WriteLine("<¤¤-");
-Console.WriteLine("<¤¤¤-");
-Console.WriteLine();
-Console.WriteLine("A");
-Console.WriteLine("¤");
-Console.WriteLine("¤");
-Console.WriteLine("¤");
-Console.WriteLine("|");

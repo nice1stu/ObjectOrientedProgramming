@@ -23,6 +23,8 @@ Scanner Power Up
 Can be used to scan a 3x3 radius around the location placed
 Only returns "Ship detected" or "No ship detected"*/
 
+using System.ComponentModel.Design;
+
 Console.WriteLine("Lets try to make Battleship");
 
 //declare arrays & variables
@@ -33,7 +35,10 @@ char[,] player1DeployMap = new char[10, 10];
 int bearing;
 int attackPlotX;
 int attackPlotY;
+string namePlayer1;
+string namePlayer2;
 
+SetUp();
 ArrayMap();
 //Maps();
 //CompPlayerAttack();
@@ -59,6 +64,31 @@ void Maps()
     Console.Write("(X)");
     Console.WriteLine();
 }*/
+
+void SetUp()
+{
+    Console.WriteLine("Welcome to Battleships");
+    Console.WriteLine("Choose [1] or [2] Players");
+    int userInput = Convert.ToInt32(Console.ReadLine());
+    if (userInput == 1)
+    {
+        Console.WriteLine("Player 1, please enter your name.");
+        string namePlayer1 = Console.ReadLine();
+        Console.WriteLine($"Welcome {namePlayer1}, Happy Hunting!");
+    }
+    else
+    {
+        Console.WriteLine("Player 1, please enter your name.");
+        string namePlayer1 = Console.ReadLine();
+        Console.WriteLine($"Welcome {namePlayer1}, Happy Hunting!");
+        Console.WriteLine("Player 2, please enter your name.");
+        string namePlayer2 = Console.ReadLine();
+        Console.WriteLine($"Welcome {namePlayer2}, Happy Hunting!");
+    }
+
+    //player 1 sets ships on player1Deploy map x 5
+    //player 2 sets ships om player2Deploy map x 5
+}
     
 //Create Array Map
 void ArrayMap()
@@ -137,3 +167,18 @@ public class Ships
         this.shipLength = shipLength;
     }
 }
+
+/*void GameMechanic()
+{
+    //gamePlay
+    //while gameOver != true
+    // n %2 to alternate players
+    //display playerAttackPlot[n]
+    //player1 attacks by selecting x,y co-ordinates on playerAttackPlot[n]
+    //attack resolved on playerDeploy[!n] map
+    //Hits change map to "X". Miss change map to "O"
+    //check if ship sunk
+    //check if game over
+    //hit key to change to next player
+}*/
+

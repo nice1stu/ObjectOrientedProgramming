@@ -26,7 +26,7 @@ Only returns "Ship detected" or "No ship detected"*/
 Console.WriteLine("Lets try to make Battleship");
 
 //declare arrays & variables
-char[,] player1DeployMap = new char[9, 9];
+char[,] player1DeployMap = new char[10, 10];
 char[,] player1AttackPlot = new char[9, 9];
 char[,] player2DeployMap = new char[9, 9];
 char[,] player2AttackPlot = new char[9, 9];
@@ -37,7 +37,7 @@ int attackPlotY;
 Maps();
 CompPlayerAttack();
 
-//draw maps
+/*draw maps
 void Maps()
 {
     Console.WriteLine("(Y)");
@@ -57,7 +57,9 @@ void Maps()
     }
     Console.Write("(X)");
     Console.WriteLine();
-}
+}*/
+//Create Map Array
+Array.Fill(player1DeployMap, '~');
 
 //generate random Bearing (veritcal or horizontal)
 void Bearing()

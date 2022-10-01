@@ -27,15 +27,15 @@ Console.WriteLine("Lets try to make Battleship");
 
 //declare arrays & variables
 char[,] player1DeployMap = new char[10, 10];
-char[,] player1AttackPlot = new char[9, 9];
-char[,] player2DeployMap = new char[9, 9];
-char[,] player2AttackPlot = new char[9, 9];
+//char[,] player1AttackPlot = new char[9, 9];
+//char[,] player2DeployMap = new char[9, 9];
+//char[,] player2AttackPlot = new char[9, 9];
 int bearing;
 int attackPlotX;
 int attackPlotY;
 
-Maps();
-CompPlayerAttack();
+//Maps();
+//CompPlayerAttack();
 
 /*draw maps
 void Maps()
@@ -59,8 +59,22 @@ void Maps()
     Console.WriteLine();
 }*/
 //Create Map Array
-Array.Fill(player1DeployMap, '~');
+for (int x = 0; x < player1DeployMap.GetLength(0); x++)
+{
+    for (int y = 0; y < player1DeployMap.GetLength(1); y++)
+    {
+        player1DeployMap[x, y] = '~';
+    }
+}
 
+for (int x = 0; x < player1DeployMap.GetLength(0); x++)
+{
+    for (int y = 0; y < player1DeployMap.GetLength(1); y++)
+    {
+        Console.Write($"{player1DeployMap[x,y]} ");
+    }
+    Console.WriteLine();
+}
 //generate random Bearing (veritcal or horizontal)
 void Bearing()
 {

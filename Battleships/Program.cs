@@ -77,7 +77,7 @@ void SetUp()
     {
         Console.WriteLine("Player 1, please enter your name.");
         string namePlayer1 = Console.ReadLine();
-        Console.WriteLine($"Welcome {namePlayer1}, Happy Hunting!");
+        Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
         //pause 3 seconds
         //DeployShips();
     }
@@ -85,10 +85,10 @@ void SetUp()
     {
         Console.WriteLine("Player 1, please enter your name.");
         string namePlayer1 = Console.ReadLine();
-        Console.WriteLine($"Welcome {namePlayer1}, Happy Hunting!");
+        Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
         Console.WriteLine("Player 2, please enter your name.");
         string namePlayer2 = Console.ReadLine();
-        Console.WriteLine($"Welcome {namePlayer2}, Happy Hunting!");
+        Console.WriteLine($"Welcome {namePlayer2}, Good Hunting!");
         //DeployShips();
     }
 }

@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Lets try the RPG again
+
+public class Unit
+{
+    private string name;
+    public Name(string name)
+    {
+        this.name = name;
+    }
+}

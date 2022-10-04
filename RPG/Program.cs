@@ -1,93 +1,46 @@
-﻿//Create a Console Project named RPG
-// Make sure, that this is the last line of the constructor:
+﻿// Lets try the RPG
 
-Unit[] units = new Unit[5];
-
-units[0] = new Unit("Zombie", 3000);
-units[1] = new Unit("Skeleton", 2000);
-units[2] = new Unit("Necromancer", 2000);
-units[3] = new Unit("Leet", 1337);
-
-for (int i = 0; i < Unit.nextId; i++)
+/*string[] units = new String[3];
+for (int i = 0; i < units.Length; i++)
 {
-    units[i].ReportStatus();
-}
-
-for (int i = 0; i < 3; i++)
-{
-    Console.WriteLine($"What do you want {units[3]} Health to be?");
-    int userInput = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine($"{units[3]} - {health}/{maxHealth} Health");
-}
-
-/*Output:Unit #3: Leet - 1337/1337 Health
-Output:What do you want Leet's Health to be?
-Input:1234
-Output:Unit #3: Leet - 1234/1337 Health
-Output:What do you want Leet's Health to be?
-Input:-100
-Output:Unit #3: Leet - 0/1337 Health
-Output:What do you want Leet's Health to be?
-Input:2000
-Output:Unit #3: Leet - 1337/1337 Health*/
-//Finalizer
-/*for(int i = 0; i < 2; i++){
-    Unit unit = new Unit("LivingHand");
-    GC.Collect();
+    Console.WriteLine("Please name your unit");
+    string userInput = Console.ReadLine();
+    units[i] = new string(userInput);
 }*/
+
+Unit unit = new Unit("Skeleton");
+unit = new Unit("Zombie");
+unit = new Unit("Necromancer");
+
+//Testing Finalizer
+for(int i = 0; i < 2; i++)
+{
+    unit = new Unit("LivingHand");
+    GC.Collect();
+}
+
 public class Unit
 {
-    public string name;
-    public int id;
+    private string name;
+    public int iD;
     public static int nextId;
-    private int health;
-    private int maxHealth;
-    public Unit(string name, int maxHealth)
+    public Unit(string name)
     {
         this.name = name;
-        id = nextId;
+        this.iD = nextId;
         nextId++;
-        this.maxHealth = maxHealth;
-        health = this.maxHealth;
+        ReportStatus();// Make sure, that this is the last line of the constructor:
     }
-
-    public int SetHealth()
+    public string GetName()
     {
-        int newHealth = 0;
-        if (newHealth <=0)
-        {
-            return 0;
-        }
-        else if (newHealth > maxHealth )
-        {
-            newHealth = maxHealth;
-        }
-
-        {
-            newHealth = maxHealth;
-        }
-        health = newHealth;
-        return health;
+        return name;
     }
-    /*Modify ReportStatus, to show not only the Id and Name, but also Health and MaxHealth:
-Unit #27: Zombie - 127/200 Health
-27 is the id
-Zombie is the name
-127 is the health
-200 is the maxHealth*/
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{id}: {name}");
-        Console.WriteLine($"{id} is the ID");
-        Console.WriteLine($"{name} is the Name");
-        Console.WriteLine($"{health} is the Health");
-        Console.WriteLine($"{maxHealth} is the Maximum Health");
+        Console.WriteLine($"Unit #{iD}: {name}");
     }
-    
-    //Add a Finalizer to the Unit Class
-    //Make it say print Unit #2: Zombie got finalized." to the Console.
-    ~Unit()
+    ~Unit()//Finalizer
     {
-        Console.WriteLine($"Unit #{id}: {name} got finalized.");
+        Console.WriteLine($"Unit #{iD}: {name} got finalized.");
     }
 }

@@ -8,14 +8,14 @@ for (int i = 0; i < units.Length; i++)
     units[i] = new string(userInput);
 }*/
 
-Unit unit = new Unit("Skeleton");
-unit = new Unit("Zombie");
-unit = new Unit("Necromancer");
+Unit unit = new Unit(200, "Skeleton");
+unit = new Unit(200, "Zombie");
+unit = new Unit(200, "Necromancer");
 
 //Testing Finalizer
 for(int i = 0; i < 2; i++)
 {
-    unit = new Unit("LivingHand");
+    unit = new Unit(200, "LivingHand");
     GC.Collect();
 }
 
@@ -24,9 +24,14 @@ public class Unit
     private string name;
     public int iD;
     public static int nextId;
-    public Unit(string name)
+    private int health;
+    private int maxHealth;
+    
+    public Unit(int maxHealth, string name)
     {
         this.name = name;
+        this.maxHealth = maxHealth;
+        health = maxHealth;
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
@@ -37,7 +42,7 @@ public class Unit
     }
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{iD}: {name}");
+        Console.WriteLine($"Unit #{iD}: {name} - {health}/{maxHealth} Health");
     }
     ~Unit()//Finalizer
     {

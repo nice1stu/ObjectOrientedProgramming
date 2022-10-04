@@ -23,19 +23,20 @@ public class Unit
     public string name;
     public int id;
     public static int nextId;
-    public static int health;
-    public static int maxHealth;
+    private int health;
+    private int maxHealth;
     public Unit(string name, int maxHealth)
     {
         this.name = name;
         id = nextId;
         nextId++;
-        health = (int)maxHealth;
+        this.maxHealth = maxHealth;
+        health = this.maxHealth;
     }
 
     public int SetHealth()
     {
-        int newHealth;
+        int newHealth = 0;
         health = newHealth;
         return health;
     }

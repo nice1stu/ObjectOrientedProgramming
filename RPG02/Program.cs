@@ -7,17 +7,17 @@ for (int i = 0; i < units.Length; i++)
     string userInput = Console.ReadLine();
     units[i] = new string(userInput);
 }*/
-
 Unit unit = new Unit(200, "Skeleton");
 unit = new Unit(200, "Zombie");
 unit = new Unit(200, "Necromancer");
+unit = new Unit(1337, "Leet");
 
-//Testing Finalizer
-for(int i = 0; i < 2; i++)
-{
-    unit = new Unit(200, "LivingHand");
-    GC.Collect();
-}
+/*Testing Finalizer
+    for (int i = 0; i < 2; i++)
+    {
+        unit = new Unit(200, "LivingHand");
+        GC.Collect();
+    }*/
 
 public class Unit
 {
@@ -32,9 +32,17 @@ public class Unit
         this.name = name;
         this.maxHealth = maxHealth;
         health = maxHealth;
+        SetHealth(newHealth:health);
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
+    }
+
+    public void SetHealth(int newHealth)
+    {
+        Console.WriteLine("What do you want Leet's Health to be?");
+        newHealth = Convert.ToInt32(Console.ReadLine());
+        health = Math.Max(0, newHealth);
     }
     public string GetName()
     {

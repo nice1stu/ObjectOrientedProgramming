@@ -11,6 +11,11 @@ for (int i = 0; i < units.Length; i++)
 Unit unit = new Unit("Skeleton");
 unit = new Unit("Zombie");
 unit = new Unit("Necromancer");
+for(int i = 0; i < 2; i++)
+{
+    unit = new Unit("LivingHand");
+    GC.Collect();
+}
 
 public class Unit
 {
@@ -31,5 +36,9 @@ public class Unit
     public void ReportStatus()
     {
         Console.WriteLine($"Unit #{iD}: {name}");
+    }
+    ~Unit()
+    {
+        Console.WriteLine($"Unit #{iD}: {name} got finalized.");
     }
 }

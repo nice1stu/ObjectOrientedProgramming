@@ -11,6 +11,8 @@ for (int i = 0; i < units.Length; i++)
 Unit unit = new Unit("Skeleton");
 unit = new Unit("Zombie");
 unit = new Unit("Necromancer");
+
+//Testing Finalizer
 for(int i = 0; i < 2; i++)
 {
     unit = new Unit("LivingHand");
@@ -37,7 +39,7 @@ public class Unit
     {
         Console.WriteLine($"Unit #{iD}: {name}");
     }
-    ~Unit()
+    ~Unit()//Finalizer
     {
         Console.WriteLine($"Unit #{iD}: {name} got finalized.");
     }

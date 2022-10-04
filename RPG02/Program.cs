@@ -1,26 +1,20 @@
 ﻿// Lets try the RPG again
 
-/* Testing
-Unit woofs = new Unit("Woofs");
-Unit bello = new Unit("Bello");
-Console.WriteLine(woofs.name);
-Console.WriteLine(bello.name);*/
-
-string[] units = new string[3];
+/*string[] units = new String[3];
 for (int i = 0; i < units.Length; i++)
 {
     Console.WriteLine("Please name your unit");
     string userInput = Console.ReadLine();
-    units[i] = userInput;
-}
-/* Testing
- Console.WriteLine(units[0]);
-Console.WriteLine(units[1]);
-Console.WriteLine(units[2]);*/
+    units[i] = new string(userInput);
+}*/
+
+Unit unit = new Unit("Skeleton");
+unit = new Unit("Zombie");
+unit = new Unit("Necromancer");
 
 public class Unit
 {
-    public string name;
+    private string name;
     public int iD;
     public static int nextId;
     public Unit(string name)
@@ -28,6 +22,11 @@ public class Unit
         this.name = name;
         this.iD = nextId;
         nextId++;
+        ReportStatus();// Make sure, that this is the last line of the constructor:
+    }
+    public string GetName()
+    {
+        return name;
     }
     public void ReportStatus()
     {

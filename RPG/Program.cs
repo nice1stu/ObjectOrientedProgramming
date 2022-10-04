@@ -3,16 +3,33 @@
 
 Unit[] units = new Unit[5];
 
-units[0] = new Unit("Zombie", int maxHealth);
-units[1] = new Unit("Skeleton", int maxHealth);
-units[2] = new Unit("Necromancer", int maxHealth);
-units[3] = new Unit("LivingHand", int maxHealth);
+units[0] = new Unit("Zombie", 3000);
+units[1] = new Unit("Skeleton", 2000);
+units[2] = new Unit("Necromancer", 2000);
+units[3] = new Unit("Leet", 1337);
 
 for (int i = 0; i < Unit.nextId; i++)
 {
     units[i].ReportStatus();
 }
 
+for (int i = 0; i < 3; i++)
+{
+    Console.WriteLine($"What do you want {units[3]} Health to be?");
+    int userInput = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine($"{units[3]} - {health}/{maxHealth} Health");
+}
+
+/*Output:Unit #3: Leet - 1337/1337 Health
+Output:What do you want Leet's Health to be?
+Input:1234
+Output:Unit #3: Leet - 1234/1337 Health
+Output:What do you want Leet's Health to be?
+Input:-100
+Output:Unit #3: Leet - 0/1337 Health
+Output:What do you want Leet's Health to be?
+Input:2000
+Output:Unit #3: Leet - 1337/1337 Health*/
 //Finalizer
 /*for(int i = 0; i < 2; i++){
     Unit unit = new Unit("LivingHand");
@@ -37,6 +54,18 @@ public class Unit
     public int SetHealth()
     {
         int newHealth = 0;
+        if (newHealth <=0)
+        {
+            return 0;
+        }
+        else if (newHealth > maxHealth )
+        {
+            newHealth = maxHealth;
+        }
+
+        {
+            newHealth = maxHealth;
+        }
         health = newHealth;
         return health;
     }
@@ -54,6 +83,7 @@ Zombie is the name
         Console.WriteLine($"{health} is the Health");
         Console.WriteLine($"{maxHealth} is the Maximum Health");
     }
+    
     //Add a Finalizer to the Unit Class
     //Make it say print Unit #2: Zombie got finalized." to the Console.
     ~Unit()

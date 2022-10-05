@@ -24,7 +24,10 @@ public class Unit
     private string name;
     public int iD;
     public static int nextId;
-    public Unit(string name)
+    private int maxHealth;
+    private int health;
+    
+    public Unit(string name, int maxHealth)
     {
         this.name = name;
         this.iD = nextId;
@@ -37,7 +40,7 @@ public class Unit
     }
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{iD}: {name}");
+        Console.WriteLine($"Unit #{iD}: {name} - {health}/{maxHealth} Health");
     }
     ~Unit()//Finalizer
     {

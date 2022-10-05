@@ -22,6 +22,8 @@ for(int i = 0; i < 2; i++)
 for(int i = 0; i < 3; i++)
 {
     unit = new Unit("Leet",1337);
+    Console.WriteLine("What do you want Leet's Health to be?");
+    int newHealth = Convert.ToInt32(Console.ReadLine());
 }
 
 public class Unit
@@ -36,6 +38,7 @@ public class Unit
     {
         this.name = name;
         this.maxHealth = maxHealth;
+        SetHealth();
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:

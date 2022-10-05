@@ -8,15 +8,20 @@ for (int i = 0; i < units.Length; i++)
     units[i] = new string(userInput);
 }*/
 
-Unit unit = new Unit("Skeleton", 200);
+Unit unit = new Unit("Skeleton", 100);
 unit = new Unit("Zombie", 200);
-unit = new Unit("Necromancer",200);
+unit = new Unit("Necromancer",300);
 
-//Testing Finalizer
+/*Testing Finalizer
 for(int i = 0; i < 2; i++)
 {
-    unit = new Unit("LivingHand",200);
+    unit = new Unit("LivingHand",400);
     GC.Collect();
+}*/
+
+for(int i = 0; i < 3; i++)
+{
+    unit = new Unit("Leet",1337);
 }
 
 public class Unit
@@ -35,9 +40,12 @@ public class Unit
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
-    public string GetName()
+
+    public void SetHealth()
     {
-        return name;
+        int newHealth = 0;
+        newHealth = Math.Clamp(newHealth, 0, maxHealth);
+        health = newHealth;
     }
     public void ReportStatus()
     {

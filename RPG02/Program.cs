@@ -7,10 +7,19 @@ for (int i = 0; i < units.Length; i++)
     string userInput = Console.ReadLine();
     units[i] = new string(userInput);
 }*/
-Unit unit = new Unit(200, "Skeleton");
-unit = new Unit(200, "Zombie");
-unit = new Unit(200, "Necromancer");
-unit = new Unit(1337, "Leet");
+//Unit unit = new Unit(200, "Skeleton");
+//unit = new Unit(200, "Zombie");
+//unit = new Unit(200, "Necromancer");
+
+using System.Security.Cryptography.X509Certificates;
+
+Unit unit = new Unit(1337, "Leet");
+for (int i = 0; i < 3; i++)
+{
+    Console.WriteLine("What do you want Leet's Health to be?");
+    
+}
+
 
 /*Testing Finalizer
     for (int i = 0; i < 2; i++)
@@ -32,15 +41,16 @@ public class Unit
         this.name = name;
         this.maxHealth = maxHealth;
         health = maxHealth;
-        SetHealth(newHealth:health);
+        SetHealth();
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
 
-    public void SetHealth(int newHealth)
+    public void SetHealth()
     {
-        Console.WriteLine("What do you want Leet's Health to be?");
+        int newHealth = 0;
+        health = newHealth;
         newHealth = Convert.ToInt32(Console.ReadLine());
         health = Math.Max(0, newHealth);
     }
@@ -52,6 +62,7 @@ public class Unit
     {
         Console.WriteLine($"Unit #{iD}: {name} - {health}/{maxHealth} Health");
     }
+    
     ~Unit()//Finalizer
     {
         Console.WriteLine($"Unit #{iD}: {name} got finalized.");

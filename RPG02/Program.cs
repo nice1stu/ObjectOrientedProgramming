@@ -1,4 +1,4 @@
-﻿// Lets try the RPG again
+﻿// Lets try the RPG
 
 /*string[] units = new String[3];
 for (int i = 0; i < units.Length; i++)
@@ -7,52 +7,29 @@ for (int i = 0; i < units.Length; i++)
     string userInput = Console.ReadLine();
     units[i] = new string(userInput);
 }*/
-//Unit unit = new Unit(200, "Skeleton");
-//unit = new Unit(200, "Zombie");
-//unit = new Unit(200, "Necromancer");
 
-using System.Security.Cryptography.X509Certificates;
+Unit unit = new Unit("Skeleton");
+unit = new Unit("Zombie");
+unit = new Unit("Necromancer");
 
-Unit unit = new Unit(1337, "Leet");
-for (int i = 0; i < 3; i++)
+//Testing Finalizer
+for(int i = 0; i < 2; i++)
 {
-    Console.WriteLine("What do you want Leet's Health to be?");
-    
+    unit = new Unit("LivingHand");
+    GC.Collect();
 }
-
-
-/*Testing Finalizer
-    for (int i = 0; i < 2; i++)
-    {
-        unit = new Unit(200, "LivingHand");
-        GC.Collect();
-    }*/
 
 public class Unit
 {
     private string name;
     public int iD;
     public static int nextId;
-    private int health;
-    private int maxHealth;
-    
-    public Unit(int maxHealth, string name)
+    public Unit(string name)
     {
         this.name = name;
-        this.maxHealth = maxHealth;
-        health = maxHealth;
-        SetHealth();
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
-    }
-
-    public void SetHealth()
-    {
-        int newHealth = 0;
-        health = newHealth;
-        newHealth = Convert.ToInt32(Console.ReadLine());
-        health = Math.Max(0, newHealth);
     }
     public string GetName()
     {
@@ -60,9 +37,8 @@ public class Unit
     }
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{iD}: {name} - {health}/{maxHealth} Health");
+        Console.WriteLine($"Unit #{iD}: {name}");
     }
-    
     ~Unit()//Finalizer
     {
         Console.WriteLine($"Unit #{iD}: {name} got finalized.");

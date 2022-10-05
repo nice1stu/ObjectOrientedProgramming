@@ -8,14 +8,14 @@ for (int i = 0; i < units.Length; i++)
     units[i] = new string(userInput);
 }*/
 
-Unit unit = new Unit("Skeleton");
-unit = new Unit("Zombie");
-unit = new Unit("Necromancer");
+Unit unit = new Unit("Skeleton", 200);
+unit = new Unit("Zombie", 200);
+unit = new Unit("Necromancer",200);
 
 //Testing Finalizer
 for(int i = 0; i < 2; i++)
 {
-    unit = new Unit("LivingHand");
+    unit = new Unit("LivingHand",200);
     GC.Collect();
 }
 
@@ -30,6 +30,7 @@ public class Unit
     public Unit(string name, int maxHealth)
     {
         this.name = name;
+        this.maxHealth = maxHealth;
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:

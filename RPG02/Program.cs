@@ -1,19 +1,19 @@
 ﻿// Lets try the RPG
 
-Unit unit = new Unit("Skeleton", 100);
-unit = new Unit("Zombie", 200);
-unit = new Unit("Necromancer",300);
-unit = new Unit("Leet", 1337);
+//Unit unit = new Unit("Skeleton", 100);
+//unit = new Unit("Zombie", 200);
+//unit = new Unit("Necromancer",300);
+//unit = new Unit("Leet", 1337);
 
 
 
-/*for(int i = 0; i < 3; i++)
+for(int i = 0; i < 3; i++)
 {
     new Unit("Leet",1337);
     //Console.WriteLine("What do you want Leet's Health to be?");
     //int newHealth = Convert.ToInt32(Console.ReadLine());
     //unit.SetHealth(newHealth);
-}*/
+}
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)

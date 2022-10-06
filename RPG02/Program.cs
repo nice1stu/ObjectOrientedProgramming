@@ -20,7 +20,7 @@ for(int i = 0; i < 2; i++)
 
 for(int i = 0; i < 3; i++)
 {
-    Unit unit = new Unit("Leet",1337);
+    new Unit("Leet",1337);
     //Console.WriteLine("What do you want Leet's Health to be?");
     //int newHealth = Convert.ToInt32(Console.ReadLine());
     //unit.SetHealth(newHealth);
@@ -38,18 +38,19 @@ public class Unit
     {
         this.name = name;
         this.maxHealth = maxHealth;
-        //SetHealth(health);
-        Console.WriteLine("What do you want Leet's Health to be?");
-        health = Convert.ToInt32(Console.ReadLine());
-        health = Math.Clamp(health, 0, maxHealth);
+        SetHealth();
+        //Console.WriteLine("What do you want Leet's Health to be?");
+        //health = Convert.ToInt32(Console.ReadLine());
+        //health = Math.Clamp(health, 0, maxHealth);
         iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
-    public void SetHealth(int newHealth)
+    public void SetHealth()
     {
-        newHealth = Math.Clamp(newHealth, 0, maxHealth);
-        health = newHealth;
+        Console.WriteLine("What do you want Leet's Health to be?");
+        health = Convert.ToInt32(Console.ReadLine());
+        health = Math.Clamp(health, 0, maxHealth);
     }
     public void ReportStatus()
     {

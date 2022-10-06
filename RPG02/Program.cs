@@ -48,8 +48,10 @@ public class Unit
     }
     public void SetHealth()
     {
+        int newHealth;
         Console.WriteLine("What do you want Leet's Health to be?");
-        health = Convert.ToInt32(Console.ReadLine());
+        newHealth = Convert.ToInt32(Console.ReadLine());
+        health = newHealth;
         health = Math.Clamp(health, 0, maxHealth);
     }
     public void ReportStatus()

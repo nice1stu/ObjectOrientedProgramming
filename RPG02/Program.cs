@@ -7,9 +7,9 @@ for (int i = 0; i < units.Length; i++)
     string userInput = Console.ReadLine();
     units[i] = new string(userInput);
 }*/
-Unit unit = new Unit("Skeleton", 100);
-unit = new Unit("Zombie", 200);
-unit = new Unit("Necromancer",300);
+//Unit unit = new Unit("Skeleton", 100);
+//unit = new Unit("Zombie", 200);
+//unit = new Unit("Necromancer",300);
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)
@@ -20,9 +20,10 @@ for(int i = 0; i < 2; i++)
 
 for(int i = 0; i < 3; i++)
 {
-    unit = new Unit("Leet",1337);
+    Unit unit = new Unit("Leet",1337);
     Console.WriteLine("What do you want Leet's Health to be?");
-    int NewHealth = Convert.ToInt32(Console.ReadLine());
+    int newHealth = Convert.ToInt32(Console.ReadLine());
+    unit.SetHealth(newHealth);
 }
 
 public class Unit
@@ -31,35 +32,21 @@ public class Unit
     public int iD;
     public static int nextId;
     private int maxHealth;
-    private int health;
-    public int newHealth;
-    
+    public int health;
+
     public Unit(string name, int maxHealth)
     {
         this.name = name;
         this.maxHealth = maxHealth;
-        SetHealth(newHealth);
+        SetHealth(health);
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
-
     public void SetHealth(int newHealth)
     {
         newHealth = Math.Clamp(newHealth, 0, maxHealth);
         health = newHealth;
-    }
-
-    public int NewHealth
-    {
-        get { return newHealth; }
-        set
-        {
-            newHealth = Math.Clamp(newHealth, 0, maxHealth);
-            {
-                health = newHealth;
-            }
-        }
     }
     public void ReportStatus()
     {

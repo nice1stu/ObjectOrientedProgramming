@@ -17,10 +17,9 @@ for(int i = 0; i < 2; i++)
     unit = new Unit("LivingHand",400);
     GC.Collect();
 }*/
-
+Unit unit = new Unit("Leet",1337);
 for(int i = 0; i < 3; i++)
 {
-    Unit unit = new Unit("Leet",1337);
     Console.WriteLine("What do you want Leet's Health to be?");
     int newHealth = Convert.ToInt32(Console.ReadLine());
     unit.SetHealth(newHealth);
@@ -43,10 +42,11 @@ public class Unit
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
-    public void SetHealth(int newHealth)
+    public int SetHealth(int newHealth)
     {
         newHealth = Math.Clamp(newHealth, 0, maxHealth);
         health = newHealth;
+        return health;
     }
     public void ReportStatus()
     {

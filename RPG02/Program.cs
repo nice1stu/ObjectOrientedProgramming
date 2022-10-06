@@ -22,7 +22,7 @@ for(int i = 0; i < 3; i++)
 {
     unit = new Unit("Leet",1337);
     Console.WriteLine("What do you want Leet's Health to be?");
-    unit.newHealth = Convert.ToInt32(Console.ReadLine());
+    int NewHealth = Convert.ToInt32(Console.ReadLine());
 }
 
 public class Unit
@@ -48,6 +48,18 @@ public class Unit
     {
         newHealth = Math.Clamp(newHealth, 0, maxHealth);
         health = newHealth;
+    }
+
+    public int NewHealth
+    {
+        get { return newHealth; }
+        set
+        {
+            newHealth = Math.Clamp(newHealth, 0, maxHealth);
+            {
+                health = newHealth;
+            }
+        }
     }
     public void ReportStatus()
     {

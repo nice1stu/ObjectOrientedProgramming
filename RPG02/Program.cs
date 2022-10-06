@@ -41,7 +41,7 @@ public class Unit
         //SetHealth(health);
         Console.WriteLine("What do you want Leet's Health to be?");
         health = Convert.ToInt32(Console.ReadLine());
-            health = Math.Clamp(health, 0, maxHealth);
+        health = Math.Clamp(health, 0, maxHealth);
         iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:

@@ -38,13 +38,13 @@ public class Unit
     {
         this.name = name;
         this.maxHealth = maxHealth;
-        SetHealth();
+        SetHealth(newHealth);
         this.iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
 
-    public void SetHealth(newHealth)
+    public void SetHealth(int newHealth)
     {
         newHealth = Math.Clamp(newHealth, 0, maxHealth);
         health = newHealth;

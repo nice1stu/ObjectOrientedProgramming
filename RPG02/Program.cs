@@ -25,19 +25,46 @@ for(int i = 0; i < 2; i++)
 }*/
 public class Unit
 {
-    private string name;
+    bool isAlive
+    {
+        get
+        {
+            if (health > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+
     public int iD;
     public static int nextId;
+    
+    private string name;
     private int maxHealth;
     private int health;
 
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+    }
     public int Health
     {
         get
         {
             return health;
         }
-        set => health = value;
+        set
+        {
+            int newHealth;
+            Console.WriteLine($"What do you want {name}'s Health to be?");
+            newHealth = Convert.ToInt32(Console.ReadLine());
+            health = newHealth;
+            health = Math.Clamp(health, 0, maxHealth);
+        }
     }
 
     public Unit(string name, int maxHealth)

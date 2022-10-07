@@ -4,7 +4,9 @@
 //unit = new Unit("Zombie", 200);
 //unit = new Unit("Necromancer",300);
 //unit = new Unit("Leet", 1337);
-
+Console.WriteLine("Temporary, please remove from final Game!");
+Unit test = new Unit("Abc", 100); 
+test.Health = 500;
 
 
 for(int i = 0; i < 3; i++)
@@ -28,7 +30,15 @@ public class Unit
     public static int nextId;
     private int maxHealth;
     private int health;
-    
+
+    public int Health
+    {
+        get
+        {
+            return health;
+        }
+        set => health = value;
+    }
 
     public Unit(string name, int maxHealth)
     {

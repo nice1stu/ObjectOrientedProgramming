@@ -3,15 +3,13 @@
 //Unit unit = new Unit("Skeleton", 100);
 //unit = new Unit("Zombie", 200);
 //unit = new Unit("Necromancer",300);
-//unit = new Unit("Leet", 1337);
-Console.WriteLine("Temporary, please remove from final Game!");
-Unit test = new Unit("Abc", 100); 
-test.Health = 500;
+Unit unit = new Unit("Leet", 1337);
+
 
 
 for(int i = 0; i < 3; i++)
 {
-    new Unit("Leet",1337);
+    //new Unit("Leet",1337);
     //Console.WriteLine("What do you want Leet's Health to be?");
     //int newHealth = Convert.ToInt32(Console.ReadLine());
     //unit.SetHealth(newHealth);
@@ -25,47 +23,11 @@ for(int i = 0; i < 2; i++)
 }*/
 public class Unit
 {
-    bool isAlive
-    {
-        get
-        {
-            if (health > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-    }
-
+    private string name;
     public int iD;
     public static int nextId;
-    
-    private string name;
     private int maxHealth;
     private int health;
-
-    public string Name
-    {
-        get
-        {
-            return name;
-        }
-    }
-    public int Health
-    {
-        get
-        {
-            return health;
-        }
-        set
-        {
-            int newHealth;
-            Console.WriteLine($"What do you want {name}'s Health to be?");
-            newHealth = Convert.ToInt32(Console.ReadLine());
-            health = newHealth;
-            health = Math.Clamp(health, 0, maxHealth);
-        }
-    }
 
     public Unit(string name, int maxHealth)
     {

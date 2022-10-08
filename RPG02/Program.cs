@@ -18,8 +18,8 @@ for(int i = 0; i < 2; i++)
 for(int i = 0; i < 3; i++)
 {
     new Unit("Leet",1337);
-    //Console.WriteLine("What do you want Leet's Health to be?");
-    //int newHealth = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("What do you want Leet's Health to be?");
+    Unit.Health = Convert.ToInt32(Console.ReadLine());
     //unit.SetHealth(newHealth);
 }
 public class Unit
@@ -28,8 +28,8 @@ public class Unit
     public int iD;
     public static int nextId;
     private int maxHealth;
-    private int health;
-    public int Health 
+    private static int health;
+    public static int Health 
     {
         set 
         {

@@ -29,23 +29,35 @@ public class Unit
     public static int nextId;
     private int maxHealth;
     private int health;
+    public int Health 
+    {
+        set 
+        {
+            health = Math.Max(0, value);
+        }
+        get 
+        {
+            return health;
+        }
+    }
     public Unit(string name, int maxHealth)
     {
         this.name = name;
         this.maxHealth = maxHealth;
-        SetHealth(health);
+        //SetHealth(health);
+        
         iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
-    public int SetHealth(int newHealth)
+    /*public int SetHealth(int newHealth)
     {
         Console.WriteLine("What do you want Leet's Health to be?");
         newHealth = Convert.ToInt32(Console.ReadLine());
         health = newHealth;
         health = Math.Clamp(health, 0, maxHealth);
         return health;
-    }
+    }*/
     public void ReportStatus()
     {
         Console.WriteLine($"Unit #{iD}: {name} - {health}/{maxHealth} Health");
@@ -55,3 +67,4 @@ public class Unit
         Console.WriteLine($"Unit #{iD}: {name} got finalized.");
     }
 }
+

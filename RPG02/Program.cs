@@ -33,7 +33,7 @@ public class Unit
     {
         set 
         {
-            health = Math.Max(0, value);
+            health = Math.Clamp(health, 0, maxHealth);
         }
         get 
         {

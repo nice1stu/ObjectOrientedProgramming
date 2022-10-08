@@ -33,22 +33,18 @@ public class Unit
     {
         this.name = name;
         this.maxHealth = maxHealth;
-        SetHealth();
-        //Console.WriteLine("What do you want Leet's Health to be?");
-        //health = Convert.ToInt32(Console.ReadLine());
-        //health = Math.Clamp(health, 0, maxHealth);
+        SetHealth(health);
         iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
     }
-    public void SetHealth()
+    public int SetHealth(int newHealth)
     {
-        int newHealth;
         Console.WriteLine("What do you want Leet's Health to be?");
-        //health = Convert.ToInt32(Console.ReadLine());
         newHealth = Convert.ToInt32(Console.ReadLine());
         health = newHealth;
         health = Math.Clamp(health, 0, maxHealth);
+        return health;
     }
     public void ReportStatus()
     {

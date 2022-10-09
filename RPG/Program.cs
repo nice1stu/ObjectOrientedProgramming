@@ -1,8 +1,8 @@
 ﻿// Lets try the RPG
 
-Unit unit = new Unit("Skeleton", 100);
+/*Unit unit = new Unit("Skeleton", 100);
 unit = new Unit("Zombie", 200);
-unit = new Unit("Necromancer",300);
+unit = new Unit("Necromancer",300);*/
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)

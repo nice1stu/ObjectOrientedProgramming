@@ -23,6 +23,7 @@ public class Unit
 
     public int Health
     {
+        get => health;
         set => health = Math.Clamp(value, 0, maxHealth);
     }
     public Unit(string Name, int maxHealth)

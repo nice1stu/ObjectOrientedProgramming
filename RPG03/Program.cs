@@ -17,12 +17,13 @@ public class Unit
     public int iD;
     public int nextId;
     private int maxHealth;
-    public static int health;
+    private static int health;
 
     public string Name { get; }
 
     public int Health
     {
+        get { return health; }
         set => health = Math.Clamp(value, 0, maxHealth);
     }
 

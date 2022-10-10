@@ -1,28 +1,17 @@
 ﻿// Lets try the RPG
 
-//Unit unit = new Unit("Skeleton", 100);
-//unit = new Unit("Zombie", 200);
-//unit = new Unit("Necromancer",300);
-/*Unit unit = new Unit("Leet",1337);
-Console.WriteLine("What do you want Leet's Health to be?");
-unit.Health = Convert.ToInt32(Console.ReadLine());
-unit.ReportStatus();*/
+Unit unit = new Unit("Skeleton", 100);
+unit = new Unit("Zombie", 200);
+unit = new Unit("Necromancer",300);
 
 do
 {
-Unit unit = new Unit("Leet",1337);
+unit = new Unit("Leet",1337);
 Console.WriteLine("What do you want Leet's Health to be?");
 unit.Health = Convert.ToInt32(Console.ReadLine());
-unit.ReportStatus();
 }
 while (Unit.health > 0) ;
 
-/*Testing Finalizer
-for(int i = 0; i < 2; i++)
-{
-    unit = new Unit("LivingHand",400);
-    GC.Collect();
-}*/
 public class Unit
 {
     private string name;
@@ -47,7 +36,7 @@ public class Unit
         this.maxHealth = maxHealth;
         iD = nextId;
         nextId++;
-        //ReportStatus();// Make sure, that this is the last line of the constructor:
+        ReportStatus();// Make sure, that this is the last line of the constructor:
     }
     public void ReportStatus()
     {

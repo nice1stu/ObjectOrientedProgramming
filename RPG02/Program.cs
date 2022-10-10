@@ -10,7 +10,7 @@ do
     Console.WriteLine("What do you want Leet's Health to be?");
     unit.Health = Convert.ToInt32(Console.ReadLine());
 }
-while (Unit.health > 0) ;
+while (unit.Health > 0) ;
 
 public class Unit
 {

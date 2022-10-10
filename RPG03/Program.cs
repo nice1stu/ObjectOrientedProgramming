@@ -6,6 +6,7 @@ unit = new Unit("Necromancer",300);
 
 //bool isAlive = true;
 
+
 do
 {
     unit = new Unit("Leet", 1337);
@@ -33,9 +34,9 @@ public class Unit
         get { return IsAlive; }
         set
         {
-            if (Health <= 0)
+            if (Health > 0)
             {
-                IsAlive = false;
+                IsAlive = true;
             }
             IsAlive = false;
         }

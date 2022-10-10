@@ -32,10 +32,11 @@ public class Unit
         get { return IsAlive; }
         set
         {
-            if (health <= 0)
+            if (health > 0)
             {
-                IsAlive = false;
+                IsAlive = true;
             }
+            IsAlive = false;
         }
     }
 

@@ -8,13 +8,14 @@ Console.WriteLine("What do you want Leet's Health to be?");
 unit.Health = Convert.ToInt32(Console.ReadLine());
 unit.ReportStatus();*/
 
-while(true)
+do
 {
 Unit unit = new Unit("Leet",1337);
 Console.WriteLine("What do you want Leet's Health to be?");
 unit.Health = Convert.ToInt32(Console.ReadLine());
 unit.ReportStatus();
 }
+while (Unit.health > 0) ;
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)
@@ -28,7 +29,7 @@ public class Unit
     public int iD;
     public int nextId;
     private int maxHealth;
-    private int health;
+    public static int health;
     public int Health
     {
         get 

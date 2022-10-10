@@ -6,33 +6,28 @@ unit = new Unit("Necromancer",300);
 
 do
 {
-unit = new Unit("Leet",1337);
-Console.WriteLine("What do you want Leet's Health to be?");
-unit.Health = Convert.ToInt32(Console.ReadLine());
+    unit = new Unit("Leet",1337);
+    Console.WriteLine("What do you want Leet's Health to be?");
+    unit.Health = Convert.ToInt32(Console.ReadLine());
 }
 while (Unit.health > 0) ;
 
 public class Unit
 {
-    private string name;
     public int iD;
     public int nextId;
     private int maxHealth;
     public static int health;
+
+    public string Name { get; }
+
     public int Health
     {
-        get 
-        {
-            return health;
-        }
-        set
-        {
-            health = Math.Clamp(value, 0, maxHealth);
-        }
+        set => health = Math.Clamp(value, 0, maxHealth);
     }
-    public Unit(string name, int maxHealth)
+    public Unit(string Name, int maxHealth)
     {
-        this.name = name;
+        this.Name = Name;
         this.maxHealth = maxHealth;
         iD = nextId;
         nextId++;
@@ -40,11 +35,11 @@ public class Unit
     }
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{iD}: {name} - {health}/{maxHealth} Health");
+        Console.WriteLine($"Unit #{iD}: {Name} - {health}/{maxHealth} Health");
     }
     ~Unit()//Finalizer
     {
-        Console.WriteLine($"Unit #{iD}: {name} got finalized.");
+        Console.WriteLine($"Unit #{iD}: {Name} got finalized.");
     }
 }
 

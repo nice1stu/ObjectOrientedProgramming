@@ -4,11 +4,17 @@ Unit unit = new Unit("Skeleton", 100);
 unit = new Unit("Zombie", 200);
 unit = new Unit("Necromancer",300);
 
+//bool isAlive = true;
+
 do
 {
-    unit = new Unit("Leet",1337);
+    unit = new Unit("Leet", 1337);
     Console.WriteLine("What do you want Leet's Health to be?");
     unit.Health = Convert.ToInt32(Console.ReadLine());
+    /*if (unit.Health <= 0)
+    {
+        isAlive = false;
+    }*/
 }
 while (unit.IsAlive) ;
 
@@ -32,7 +38,7 @@ public class Unit
         get { return IsAlive; }
         set
         {
-            if (health > 0)
+            if (Health > 0)
             {
                 IsAlive = true;
             }
@@ -47,6 +53,7 @@ public class Unit
         iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
+
     }
     public void ReportStatus()
     {

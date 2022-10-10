@@ -10,7 +10,7 @@ do
     Console.WriteLine("What do you want Leet's Health to be?");
     unit.Health = Convert.ToInt32(Console.ReadLine());
 }
-while (unit.isAlive) ;
+while (unit.IsAlive) ;
 
 public class Unit
 {
@@ -26,16 +26,15 @@ public class Unit
         set => health = Math.Clamp(value, 0, maxHealth);
     }
 
-    public bool isAlive
+    public bool IsAlive
     {
-        get { return isAlive; }
+        get { return IsAlive; }
         set
         {
             if (health <= 0)
             {
-                isAlive = false;
+                IsAlive = false;
             }
-            isAlive = true;
         }
     }
 

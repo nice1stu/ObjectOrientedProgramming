@@ -76,7 +76,7 @@ void SetUp()
     if (userInput == 1)
     {
         Console.WriteLine("Player 1, please enter your name.");
-        string namePlayer1 = Console.ReadLine();
+        namePlayer1 = Console.ReadLine();
         Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
         //pause 3 seconds
         //DeployShips();
@@ -135,6 +135,7 @@ void AircraftCarrier()
 //Create Array Map
 void ArrayMap()
 {
+    Console.WriteLine(namePlayer1 + ", Deploy your ships");
     for (int x = 0; x < player1DeployMap.GetLength(0); x++)
     {
         for (int y = 0; y < player1DeployMap.GetLength(1); y++)
@@ -200,13 +201,13 @@ Ships corvette = new Ships("Corvette", 2);
 
 public class Ships
 {
-    public string shipType;
-    public int shipLength;
+    public string ShipType;
+    public int ShipLength;
 
     public Ships(string shipType, int shipLength)
     {
-        this.shipType = shipType;
-        this.shipLength = shipLength;
+        this.ShipType = shipType;
+        this.ShipLength = shipLength;
     }
 }
 

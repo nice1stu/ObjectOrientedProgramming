@@ -60,3 +60,8 @@ public class Unit
         Console.WriteLine($"Unit #{iD}: {Name} got finalized.");
     }
 }
+
+public void Damage()
+{
+    
+}

@@ -4,7 +4,7 @@ using RPG03;
 
 Unit unit = new Unit("Skeleton", 100);
 unit = new Unit("Zombie", 200);
-Necromancer necromancer = new Necromancer("Necromancer",300);
+Necromancer necromancer01 = new Necromancer("Necromancer",300);
 unit = new Unit("Leet", 1337);
 int value = 0;
 

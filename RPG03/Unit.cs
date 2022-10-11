@@ -1,3 +1,5 @@
+namespace RPG03;
+
 public class Unit
 {
     public int iD;

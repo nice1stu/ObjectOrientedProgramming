@@ -4,9 +4,6 @@ Unit unit = new Unit("Skeleton", 100);
 unit = new Unit("Zombie", 200);
 unit = new Unit("Necromancer",300);
 
-//bool isAlive = true;
-
-
 do
 {
     unit = new Unit("Leet", 1337);

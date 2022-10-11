@@ -78,7 +78,8 @@ void SetUp()
         Console.WriteLine("Player 1, please enter your name.");
         namePlayer1 = Console.ReadLine();
         Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
-        //pause 3 seconds
+        Thread.Sleep(3000);
+        Console.Clear();
         //DeployShips();
     }
     else
@@ -126,11 +127,13 @@ void AircraftCarrier()
     shipBearing = "h";
     if (shipBearing == "h") // set ship horizontally from start co-ordinates
     {
-        
-        for (x = 0; x < 5; x++)
+
+        for (int i = 0; i < 5; i++)
         {
             player1DeployMap[x, yInput] = '¤';
+            x = x++;
         }
+
     }
 }
     

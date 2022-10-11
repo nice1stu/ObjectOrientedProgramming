@@ -31,14 +31,13 @@ public class Unit
 
     public bool IsAlive
     {
-        get => IsAlive;
-        set
+        get        
         {
             if (Health > 0)
             {
-                IsAlive = true;
+                return true;
             }
-            IsAlive = false;
+            return false;
         }
     }
 
@@ -59,9 +58,4 @@ public class Unit
     {
         Console.WriteLine($"Unit #{iD}: {Name} got finalized.");
     }
-}
-
-public void Damage()
-{
-    
 }

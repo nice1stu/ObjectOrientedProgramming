@@ -3,12 +3,20 @@
 Unit unit = new Unit("Skeleton", 100);
 unit = new Unit("Zombie", 200);
 unit = new Unit("Necromancer",300);
+unit = new Unit("Leet", 1337);
+int value = 0;
+
+void Damage()
+{
+    unit.Health -= value;
+}
 
 do
 {
-    unit = new Unit("Leet", 1337);
-    Console.WriteLine("What do you want Leet's Health to be?");
-    unit.Health = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("How much damage do you want to deal to Leet?");
+    string userInput = Console.ReadLine();
+    value = Convert.ToInt32(userInput);
+    Damage();
 } while (unit.IsAlive);
 
 public class Unit

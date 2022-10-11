@@ -97,12 +97,16 @@ void SetUp()
 {
     int x = xInput;
     int y = yInput;
-    Console.WriteLine("Ship Classes;");
+    Console.WriteLine("Ship Classes:");
     Console.WriteLine("[1] Aircraft Carrier - 5 Squares");
     Console.WriteLine("[2] Cruiser - 4 Squares");
     Console.WriteLine("[3] Destroyer - 3 Squares");
     Console.WriteLine("[4] Submarine - 3 Squares");
     Console.WriteLine("[5] Corvette - 2 Squares");
+    Console.WriteLine(namePlayer1 + " select which ship to deploy");
+    Console.WriteLine();
+    string userInput = Console.ReadLine();
+    // select ship class
     Console.WriteLine("Select the starting co-ordinate of your ship [x,y]");
     Console.WriteLine("please enter the X co-ordinate");
     xInput = Convert.ToInt32(Console.ReadLine());
@@ -112,9 +116,6 @@ void SetUp()
     Console.WriteLine("Then choose to deploy [v]ertically down or [h]orizontally across");
     string shipBearing = Console.ReadLine();
     //player 1 sets ships on player1Deploy map x 5
-    Console.WriteLine($"{namePlayer1} select which ship to deploy");
-    Console.WriteLine();
-    string userInput = Console.ReadLine();
     //player 2 sets ships om player2Deploy map x 5
 }*/
 
@@ -122,6 +123,7 @@ void AircraftCarrier()
 {
     int x = 4;//xInput;
     int y = 4;//yInput;
+    shipBearing = "h";
     if (shipBearing == "h") // set ship horizontally from start co-ordinates
     {
         
@@ -193,8 +195,8 @@ void CompPlayerAttack()
     Console.WriteLine($"{attackPlotX}, {attackPlotY}"); //CompPlayerAttack co-ordinates
 }
 
-Ships aircraftCarrier = new Ships("aircraftCarrier", 5);
-Ships cruiser = new Ships("cruiser", 4);
+Ships aircraftCarrier = new Ships("AircraftCarrier", 5);
+Ships cruiser = new Ships("Cruiser", 4);
 Ships destroyer = new Ships("Destroyer", 3);
 Ships submarine = new Ships("Submarine", 3);
 Ships corvette = new Ships("Corvette", 2);

@@ -6,11 +6,10 @@ unit = new Unit("Necromancer",300);
 
 do
 {
-    unit = new Unit("Leet",1337);
+    unit = new Unit("Leet", 1337);
     Console.WriteLine("What do you want Leet's Health to be?");
     unit.Health = Convert.ToInt32(Console.ReadLine());
-}
-while (unit.Health > 0) ;
+} while (unit.IsAlive);
 
 public class Unit
 {
@@ -26,6 +25,19 @@ public class Unit
         get => health;
         set => health = Math.Clamp(value, 0, maxHealth);
     }
+
+    public bool IsAlive
+    {
+        get        
+        {
+            if (Health > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
+
     public Unit(string Name, int maxHealth)
     {
         this.Name = Name;
@@ -33,6 +45,7 @@ public class Unit
         iD = nextId;
         nextId++;
         ReportStatus();// Make sure, that this is the last line of the constructor:
+
     }
     public void ReportStatus()
     {
@@ -43,4 +56,3 @@ public class Unit
         Console.WriteLine($"Unit #{iD}: {Name} got finalized.");
     }
 }
-

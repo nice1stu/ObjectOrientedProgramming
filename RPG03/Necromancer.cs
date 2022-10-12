@@ -5,5 +5,9 @@ public class Necromancer : Unit
     private bool hasResurrected = false;
     public Necromancer(string Name, int maxHealth) : base(Name, maxHealth)
     {
+        if (IsAlive == false)
+        {
+            health = (int)(maxHealth * 0.5);
+        }
     }
 }

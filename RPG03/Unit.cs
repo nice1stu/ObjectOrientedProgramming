@@ -14,8 +14,8 @@ public class Unit
         get => health;
         set => health = Math.Clamp(value, 0, maxHealth);
     }
-    
-    void Damage() => unit.Health -= value;
+
+    public virtual void Damage() => Health -= value;
 
     public bool IsAlive
     {

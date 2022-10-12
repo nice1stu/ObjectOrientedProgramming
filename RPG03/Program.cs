@@ -16,14 +16,14 @@ class Program
         Necromancer.health = 200;
         Console.WriteLine("Necromancer" + Necromancer.health);
         
-        void Damage() => unit.Health -= value;
+        //void Damage() => unit.Health -= value;
         
         do
         {
             Console.WriteLine("How much damage do you want to deal to Necromancer?");
             string userInput = Console.ReadLine();
             value = Convert.ToInt32(userInput);
-            Damage();
+            unit.Damage();
         } while (unit.IsAlive);
     }
 }

@@ -8,6 +8,7 @@ public class Necromancer : Unit
         if (IsAlive == false)
         {
             health = (int)(maxHealth * 0.5);
+            hasResurrected = true;
         }
     }
 }

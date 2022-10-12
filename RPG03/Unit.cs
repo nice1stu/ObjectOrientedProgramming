@@ -14,6 +14,8 @@ public class Unit
         get => health;
         set => health = Math.Clamp(value, 0, maxHealth);
     }
+    
+    void Damage() => unit.Health -= value;
 
     public bool IsAlive
     {
@@ -36,12 +38,7 @@ public class Unit
         ReportStatus();// Make sure, that this is the last line of the constructor:
 
     }
-    public void ReportStatus()
-    {
-        Console.WriteLine($"Unit #{iD}: {Name} - {health}/{maxHealth} Health");
-    }
-    ~Unit()//Finalizer
-    {
-        Console.WriteLine($"Unit #{iD}: {Name} got finalized.");
-    }
+    public void ReportStatus() => Console.WriteLine($"Unit #{iD}: {Name} - {health}/{maxHealth} Health");
+    
+    ~Unit()=> Console.WriteLine($"Unit #{iD}: {Name} got finalized.");//Finalizer 
 }

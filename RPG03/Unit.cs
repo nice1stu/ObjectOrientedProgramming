@@ -5,7 +5,7 @@ public class Unit
     public int iD;
     public int nextId;
     private int maxHealth;
-    private static int health;
+    public static int health;
 
     public string Name { get; }
 

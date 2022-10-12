@@ -2,12 +2,14 @@
 
 using RPG03;
 
-Unit unit = new Unit("Skeleton", 100);
+/*Unit unit = new Unit("Skeleton", 100);
 unit = new Unit("Zombie", 200);
-Necromancer necromancer01 = new Necromancer("Necromancer",300);
-unit = new Unit("Leet", 1337);
+Necromancer necromancer01 = new Necromancer("Necromancer",200);
+unit = new Unit("Leet", 1337);*/
 int value = 0;
-
+Unit unit = new Necromancer("Necromancer", 200);
+Necromancer.health = 200;
+Console.WriteLine(Necromancer.health);
 void Damage()
 {
     unit.Health -= value;
@@ -15,7 +17,7 @@ void Damage()
 
 do
 {
-    Console.WriteLine("How much damage do you want to deal to Leet?");
+    Console.WriteLine("How much damage do you want to deal to Necromancer?");
     string userInput = Console.ReadLine();
     value = Convert.ToInt32(userInput);
     Damage();

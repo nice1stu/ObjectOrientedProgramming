@@ -24,7 +24,16 @@ void EMS()
             Console.WriteLine("Here is a list of all employees");
             Console.WriteLine($"Employee 1: {employee[i]}. Salary: {employee[i]} Taxes ({employeeTaxRate}%): {employeeSalary*employeeTaxRate} Salary After Taxes: {employeeSalary*(1-employeeTaxRate)});
         }
+    }else if (userInput == 2)
+    {
+        Console.WriteLine("Add another employee");
+        Console.WriteLine("Employee name:");
+        string employeeName = Console.ReadLine();
+        Console.WriteLine("Employee salary:");
+        int employeeSalary = Convert.ToInt32(Console.ReadLine());
     }
+    Console.WriteLine("What's the new Tax Rate (0.1 = 10%)?");
+    double employeeTaxRate = Convert.ToDouble(Console.ReadLine());
 
 }
 
@@ -32,10 +41,14 @@ public class Employee
 {
     public string employeeName;
     public int employeeSalary;
-    public static float emplooyeeTaxRate;
+    public static double emplooyeeTaxRate;
 
-    public Employee(string employeeName, int employeeSalary)
+    public AddEmployee(string employeeName, int employeeSalary)
     {
-        
+        int employeeID;
+        int nextID;
+        this.employee[employeeID] = employeeName, employeeSalary;
+        nextID++;
+        employeeID = nextID;
     }
 }

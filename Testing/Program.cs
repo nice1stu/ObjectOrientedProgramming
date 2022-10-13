@@ -1,7 +1,4 @@
-﻿using Testing;
-Main();
-static void Main()
+﻿public class Animal
 {
-    Animal dog = new Animal();
-    dog.Pet();
+    
 }

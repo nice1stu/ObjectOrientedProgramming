@@ -4,7 +4,9 @@
     <projectFile>EMS.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12d1d708-3e3e-4d7d-8df6-c9136020d1bb" name="Changes" comment="" />
+    <list default="true" id="12d1d708-3e3e-4d7d-8df6-c9136020d1bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.EMS.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EMS.dir/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,15 +21,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="EMS" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -57,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664483510710</updated>
       <workItem from="1664483514773" duration="13000" />
+      <workItem from="1665685744995" duration="108000" />
     </task>
     <servers />
   </component>

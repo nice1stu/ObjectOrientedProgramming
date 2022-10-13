@@ -31,6 +31,12 @@ for (int i = 0; i < enemyUnits.Length; i++)
     Unit unit = new Unit(enemyUnits[i]);
     //Unit.ReportStatus();
 }
+//Testing Finalizer
+for(int i = 0; i < 2; i++)
+{
+    Unit unit = new Unit("LivingHand");
+    GC.Collect();
+}
 
 class Unit
 {
@@ -44,17 +50,11 @@ class Unit
         id = nextId;
         nextId++;
     }
-
-    //Finalizer
-    ~Unit()
+    
+    ~Unit()//Finalizer
     {
-        for (int i = 0; i < 2; i++)
-        {
-            Unit unit = new Unit("LivingHand");
-            GC.Collect();
-            Console.WriteLine("LivingHand got finalized.");
-            Thread.Sleep(1000);
-        }
+        Console.WriteLine($"Unit #{id}: {name} got finalized.");
+    }
 
         // Make sure, that this is the last line of the constructor:
         /*void ReportStatus()
@@ -62,4 +62,3 @@ class Unit
             Console.WriteLine($"Unit #{id}: {name}");
         }*/
     }
-}

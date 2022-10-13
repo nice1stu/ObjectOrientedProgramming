@@ -1,4 +1,4 @@
-﻿/*//Create a Console Project named P3Classes
+﻿/*Continue Working on P2Classes
 Extend the class Person:
 Give it a field of type string with the name name
 Give it a method named IntroduceYourself()
@@ -9,48 +9,46 @@ Use a for-loop, to do so.
 Put each name into one slot of the Person-Array's name
 Now, call IntroduceYourself() on each person of the Array*/
 
-//Create a Console Project named P2Classes
-
-/*Person person = new Person();
-Animal animal = new Animal();
-Car car = new Car();
-
-Console.WriteLine(person);
-Console.WriteLine(animal);
-Console.WriteLine(car);*/
-
-
-
-Person[] persons = new Person[3];
-
+string?[] persons = new string?[3];
 for (int i = 0; i < persons.Length; i++)
 {
-    persons[i] = new Person();
+    Console.WriteLine("Please enter a name.");
+    string? userInput = Console.ReadLine();
+    persons[i] = userInput;
 }
 
 for (int i = 0; i < persons.Length; i++)
 {
-    Console.WriteLine("Give me a name ");
-    persons[i].name = Console.ReadLine();
+    Person.name = persons[i];
+    Person.IntroduceYourself();
 }
 
-for (int i = 0; i < persons.Length; i++)
-{
-    persons[i].IntroduceYourself();
-}
 public class Person
 {
-    public string name;
-    public void IntroduceYourself()
+    public static string? name;
+
+    public static void IntroduceYourself()
     {
-        Console.WriteLine($"Hello, my name is {name}");
+        Console.WriteLine("Hello, my name is " + name);
+    }
+    public Person()
+    {
+        Console.WriteLine("Person");
     }
 }
 
 public class Animal
-{ }
-
+{
+    public Animal()
+    {
+        Console.WriteLine("Animal");
+    }
+}
 
 public class Car
-{ }
-
+{
+    public Car()
+    {
+        Console.WriteLine("Car");
+    } 
+}

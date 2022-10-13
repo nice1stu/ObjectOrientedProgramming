@@ -4,7 +4,11 @@
     <projectFile>P3Classes.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1d5c825-5b70-4806-9339-d546265c76ea" name="Changes" comment="" />
+    <list default="true" id="c1d5c825-5b70-4806-9339-d546265c76ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../P2Classes/.idea/.idea.P2Classes.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P2Classes/.idea/.idea.P2Classes.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.P3Classes.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.P3Classes.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +61,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664483613670</updated>
       <workItem from="1664483617533" duration="10000" />
-      <workItem from="1665675665315" duration="594000" />
+      <workItem from="1665675665315" duration="1544000" />
     </task>
     <servers />
   </component>

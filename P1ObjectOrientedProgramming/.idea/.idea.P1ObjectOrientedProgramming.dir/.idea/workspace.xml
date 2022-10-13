@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa69f3dc-846d-45d1-a3be-a6252176d6b2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.P1ObjectOrientedProgramming.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.P1ObjectOrientedProgramming.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/P1ObjectOrientedProgramming.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/P1ObjectOrientedProgramming.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/P1ObjectOrientedProgramming.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/P1ObjectOrientedProgramming.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/P1ObjectOrientedProgramming.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/P1ObjectOrientedProgramming.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/P1ObjectOrientedProgramming.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/P1ObjectOrientedProgramming.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +64,7 @@
       <updated>1664483567066</updated>
       <workItem from="1664483570951" duration="9000" />
       <workItem from="1665622103330" duration="65000" />
+      <workItem from="1665628080824" duration="314000" />
     </task>
     <servers />
   </component>

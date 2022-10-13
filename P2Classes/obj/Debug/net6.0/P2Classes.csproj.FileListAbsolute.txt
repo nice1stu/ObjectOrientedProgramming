@@ -1,0 +1,15 @@
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\bin\Debug\net6.0\P2Classes.exe
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\bin\Debug\net6.0\P2Classes.deps.json
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\bin\Debug\net6.0\P2Classes.runtimeconfig.json
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\bin\Debug\net6.0\P2Classes.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\bin\Debug\net6.0\P2Classes.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.csproj.AssemblyReference.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.AssemblyInfoInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.AssemblyInfo.cs
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.csproj.CoreCompileInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\refint\P2Classes.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\P2Classes.genruntimeconfig.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P2Classes\obj\Debug\net6.0\ref\P2Classes.dll

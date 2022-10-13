@@ -25,30 +25,48 @@ Add a Finalizer to the Unit Class
 Make it say print Unit #2: Zombie got finalized." to the Console.
 You can quickly test it using following code sample:*/
 
-string[] enemyUnits = new String[4];
-for (int i = 0; i < enemyUnits.Length; i++)
+string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
+int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
+
+Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
+for (int i = 0; i < 3; i++)
 {
-    Unit unit = new Unit(enemyUnits[i]);
-    //Unit.ReportStatus();
+    Console.WriteLine("What do you want Leet's Health to be?");
+    int newHealth = Convert.ToInt32(Console.ReadLine());
+    unit.SetHealth();
+    unit.ReportStatus();
 }
-//Testing Finalizer
+
+/*Testing Finalizer
 for(int i = 0; i < 2; i++)
 {
     Unit unit = new Unit("LivingHand");
     GC.Collect();
-}
+}*/
 
 class Unit
 {
     private string name;
     private int id;
     private static int nextId;
+    private int health;
+    private int maxHealth;
 
-    public Unit(string name)
+    public Unit(string name, int maxHealth)
     {
         this.name = name;
+        this.maxHealth = maxHealth;
+        health = maxHealth;
         id = nextId;
         nextId++;
+    }
+
+    public int SetHealth()
+    {
+        int newHealth = 0;
+        health = newHealth;
+        health = Math.Clamp(0, health, maxHealth);
+        return health;
     }
     
     ~Unit()//Finalizer
@@ -57,8 +75,8 @@ class Unit
     }
 
         // Make sure, that this is the last line of the constructor:
-        /*void ReportStatus()
+        public void ReportStatus()
         {
-            Console.WriteLine($"Unit #{id}: {name}");
-        }*/
+            Console.WriteLine($"Unit #{id}: {name} - {health}/{maxHealth} Health");//Unit #27: Zombie - 127/200 Health
+        }
     }

@@ -4,10 +4,7 @@
     <projectFile>P2Classes.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74314297-4c4e-4fea-9f05-5ea2fdeccb75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.P2Classes.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.P2Classes.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="74314297-4c4e-4fea-9f05-5ea2fdeccb75" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,7 +57,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664483590291</updated>
       <workItem from="1664483594306" duration="8000" />
-      <workItem from="1665628499015" duration="771000" />
+      <workItem from="1665628499015" duration="883000" />
     </task>
     <servers />
   </component>

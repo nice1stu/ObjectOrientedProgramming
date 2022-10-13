@@ -1,0 +1,15 @@
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\bin\Debug\net6.0\EMS.exe
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\bin\Debug\net6.0\EMS.deps.json
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\bin\Debug\net6.0\EMS.runtimeconfig.json
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\bin\Debug\net6.0\EMS.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\bin\Debug\net6.0\EMS.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.csproj.AssemblyReference.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.AssemblyInfoInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.AssemblyInfo.cs
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.csproj.CoreCompileInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\refint\EMS.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\EMS.genruntimeconfig.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\EMS\obj\Debug\net6.0\ref\EMS.dll

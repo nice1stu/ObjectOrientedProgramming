@@ -8,7 +8,11 @@ Now, add whatever functions and methods are needed to solve above exercise.*/
 
 using System.ComponentModel;
 EMS();
-string[] employee = new string[100];
+string[] employeeName = new string[100];
+int[] employeeSalary = new int[100];
+int[] employeeID = new int[100];
+
+Employee employee[employeeID] = new Employee(employeeName, employeeSalary);
 
 void EMS()
 {//menu
@@ -42,12 +46,13 @@ public class Employee
     public string employeeName;
     public int employeeSalary;
     public static double emplooyeeTaxRate;
+    int employeeID = 0;
 
     public AddEmployee(string employeeName, int employeeSalary)
     {
-        int employeeID;
         int nextID;
-        this.employee[employeeID] = employeeName, employeeSalary;
+        this.employeeName = employeeName;
+        this.employeeSalary = employeeSalary;
         nextID++;
         employeeID = nextID;
     }

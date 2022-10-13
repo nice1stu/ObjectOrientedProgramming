@@ -1,26 +1,30 @@
-﻿{
-    Main(new string[] { });
-}
+﻿Person person = new Person();
+person.SetName("Hans");
+Console.WriteLine(person.GetName());
+person.Promote();
+Console.WriteLine(person.GetName());
+person.SetName("Will");
+Console.WriteLine(person.GetName());
 
-static void Main(string[] args)
-{
-    for (var i = 0; i < 5; i++)
-    {
-        var animal = new Animal();
-        GC.Collect();
-        Thread.Sleep(1000);
-    }
-}
 
-public class Animal
+public class Person
 {
-    public Animal()
+    private string name;
+
+    public string GetName()
     {
-        Console.WriteLine("animal is created");
+        return name;
     }
 
-    ~Animal()
+    public void SetName(string value)
     {
-        Console.WriteLine("animal is destroyed");
+        if (string.IsNullOrEmpty(value))
+        {
+            Console.WriteLine("Error");
+            return;
+        }
+
+        name = value;
+        Console.WriteLine($"You have successfully changed name to : {name}");
     }
 }

@@ -4,7 +4,9 @@
     <projectFile>P1ObjectOrientedProgramming.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa69f3dc-846d-45d1-a3be-a6252176d6b2" name="Changes" comment="" />
+    <list default="true" id="aa69f3dc-846d-45d1-a3be-a6252176d6b2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.P1ObjectOrientedProgramming.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.P1ObjectOrientedProgramming.dir/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,15 +21,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "configurable.group.appearance",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="P1ObjectOrientedProgramming" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -57,6 +59,7 @@
       <option name="presentableId" value="Default" />
       <updated>1664483567066</updated>
       <workItem from="1664483570951" duration="9000" />
+      <workItem from="1665622103330" duration="65000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,15 @@
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\bin\Debug\net6.0\P1ObjectOrientedProgramming.exe
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\bin\Debug\net6.0\P1ObjectOrientedProgramming.deps.json
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\bin\Debug\net6.0\P1ObjectOrientedProgramming.runtimeconfig.json
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\bin\Debug\net6.0\P1ObjectOrientedProgramming.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\bin\Debug\net6.0\P1ObjectOrientedProgramming.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.csproj.AssemblyReference.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.GeneratedMSBuildEditorConfig.editorconfig
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.AssemblyInfoInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.AssemblyInfo.cs
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.csproj.CoreCompileInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\refint\P1ObjectOrientedProgramming.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\P1ObjectOrientedProgramming.genruntimeconfig.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P1ObjectOrientedProgramming\obj\Debug\net6.0\ref\P1ObjectOrientedProgramming.dll

@@ -4,9 +4,7 @@
     <projectFile>EMS.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12d1d708-3e3e-4d7d-8df6-c9136020d1bb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.EMS.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.EMS.dir/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="12d1d708-3e3e-4d7d-8df6-c9136020d1bb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +58,7 @@
       <updated>1664483510710</updated>
       <workItem from="1664483514773" duration="13000" />
       <workItem from="1665685744995" duration="108000" />
+      <workItem from="1665687690993" duration="195000" />
     </task>
     <servers />
   </component>

@@ -1,55 +1,31 @@
-﻿//Create a static class named SuperMath
+﻿/*Create a Console Project named P4StaticClassMembers
+  Create a static class named SuperMath
+  In that claas, create a static method named Lerp
+  Tt takes three arguments:
+  from of type float
+  to of type float
+  t of type float
+  It returns one value of type float:
+  It returns the result of the formula from + (to - from)*t*/
 
+float[] t = new float[] { 0f, .1f, .3f, .7f, 1f, 1.3f };
+float[] from = new float[] { 0, 100, 200 };
+float[] to = new float[] { 100, 200, -100 };
 
-float from;
-float to;
-float[] t = { 0f, .1f, .3f, .7f, 1f, 1.3f };
-
-int i;
-
-/*for (int j = 0; j < 3; j++)
+for (int i = 0; i < 3; i++)
 {
-    for (i = 0; i < 6; i++)
+    for (int j = 0; j < t.Length; j++)
     {
-        //from = 0;
-        to = 100;
-        SuperMath.Lerp(from, to, t[i]);
+        float result = SuperMath.Lerp(from[i], to[i], t[j]);
+        Console.WriteLine($"Lerp from {from[i]} to {to[i]} with t({t[j]}): {result}");
     }
-
-    from = from + 100;
-}*/
-
-for (i = 0; i < 6; i++)
-{
-    from = 0;
-    to = 100;
-    SuperMath.Lerp(from, to, t[i]);
-}
-
-for (i = 0; i < 6; i++)
-{
-    from = 100;
-    to = 200;
-    SuperMath.Lerp(100, 200, t[i]);
-}
-
-for (i = 0; i < 6; i++)
-{
-    from = 200;
-    to = -100;
-    SuperMath.Lerp(200, -100, t[i]);
 }
 
 public static class SuperMath
 {
-    public static float from;
-
-    public static float to;
-
-    public static float t;
-    public static void Lerp(float from, float to, double t)
+    public static float Lerp(float from, float to, float t)
     {
-        float answer = (float)(from + (to - from) * t);
-        Console.WriteLine($"Lerp from {from} to {to} with t({t}):{answer}");
+        float result = from + (to - from) * t;
+        return result;
     }
 }

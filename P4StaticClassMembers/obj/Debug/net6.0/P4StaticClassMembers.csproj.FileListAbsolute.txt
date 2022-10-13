@@ -1,0 +1,15 @@
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\bin\Debug\net6.0\P4StaticClassMembers.exe
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\bin\Debug\net6.0\P4StaticClassMembers.deps.json
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\bin\Debug\net6.0\P4StaticClassMembers.runtimeconfig.json
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\bin\Debug\net6.0\P4StaticClassMembers.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\bin\Debug\net6.0\P4StaticClassMembers.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.csproj.AssemblyReference.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.AssemblyInfoInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.AssemblyInfo.cs
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.csproj.CoreCompileInputs.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\refint\P4StaticClassMembers.dll
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.pdb
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\P4StaticClassMembers.genruntimeconfig.cache
+C:\Unity Projects\104-csharp-oop-nice1stu\P4StaticClassMembers\obj\Debug\net6.0\ref\P4StaticClassMembers.dll

@@ -10,9 +10,14 @@ Console.WriteLine(person.GetName());
 public class Person
 {
     private string name;
+    private bool isPromoted;
 
     public string GetName()
     {
+        if (isPromoted)
+        {
+            return "Officer " + name;
+        }
         return name;
     }
 
@@ -20,11 +25,17 @@ public class Person
     {
         if (string.IsNullOrEmpty(value))
         {
-            Console.WriteLine("Error");
+            Console.WriteLine("Error. Can not assign an invalid name to Person.");
             return;
         }
 
         name = value;
-        Console.WriteLine($"You have successfully changed name to : {name}");
+        Console.WriteLine($"You have successfully changed name to : {value}");
+    }
+
+    public void Promote()
+    {
+        isPromoted = true;
+        Console.WriteLine($"Promoted {name}.");
     }
 }

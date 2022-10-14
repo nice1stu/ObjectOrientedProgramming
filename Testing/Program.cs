@@ -1,41 +1,25 @@
-﻿Person person = new Person();
-person.SetName("Hans");
-Console.WriteLine(person.GetName());
-person.Promote();
-Console.WriteLine(person.GetName());
-person.SetName("Will");
-Console.WriteLine(person.GetName());
+﻿Circle circle = new Circle();
+circle.Radius = 12;
+Console.WriteLine(circle.Radius);
+Console.WriteLine(circle.Area);
 
-
-public class Person
+public class Circle
 {
-    private string name;
-    private bool isPromoted;
+    private float radius;
+    private float area;
 
-    public string GetName()
+    public float Radius
     {
-        if (isPromoted)
+        get { return radius; }
+        set
         {
-            return "Officer " + name;
+            radius = value;
+            area = value * value * MathF.PI;
         }
-        return name;
     }
 
-    public void SetName(string value)
+    public float Area
     {
-        if (string.IsNullOrEmpty(value))
-        {
-            Console.WriteLine("Error. Can not assign an invalid name to Person.");
-            return;
-        }
-
-        name = value;
-        Console.WriteLine($"You have successfully changed name to : {value}");
-    }
-
-    public void Promote()
-    {
-        isPromoted = true;
-        Console.WriteLine($"Promoted {name}.");
+        get { return area; }
     }
 }

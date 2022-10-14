@@ -1,25 +1,13 @@
-﻿Circle circle = new Circle();
-circle.Radius = 12;
-Console.WriteLine(circle.Radius);
-Console.WriteLine(circle.Area);
+﻿Login login = new Login();
+login.Password = "12345";
+Console.WriteLine(login.Password);
 
-public class Circle
+public class Login
 {
-    private float radius;
-    private float area;
+    private string password;
 
-    public float Radius
+    public string Password
     {
-        get { return radius; }
-        set
-        {
-            radius = value;
-            area = value * value * MathF.PI;
-        }
-    }
-
-    public float Area
-    {
-        get { return area; }
+        set { password = value; }
     }
 }

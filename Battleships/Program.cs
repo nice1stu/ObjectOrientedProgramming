@@ -51,7 +51,7 @@ void SetUp()
         Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
         Thread.Sleep(3000);
         Console.Clear();
-        MapArray.Maps();
+        Player1DeployMap.Maps();
         //DeployShips();
     }
     else

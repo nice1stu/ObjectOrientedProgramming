@@ -1,11 +1,11 @@
-public class Dog : Terrestrial
+public class Dog : Animal
 {
     public Dog(int age)
     {
         Age = age;
     }
-    public void Swims()
+    public void Bark()
     {
-        Console.WriteLine($"{this} age {Age} swims.");
+        Console.WriteLine($"I am {Age} years old, but I can bark!");
     }
 }

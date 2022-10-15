@@ -1,17 +1,8 @@
-public abstract class MapArray
+public class MapArray
 {
     //initialise map
-    private static string[,] map = new String[10, 10];
-    public void FillMap()
-    {
-        for (int x = 0; x < map.Length; x++)
-        {
-            for (int y = 0; y < map.Length; y++)
-            {
-                map[x, y] = "~ ";
-            }
-        }
-    }
+    private static string[] map = new String[10];
+
     public static void DrawMap()
 {
     Console.WriteLine("(Y)");
@@ -21,7 +12,6 @@ public abstract class MapArray
         for (int y = 0; y < 10; y++)
         {
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            //Console.WriteLine(map[x,y]);
             Console.Write("~ ");
             Console.ResetColor();
         }

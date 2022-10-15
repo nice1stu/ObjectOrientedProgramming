@@ -29,7 +29,7 @@ class Unit
         nextId++;
     }
 
-    public int Health
+    protected int Health
     {
         set
         {

@@ -26,12 +26,6 @@ Only returns "Ship detected" or "No ship detected"*/
 using System.ComponentModel.Design;
 
 Console.WriteLine("Lets try to make Battleship");
-
-//declare arrays & variables
-char[,] player1DeployMap = new char[10, 10];
-//char[,] player1AttackPlot = new char[9, 9];
-//char[,] player2DeployMap = new char[9, 9];
-//char[,] player2AttackPlot = new char[9, 9];
 int[] startPosition = new int[2];
 int bearing;
 int xInput= 0;
@@ -39,34 +33,11 @@ int yInput = 0;
 string shipBearing = null;
 string namePlayer1 = null;
 string namePlayer2;
-
 SetUp();
-ArrayMap();
-AircraftCarrier();
 //Maps();
 //CompPlayerAttack();
 
-/*draw maps
-void Maps()
-{
-    Console.WriteLine("(Y)");
-    for (int x = 0; x < 10; x++)
-    {
-        Console.Write($"{9-x} ");
-        for (int y = 0; y < 10; y++)
-        {
-            Console.Write("~ ");
-        }
-        Console.WriteLine();
-    }
-    Console.Write("\\ ");
-    for (int x = 0; x < 10; x++)
-    {
-        Console.Write($"{x} ");
-    }
-    Console.Write("(X)");
-    Console.WriteLine();
-}*/
+
 
 void SetUp()
 {
@@ -80,6 +51,7 @@ void SetUp()
         Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
         Thread.Sleep(3000);
         Console.Clear();
+        MapArray.Maps();
         //DeployShips();
     }
     else
@@ -90,37 +62,12 @@ void SetUp()
         Console.WriteLine("Player 2, please enter your name.");
         string namePlayer2 = Console.ReadLine();
         Console.WriteLine($"Welcome {namePlayer2}, Good Hunting!");
+        MapArray.Maps();
         //DeployShips();
     }
 }
 
-/*void DeployShips()//change to player n
-{
-    int x = xInput;
-    int y = yInput;
-    Console.WriteLine("Ship Classes:");
-    Console.WriteLine("[1] Aircraft Carrier - 5 Squares");
-    Console.WriteLine("[2] Cruiser - 4 Squares");
-    Console.WriteLine("[3] Destroyer - 3 Squares");
-    Console.WriteLine("[4] Submarine - 3 Squares");
-    Console.WriteLine("[5] Corvette - 2 Squares");
-    Console.WriteLine(namePlayer1 + " select which ship to deploy");
-    Console.WriteLine();
-    string userInput = Console.ReadLine();
-    // select ship class
-    Console.WriteLine("Select the starting co-ordinate of your ship [x,y]");
-    Console.WriteLine("please enter the X co-ordinate");
-    xInput = Convert.ToInt32(Console.ReadLine());
-    Console.WriteLine("please enter the Y co-ordinate");
-    yInput = Convert.ToInt32(Console.ReadLine());
-    startPosition[x,y] = xInput, yInput;
-    Console.WriteLine("Then choose to deploy [v]ertically down or [h]orizontally across");
-    string shipBearing = Console.ReadLine();
-    //player 1 sets ships on player1Deploy map x 5
-    //player 2 sets ships om player2Deploy map x 5
-}*/
-
-void AircraftCarrier()
+/*void AircraftCarrier()
 {
     int x = 4;//xInput;
     int y = 4;//yInput;
@@ -204,17 +151,37 @@ Ships destroyer = new Ships("Destroyer", 3);
 Ships submarine = new Ships("Submarine", 3);
 Ships corvette = new Ships("Corvette", 2);
 
-public class Ships
+/*void DeployShips()//change to player n
 {
-    public string ShipType;
-    public int ShipLength;
+    int x = xInput;
+    int y = yInput;
+    Console.WriteLine("Ship Classes:");
+    Console.WriteLine("[1] Aircraft Carrier - 5 Squares");
+    Console.WriteLine("[2] Cruiser - 4 Squares");
+    Console.WriteLine("[3] Destroyer - 3 Squares");
+    Console.WriteLine("[4] Submarine - 3 Squares");
+    Console.WriteLine("[5] Corvette - 2 Squares");
+    Console.WriteLine(namePlayer1 + " select which ship to deploy");
+    Console.WriteLine();
+    string userInput = Console.ReadLine();
+    // select ship class
+    Console.WriteLine("Select the starting co-ordinate of your ship [x,y]");
+    Console.WriteLine("please enter the X co-ordinate");
+    xInput = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("please enter the Y co-ordinate");
+    yInput = Convert.ToInt32(Console.ReadLine());
+    startPosition[x,y] = xInput, yInput;
+    Console.WriteLine("Then choose to deploy [v]ertically down or [h]orizontally across");
+    string shipBearing = Console.ReadLine();
+    //player 1 sets ships on player1Deploy map x 5
+    //player 2 sets ships om player2Deploy map x 5
+}*/
 
-    public Ships(string shipType, int shipLength)
-    {
-        this.ShipType = shipType;
-        this.ShipLength = shipLength;
-    }
-}
+//declare arrays & variables
+
+//char[,] player1AttackPlot = new char[9, 9];
+//char[,] player2DeployMap = new char[9, 9];
+//char[,] player2AttackPlot = new char[9, 9];
 
 /*void GameMechanic()
 {

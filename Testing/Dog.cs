@@ -1,8 +1,8 @@
 public class Dog : Animal
 {
-    public Dog(int age)
+    public Dog()
     {
-        Age = age;
+        Console.WriteLine("Dog gets constructed");
     }
     public void Bark()
     {

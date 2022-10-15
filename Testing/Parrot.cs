@@ -1,4 +1,4 @@
-public class Parrot: Terrestrial
+/*public class Parrot: Terrestrial
 {
     public Parrot(int age)
     {
@@ -8,4 +8,4 @@ public class Parrot: Terrestrial
     {
         Console.WriteLine($"{this} age {Age} flys.");
     }
-}
+}*/

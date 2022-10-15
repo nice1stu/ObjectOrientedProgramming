@@ -1,4 +1,4 @@
-public class Fish: Animal
+/*public class Fish: Animal
 {
     public Fish (int age)
     {
@@ -8,4 +8,4 @@ public class Fish: Animal
     {
         Console.WriteLine($"{this} age {Age} swims.");
     }
-}
+}*/

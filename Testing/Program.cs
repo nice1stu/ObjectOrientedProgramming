@@ -1,1 +1,2 @@
-﻿Programmer programmer = new Programmer();
+﻿Dog dog = new Dog();
+Console.WriteLine(dog.Age);

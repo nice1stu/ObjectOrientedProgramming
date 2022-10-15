@@ -1,4 +1,9 @@
 public class Ship
 {
-    private char shipMarker = '¤';
+    public static void ShipMarker()
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.Write('¤');
+        Console.ResetColor();
+    }
 }

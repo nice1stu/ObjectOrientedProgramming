@@ -51,7 +51,12 @@ void SetUp()
         Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
         Thread.Sleep(3000);
         Console.Clear();
-        Player1DeployMap.Maps();
+        Player1DeployMap.Maps();//test draw map - add to start of player turn
+        for (int i = 0; i < 5; i++)//test draw ship - remove for final game
+        {
+            Ship.ShipMarker();
+        }
+
         //DeployShips();
     }
     else

@@ -1,13 +1,20 @@
-﻿Login login = new Login();
-login.Password = "12345";
-Console.WriteLine(login.Password);
+﻿Unit unit = new Unit();
+Console.WriteLine(unit.Health);
 
-public class Login
+public class Unit
 {
-    private string password;
+    private int health;
 
-    public string Password
+    public int Health
     {
-        set { password = value; }
+        get => health;
+        private set => health = Math.Max(0, value);
     }
+}
+
+public class Radius
+{
+    private float radius;
+
+    public float Area => radius * radius * MathF.PI;
 }

@@ -6,6 +6,11 @@ class Unit
     private int health;
     private int maxHealth;
 
+    public string Name
+    {
+        get { return name; }
+    }
+
     public Unit(string name, int maxHealth)
     {
         this.name = name;

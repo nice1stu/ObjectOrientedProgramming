@@ -56,11 +56,16 @@ The same logic that happened in SetHealth before, should now happen in that Prop
 Add a get to the Property, which returns the current value of the health-field
 Change the Game-Loop:
 Don't ask the user 3 times for Leet's new Health
-But instead ask him for as long as Leet's Health is greater than zero*/
+But instead ask him for as long as Leet's Health is greater than zero
+
+Change the field name to be a Property named Name which only has a get, but no set
+You can still assign the value in the constructor, but nowhere else anymore*/
 
 string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
 int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
-
+Console.WriteLine("Temporary, please remove from final Game!");
+Unit test = new Unit("Abc", 100); 
+Console.WriteLine(test.Name);
 Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
 while (unit.Health > 0)
 {

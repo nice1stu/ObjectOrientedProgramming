@@ -1,4 +1,4 @@
-public class MapArray
+public abstract class MapArray
 {
     //draw maps
     public static void Maps()

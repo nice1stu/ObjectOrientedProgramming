@@ -1,14 +1,7 @@
-public class Animal
+public sealed class Animal
 {
-    public int Age { get; set; }
-
-    public Animal()
+    public void Live()
     {
-        Console.WriteLine("Animal gets constructed");
-    }
-
-    public void Breathes()
-    {
-        Console.WriteLine($"I am breathing");
+        Console.WriteLine("I am a living animal");
     }
 }

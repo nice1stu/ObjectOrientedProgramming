@@ -1,5 +1,8 @@
 ﻿Unit unit = new Unit();
 Console.WriteLine(unit.Health);
+Player player = new Player("Player1");
+//player.Id = "Player1";
+Console.WriteLine(player.Id);
 
 public class Unit
 {
@@ -12,9 +15,17 @@ public class Unit
     }
 }
 
-public class Radius
+public class Circle
 {
-    private float radius;
+    public float Radius { get; set; }
+}
 
-    public float Area => radius * radius * MathF.PI;
+public class Player
+{
+    public string Id { get; }
+
+    public Player(string id)
+    {
+        Id = id;
+    }
 }

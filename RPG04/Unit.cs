@@ -1,11 +1,11 @@
-class Unit
+public class Unit
 {
     private int id;
     private static int nextId;
     private int health;
     private int maxHealth;
 
-    public void Damage(int value)
+    public virtual void Damage(int value)
     {
         Health -= value;
     }

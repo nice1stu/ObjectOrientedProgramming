@@ -4,18 +4,7 @@
     <projectFile>RPG.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e04084-c6ca-4e14-b61c-878584bb8495" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/RPG.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/RPG.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
-    </list>
+    <list default="true" id="a1e04084-c6ca-4e14-b61c-878584bb8495" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,6 +58,7 @@
       <updated>1665805095598</updated>
       <workItem from="1665805104651" duration="9000" />
       <workItem from="1665805127368" duration="81000" />
+      <workItem from="1665805245494" duration="5000" />
     </task>
     <servers />
   </component>

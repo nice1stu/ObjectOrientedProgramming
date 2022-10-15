@@ -51,11 +51,11 @@ void SetUp()
         Console.WriteLine($"Welcome {namePlayer1}, Good Hunting!");
         Thread.Sleep(3000);
         Console.Clear();
-        Player1DeployMap.Maps();//test draw map - add to start of player turn
-        for (int i = 0; i < 5; i++)//test draw ship - remove for final game
+        Player1DeployMap.DrawMap();//test draw map - add to start of player turn
+        /*for (int i = 0; i < 5; i++)//test draw ship - remove for final game
         {
             Ship.ShipMarker();
-        }
+        }*/
 
         //DeployShips();
     }
@@ -67,7 +67,7 @@ void SetUp()
         Console.WriteLine("Player 2, please enter your name.");
         string namePlayer2 = Console.ReadLine();
         Console.WriteLine($"Welcome {namePlayer2}, Good Hunting!");
-        MapArray.Maps();
+        MapArray.DrawMap();
         //DeployShips();
     }
 }

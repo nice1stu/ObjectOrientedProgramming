@@ -1,8 +1,7 @@
-public class MapArray
+public abstract class MapArray
 {
     //initialise map
-    private static string[] map = new String[10];
-
+    //string[] map = new String[10];
     public static void DrawMap()
 {
     Console.WriteLine("(Y)");

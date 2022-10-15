@@ -4,9 +4,17 @@
     <projectFile>RPG.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5962f09e-635b-4ced-b921-425a863b0496" name="Changes" comment="">
+    <list default="true" id="a1e04084-c6ca-4e14-b61c-878584bb8495" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPG04/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RPG04/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/RPG.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/RPG.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/RPG.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/RPG.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/RPG.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,7 +24,7 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2FSRQH9CaRBpUrakDUj4Uw8846F" />
+  <component name="ProjectId" id="2G9eBxXh1ftmIKgXl1HQbfQu0n9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -54,23 +62,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5962f09e-635b-4ced-b921-425a863b0496" name="Changes" comment="" />
-      <created>1664483483571</created>
+      <changelist id="a1e04084-c6ca-4e14-b61c-878584bb8495" name="Changes" comment="" />
+      <created>1665805095598</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1664483483571</updated>
-      <workItem from="1664483488147" duration="10000" />
-      <workItem from="1664543553987" duration="927000" />
-      <workItem from="1664564994309" duration="822000" />
-      <workItem from="1664658621925" duration="601000" />
-      <workItem from="1664868864258" duration="1594000" />
-      <workItem from="1664873837486" duration="340000" />
-      <workItem from="1664881477081" duration="5094000" />
-      <workItem from="1664918812682" duration="1185000" />
-      <workItem from="1664995129813" duration="67000" />
-      <workItem from="1665231471127" duration="198000" />
-      <workItem from="1665358134599" duration="603000" />
-      <workItem from="1665689832321" duration="850000" />
+      <updated>1665805095598</updated>
+      <workItem from="1665805104651" duration="9000" />
+      <workItem from="1665805127368" duration="81000" />
     </task>
     <servers />
   </component>

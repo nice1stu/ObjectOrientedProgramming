@@ -1,13 +1,13 @@
 ﻿/*Create a Console Project named RPG
 Create a class named Unit
 Add a field to the Class of type string named name
-Add a Contructor to the Class
-The Contructor requires an argument of type string named name
+Add a Constructor to the Class
+The Constructor requires an argument of type string named name
 Assign the value of name to the field name (use this. to reference the field)
 Add a field of type int named id to the Class
 Add a static field of type int named nextId to the Class
-static fields are shared acros all Class instances
-In the Constructor, assign the vaalue of nextId to the field id of the class
+static fields are shared across all Class instances
+In the Constructor, assign the value of nextId to the field id of the class
 After that, increase nextId by 1
 this ensures, that the next unit gets a higher id than the previous one
 Add a method named ReportStatus to the Class
@@ -48,7 +48,15 @@ It then calls ReportStatus to print the new Status to the Console
 Test the functionality by:
 Creating a Unit with name Leet and maxHealth 1337
 Asking the User 3 times, to what value he wants to change the Unit's health
-Assign the given value each time to the Unit's SetHealth-Method:*/
+Assign the given value each time to the Unit's SetHealth-Method:
+
+Continue working on the Project RPG
+Replace the Method SetHealth with a public Property named Health of type int
+The same logic that happened in SetHealth before, should now happen in that Property's set
+Add a get to the Property, which returns the current value of the health-field
+Change the Game-Loop:
+Don't ask the user 3 times for Leet's new Health
+But instead ask him for as long as Leet's Health is greater than zero*/
 
 string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
 int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
@@ -58,7 +66,7 @@ for (int i = 0; i < 3; i++)
 {
     Console.WriteLine("What do you want Leet's Health to be?");
     int newHealth = Convert.ToInt32(Console.ReadLine());
-    unit.SetHealth(newHealth);
+    unit.Health = newHealth;
     unit.ReportStatus();
 }
 
@@ -86,11 +94,14 @@ class Unit
         nextId++;
     }
 
-    public int SetHealth(int newHealth)
+    public int Health
     {
-        health = newHealth;
-        health = Math.Clamp(health, 0, maxHealth);
-        return health;
+        set
+        {
+            health = value;
+            health = Math.Clamp(health, 0, maxHealth);
+        }
+        get { return health; }
     }
     
     ~Unit()//Finalizer

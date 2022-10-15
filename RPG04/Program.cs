@@ -23,7 +23,32 @@ I think it's best to put a comment there right away: // Make sure, that this is 
 Continue working on the Project RPG
 Add a Finalizer to the Unit Class
 Make it say print Unit #2: Zombie got finalized." to the Console.
-You can quickly test it using following code sample:*/
+You can quickly test it using following code sample:
+
+Continue working on the Project RPG
+Add two new fields to the Unit Class. Both fields should NOT be accessible from outside the class!
+maxHealth of type int
+health of type int
+Require maxHealth as an argument in the constructor
+This phrasing describes two steps:
+Adding the parameter to the constructor's parameter list
+Assigning the passed value to the class's field in the constructor body
+In the Constructor, set health to the same value as maxHealth, too
+Modify ReportStatus, to show not only the Id and Name, but also Health and MaxHealth:
+Unit #27: Zombie - 127/200 Health
+27 is the id
+Zombie is the name
+127 is the health
+200 is the maxHealth
+Create a public Method named SetHealth to the Unit-class.
+The method takes one argument: newHealth of type int
+It then sets the Unit's health to the value of newHealth
+It also ensures, that the new health is not smaller than 0 or greater than maxHealth
+It then calls ReportStatus to print the new Status to the Console
+Test the functionality by:
+Creating a Unit with name Leet and maxHealth 1337
+Asking the User 3 times, to what value he wants to change the Unit's health
+Assign the given value each time to the Unit's SetHealth-Method:*/
 
 string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
 int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
@@ -33,7 +58,7 @@ for (int i = 0; i < 3; i++)
 {
     Console.WriteLine("What do you want Leet's Health to be?");
     int newHealth = Convert.ToInt32(Console.ReadLine());
-    unit.SetHealth();
+    unit.SetHealth(newHealth);
     unit.ReportStatus();
 }
 
@@ -61,11 +86,10 @@ class Unit
         nextId++;
     }
 
-    public int SetHealth()
+    public int SetHealth(int newHealth)
     {
-        int newHealth = 0;
         health = newHealth;
-        health = Math.Clamp(0, health, maxHealth);
+        health = Math.Clamp(health, 0, maxHealth);
         return health;
     }
     

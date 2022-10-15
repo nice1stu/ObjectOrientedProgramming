@@ -1,3 +1,12 @@
-﻿Dog dog = new Dog(3);
-//dog.Age=5;
-Console.WriteLine(dog.Age);
+﻿static void Main(string[] args)
+{
+    Animal[] animals = { new Animal(), new Dog(), new Cat() };
+    foreach (Animal animal in animals)
+    {
+        animal.MakeSound();
+    }
+}
+
+{
+    Main(new string[] { });
+}

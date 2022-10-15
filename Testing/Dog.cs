@@ -1,7 +1,8 @@
 public class Dog : Animal
 {
-    public Dog(int age)
+    // Additionally, we define a Bark()-Method
+    public override void MakeSound()
     {
-        Age = age;
+        Console.WriteLine("Woof!");
     }
 }

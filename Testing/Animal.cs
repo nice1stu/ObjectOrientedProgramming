@@ -1,7 +1,6 @@
-public sealed class Animal
-{
-    public void Live()
+public class Animal {
+    public virtual void MakeSound()
     {
-        Console.WriteLine("I am a living animal");
+        Console.WriteLine("<animal sound>");
     }
 }

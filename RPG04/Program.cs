@@ -65,7 +65,16 @@ Add a property named IsAlive of type bool to the Unit Class
 It should have a get that returns true, if health is greater than zero
 And false in any other case
 In the Game Loop, use this property instead of comparing Health <= 0 or Health > 0!
-You can make the Health Property's get protected now!*/
+You can make the Health Property's get protected now!
+
+Introduce a public method named Damage
+It returns nothing
+It takes a parameter named value of type int
+It then subtracts value from our current Health and assigns it to Health
+Change the Game Loop, so it does
+Not ask anymore, what we want Leet's Health to be
+But instead asks, how much damage we want to deal
+And then calls the Damage-Method with that value*/
 
 string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
 int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
@@ -73,9 +82,9 @@ int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
 Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
 while (unit.IsAlive)
 {
-    Console.WriteLine("What do you want Leet's Health to be?");
-    int newHealth = Convert.ToInt32(Console.ReadLine());
-    unit.Health = newHealth;
+    Console.WriteLine("How much damage do you want to deal to Leet?");
+    int value = Convert.ToInt32(Console.ReadLine());
+    unit.Damage(value);
     unit.ReportStatus();
 }
 

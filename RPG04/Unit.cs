@@ -5,6 +5,10 @@ class Unit
     private int health;
     private int maxHealth;
 
+    public void Damage(int value)
+    {
+        Health -= value;
+    }
     public bool IsAlive
     {
         get
@@ -29,7 +33,7 @@ class Unit
         nextId++;
     }
 
-    protected int Health
+    protected internal int Health
     {
         set
         {

@@ -59,15 +59,19 @@ Don't ask the user 3 times for Leet's new Health
 But instead ask him for as long as Leet's Health is greater than zero
 
 Change the field name to be a Property named Name which only has a get, but no set
-You can still assign the value in the constructor, but nowhere else anymore*/
+You can still assign the value in the constructor, but nowhere else anymore
+
+Add a property named IsAlive of type bool to the Unit Class
+It should have a get that returns true, if health is greater than zero
+And false in any other case
+In the Game Loop, use this property instead of comparing Health <= 0 or Health > 0!
+You can make the Health Property's get protected now!*/
 
 string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
 int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
-Console.WriteLine("Temporary, please remove from final Game!");
-Unit test = new Unit("Abc", 100); 
-Console.WriteLine(test.Name);
+
 Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
-while (unit.Health > 0)
+while (unit.IsAlive)
 {
     Console.WriteLine("What do you want Leet's Health to be?");
     int newHealth = Convert.ToInt32(Console.ReadLine());

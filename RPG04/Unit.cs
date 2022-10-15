@@ -1,19 +1,28 @@
 class Unit
 {
-    private string name;
     private int id;
     private static int nextId;
     private int health;
     private int maxHealth;
 
-    public string Name
+    public bool IsAlive
     {
-        get { return name; }
+        get
+        {
+            if (health > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
     }
+
+    public string Name { get; }
 
     public Unit(string name, int maxHealth)
     {
-        this.name = name;
+        this.Name = name;
         this.maxHealth = maxHealth;
         health = maxHealth;
         id = nextId;
@@ -32,12 +41,12 @@ class Unit
     
     ~Unit()//Finalizer
     {
-        Console.WriteLine($"Unit #{id}: {name} got finalized.");
+        Console.WriteLine($"Unit #{id}: {Name} got finalized.");
     }
 
     // Make sure, that this is the last line of the constructor:
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{id}: {name} - {health}/{maxHealth} Health");//Unit #27: Zombie - 127/200 Health
+        Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");//Unit #27: Zombie - 127/200 Health
     }
 }

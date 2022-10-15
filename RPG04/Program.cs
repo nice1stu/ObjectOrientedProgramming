@@ -82,7 +82,7 @@ int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
 Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
 while (unit.IsAlive)
 {
-    Console.WriteLine("How much damage do you want to deal to Leet?");
+    Console.WriteLine($"How much damage do you want to deal to {enemyNames[4]}?");
     int value = Convert.ToInt32(Console.ReadLine());
     unit.Damage(value);
     unit.ReportStatus();

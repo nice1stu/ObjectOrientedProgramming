@@ -9,7 +9,9 @@ public class MapArray
         Console.Write($"{9-x} ");
         for (int y = 0; y < 10; y++)
         {
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.Write("~ ");
+            Console.ResetColor();
         }
         Console.WriteLine();
     }

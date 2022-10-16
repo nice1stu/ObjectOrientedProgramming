@@ -83,39 +83,51 @@ Until a total of three monsters have been killed.
 Make the Unit-class abstract by using the abstract-keyword before the class-keyword
 Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromancer*/
 
-string[] enemyNames = new[] { "Zombie", "Hedgehog", "Skeleton", "Leet", "LivingHand", "Necromancer" };
-int[] maxHealthTable = new[] { 100, 200, 250, 1337, 400, 300 };
+string[] enemyNames = new[] { "Zombie", "Hedgehog", "Skeleton", "Bomb", "Leet", "LivingHand", "Necromancer" };
+int[] maxHealthTable = new[] { 100, 200, 250, 500, 1337, 400, 300 };
+int currentRound = 0;
+int count = 0;
+bool gameOver = false;
 
-for (int i = 0; i < 3; i++)
+while (gameOver == false)
 {
-    Random random = new Random();
-    int number = random.Next(0, 20);
-    Unit unit;
-    if (number > 0)
+
+    for (int i = 0; i < 3; i++)
     {
-        Random rnd = new Random();
-        int random2 = rnd.Next(0, 3);
-        unit = new Hedgehog(enemyNames[1], maxHealthTable[1]);
-        Console.WriteLine($"A {enemyNames[1]} has spawned");
-    }
-    else
-    {
-        unit = new Necromancer(enemyNames[4], maxHealthTable[4]);
-        Console.WriteLine($"A {enemyNames[4]} has spawned");
-    }
-    while (unit.IsAlive)
-    {
-        Console.WriteLine($"How much damage do you want to deal to {unit}?");
-        int value = Convert.ToInt32(Console.ReadLine());
-        unit.TakeDamage(value);
-        unit.ReportStatus();
-        if (unit.IsDead)
+        Random random = new Random();
+        int number = random.Next(0, 20);
+        Unit unit;
+        if (number > 0)
         {
-            Console.WriteLine($"{unit} has Died");
+            Random rnd = new Random();
+            int random2 = rnd.Next(0, 3);
+            unit = new Bomb(enemyNames[3], maxHealthTable[3]);
+            Console.WriteLine($"A {enemyNames[3]} has spawned");
+        }
+        else
+        {
+            unit = new Necromancer(enemyNames[4], maxHealthTable[4]);
+            Console.WriteLine($"A {enemyNames[4]} has spawned");
+        }
+
+        while (unit.IsAlive)
+        {
+            Console.WriteLine($"How much damage do you want to deal to {unit}?");
+            int value = Convert.ToInt32(Console.ReadLine());
+            unit.TakeDamage(value);
+            unit.ReportStatus();
+            if (unit.IsDead)
+            {
+                Console.WriteLine($"{unit} has Died");
+            }
+            count++;
+            currentRound = count;
+            Console.WriteLine(currentRound);
         }
     }
-}
-Console.WriteLine("Game Over");
+
+    Console.WriteLine("Game Over");
+    gameOver = true;
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)
@@ -123,3 +135,4 @@ for(int i = 0; i < 2; i++)
     Unit unit = new Unit("LivingHand");
     GC.Collect();
 }*/
+}

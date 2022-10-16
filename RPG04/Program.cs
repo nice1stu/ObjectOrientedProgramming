@@ -83,8 +83,6 @@ Until a total of three monsters have been killed.
 Make the Unit-class abstract by using the abstract-keyword before the class-keyword
 Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromancer*/
 
-string[] enemyNames = new[] { "Zombie", "Hedgehog", "Skeleton", "Bomb", "Leet", "LivingHand", "Necromancer" };
-int[] maxHealthTable = new[] { 100, 200, 250, 500, 1337, 400, 300 };
 int currentRound = 0;
 int count = 0;
 bool gameOver = false;

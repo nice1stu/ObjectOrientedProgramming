@@ -76,16 +76,17 @@ Not ask anymore, what we want Leet's Health to be
 But instead asks, how much damage we want to deal
 And then calls the Damage-Method with that value*/
 
-string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
+/*string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
 int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
 
-Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
-while (unit.IsAlive)
+Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);*/
+Necromancer necromancer = new Necromancer("necromancer", 300);
+while (necromancer.IsAlive)
 {
-    Console.WriteLine($"How much damage do you want to deal to {enemyNames[4]}?");
+    Console.WriteLine($"How much damage do you want to deal to {necromancer}?");
     int value = Convert.ToInt32(Console.ReadLine());
-    unit.Damage(value);
-    unit.ReportStatus();
+    necromancer.Damage(value);
+    necromancer.ReportStatus();
 }
 
 /*Testing Finalizer

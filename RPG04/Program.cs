@@ -94,22 +94,34 @@ while (gameOver == false)
 
     for (int i = 0; i < 3; i++)
     {
+        //enemySpawner
         Random random = new Random();
-        int number = random.Next(0, 20);
+        int number = random.Next(0, 3);
         Unit unit;
-        if (number > 0)
+        if (number == 0)
         {
             unit = new Bomb(Bomb.name, Bomb.maxHealth);
             Console.WriteLine($"A {Bomb.name} has spawned");
+        }
+        else if (number == 1)
+        {
+            unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth);
+            Console.WriteLine($"A {Hedgehog.name} has spawned");
+        }
+        else if (number == 2)
+        {
+            unit = new Skeleton(Skeleton.name, Skeleton.maxHealth);
+            Console.WriteLine($"A {Skeleton.name} has spawned");
         }
         else
         {
             unit = new Necromancer(Necromancer.name, Necromancer.maxHealth);
             Console.WriteLine($"A {Necromancer.name} has spawned");
         }
-
+        
         while (unit.IsAlive)
         {
+            //doDamage
             Console.WriteLine($"How much damage do you want to deal to {unit}?");
             int value = Convert.ToInt32(Console.ReadLine());
             unit.TakeDamage(value);

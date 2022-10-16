@@ -8,8 +8,8 @@ Print Unit #3: Hedgehog was hit while in Defense Mode!*/
 
 public class Hedgehog : Unit
 {
-    private static string name = "Hedgehog";
-    private static int maxHealth = 200;
+    internal static string name = "Hedgehog";
+    internal static int maxHealth = 200;
     private int tookDamage;
     public Hedgehog(string name, int maxHealth) : base(name, maxHealth)
     {

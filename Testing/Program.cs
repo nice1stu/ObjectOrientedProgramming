@@ -1,12 +1,11 @@
 ﻿static void Main(string[] args)
 {
-    Animal[] animals = { new Animal(), new Dog(), new Cat() };
-    foreach (Animal animal in animals)
-    {
-        animal.MakeSound();
-    }
-}
+    Dog dog = new Dog("Bello");
+    Animal animal = new Dog("Tina");
 
-{
-    Main(new string[] { });
+
+
+
+
+
 }

@@ -1,8 +1,9 @@
 public class Cat : Animal
 {
+    public override string FavouriteFood => "Mice";
+    public void HuntMice(){}
     public override void MakeSound()
     {
-        base.MakeSound();
         Console.WriteLine("Meow!");
     }
 }

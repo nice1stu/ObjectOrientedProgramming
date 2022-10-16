@@ -1,6 +1,6 @@
-public class Animal {
-    public virtual void MakeSound()
-    {
-        Console.WriteLine("<animal sound>");
-    }
+public abstract class Animal
+{
+    public string name;
+    public abstract string FavouriteFood { get; }
+    public abstract void MakeSound();
 }

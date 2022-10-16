@@ -80,33 +80,42 @@ Update the Game Loop, so randomly, either a Unit or a Necromancer is spawned.
 After the Unit or Necromancer dies, a new one is spawned.
 Until a total of three monsters have been killed.*/
 
-string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
-int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
+string[] enemyNames = new[] { "Zombie", "Skeleton", "Leet", "LivingHand", "Necromancer" };
+int[] maxHealthTable = new[] { 100, 200, 1337, 400, 300 };
 
-Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
-
-
-unit = SpawnNewUnit();
-static Unit SpawnNewUnit()
-    {
-    // get random number between 0 and 1
+Unit unit;
+for (int i = 0; i < 3; i++)
+{
     Random random = new Random();
     int number = random.Next(0, 2);
-    if(number == 0){
-        return new Necromancer("Necromancer", 300);
-    }
-    if(number == 1)
+    if (number > 0)
     {
-        return new Unit(enemyNames, maxHealthTable);
+        Random rnd = new Random();
+        int random2 = rnd.Next(0, 3);
+        unit = new Unit(enemyNames[random2], maxHealthTable[random2]);
+        Console.WriteLine($"A {enemyNames[random2]} has spawned");
+    }
+    else
+    {
+        unit = new Necromancer(enemyNames[4], maxHealthTable[4]);
+        Console.WriteLine($"A {enemyNames[4]} has spawned");
+    }
+    while (unit.IsAlive)
+    {
+        Console.WriteLine($"How much damage do you want to deal to {unit}?");
+        int value = Convert.ToInt32(Console.ReadLine());
+        unit.TakeDamage(value);
+        unit.ReportStatus();
     }
 }
+/*unit = new Unit(enemyNames[2], maxHealthTable[2]);
 while (unit.IsAlive)
 {
     Console.WriteLine($"How much damage do you want to deal to {unit}?");
     int value = Convert.ToInt32(Console.ReadLine());
     unit.TakeDamage(value);
     unit.ReportStatus();
-}
+}*/
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)

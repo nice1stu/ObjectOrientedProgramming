@@ -74,20 +74,82 @@ It then subtracts value from our current Health and assigns it to Health
 Change the Game Loop, so it does
 Not ask anymore, what we want Leet's Health to be
 But instead asks, how much damage we want to deal
-And then calls the Damage-Method with that value*/
+And then calls the Damage-Method with that value
 
-/*string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
-int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
+Update the Game Loop, so randomly, either a Unit or a Necromancer is spawned.
+After the Unit or Necromancer dies, a new one is spawned.
+Until a total of three monsters have been killed.
 
-Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);*/
-Necromancer necromancer = new Necromancer("necromancer", 300);
-while (necromancer.IsAlive)
+Make the Unit-class abstract by using the abstract-keyword before the class-keyword
+Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromancer*/
+
+using System.Security.Cryptography.X509Certificates;
+
+int currentRound = 0;
+int count = 0;
+bool gameOver = false;
+
+while (gameOver == false)
 {
-    Console.WriteLine($"How much damage do you want to deal to {necromancer}?");
-    int value = Convert.ToInt32(Console.ReadLine());
-    necromancer.TakeDamage(value);
-    necromancer.ReportStatus();
-}
+    //Spawn Hero
+    Hero hero = new Hero(Hero.name, Hero.maxHealth);
+    Console.WriteLine("A Hero has spawned !");
+
+    for (int i = 0; i < 3; i++)
+    {
+        //enemySpawner
+        Random random = new Random();
+        int number = random.Next(0, 3);
+        Unit unit;
+        if (number == 0)
+        {
+            unit = new Bomb(Bomb.name, Bomb.maxHealth);
+            Console.WriteLine($"A {Bomb.name} has spawned");
+        }
+        else if (number == 1)
+        {
+            unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth);
+            Console.WriteLine($"A {Hedgehog.name} has spawned");
+        }
+        else if (number == 2)
+        {
+            unit = new Skeleton(Skeleton.name, Skeleton.maxHealth);
+            Console.WriteLine($"A {Skeleton.name} has spawned");
+        }
+        else
+        {
+            unit = new Necromancer(Necromancer.name, Necromancer.maxHealth);
+            Console.WriteLine($"A {Necromancer.name} has spawned");
+        }
+        
+        while (unit.IsAlive)
+        {
+            //doDamage
+            Console.WriteLine($"How much damage do you want to deal to {unit}?");
+            int value = Convert.ToInt32(Console.ReadLine());
+            unit.TakeDamage(value);
+            Console.WriteLine("Our Hero has taken 89 points of Damage");
+            hero.TakeDamage(89);
+            Console.WriteLine(hero.Health);
+            Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
+            unit.ReportStatus();
+            if (hero.IsDead)
+            {
+                Console.WriteLine($"{hero} has Died");
+                gameOver = true;
+            }
+            if (unit.IsDead)
+            {
+                Console.WriteLine($"{unit} has Died");
+            }
+            count++;
+            currentRound = count;
+            Console.WriteLine(currentRound);
+        }
+    }
+
+    Console.WriteLine("Game Over");
+    gameOver = true;
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)
@@ -95,3 +157,4 @@ for(int i = 0; i < 2; i++)
     Unit unit = new Unit("LivingHand");
     GC.Collect();
 }*/
+}

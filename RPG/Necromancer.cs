@@ -14,13 +14,15 @@ Call this Method from within the Necromancer's Damage-Method instead of the two 
 
 public class Necromancer : Unit
 {
+    internal static string name = "Necromancer";
+    internal static int maxHealth = 300;
     bool hasResurrected = false;
 
     private void HasResurrected()
     {
-        if (Health <= 0 && hasResurrected == false)
+        if (IsDead && !hasResurrected)
         {
-            Console.WriteLine("I am born again!");
+            Console.WriteLine("Necromancer is born again!");
             Health = (int)(maxHealth * .5);
             hasResurrected = true;
         }

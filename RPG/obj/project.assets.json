@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG\\RPG.csproj",
-      "projectName": "RPG",
-      "projectPath": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG\\RPG.csproj",
+      "projectUniqueName": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG04\\RPG04.csproj",
+      "projectName": "RPG04",
+      "projectPath": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG04\\RPG04.csproj",
       "packagesPath": "C:\\Users\\nice1\\.nuget\\packages\\",
-      "outputPath": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG\\obj\\",
+      "outputPath": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG04\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nice1\\AppData\\Roaming\\NuGet\\NuGet.Config"

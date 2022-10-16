@@ -29,6 +29,17 @@ public class Unit
         }
     }
 
+    public bool IsDead
+    {
+        get
+        {
+            if (health <= 0)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
     public string Name { get; }
 
     public Unit(string name, int maxHealth)
@@ -58,6 +69,7 @@ public class Unit
     // Make sure, that this is the last line of the constructor:
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");//Unit #27: Zombie - 127/200 Health
+        //Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
+        Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");
     }
 }

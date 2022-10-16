@@ -74,19 +74,38 @@ It then subtracts value from our current Health and assigns it to Health
 Change the Game Loop, so it does
 Not ask anymore, what we want Leet's Health to be
 But instead asks, how much damage we want to deal
-And then calls the Damage-Method with that value*/
+And then calls the Damage-Method with that value
 
-/*string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
+Update the Game Loop, so randomly, either a Unit or a Necromancer is spawned.
+After the Unit or Necromancer dies, a new one is spawned.
+Until a total of three monsters have been killed.*/
+
+string[] enemyNames = new[] { "Zombie", "Skeleton", "Necromancer", "LivingHand", "Leet" };
 int[] maxHealthTable = new[] { 100, 200, 300, 400, 1337 };
 
-Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);*/
-Necromancer necromancer = new Necromancer("necromancer", 300);
-while (necromancer.IsAlive)
+Unit unit = new Unit(enemyNames[4], maxHealthTable[4]);
+
+
+unit = SpawnNewUnit();
+static Unit SpawnNewUnit()
+    {
+    // get random number between 0 and 1
+    Random random = new Random();
+    int number = random.Next(0, 2);
+    if(number == 0){
+        return new Necromancer("Necromancer", 300);
+    }
+    if(number == 1)
+    {
+        return new Unit(enemyNames, maxHealthTable);
+    }
+}
+while (unit.IsAlive)
 {
-    Console.WriteLine($"How much damage do you want to deal to {necromancer}?");
+    Console.WriteLine($"How much damage do you want to deal to {unit}?");
     int value = Convert.ToInt32(Console.ReadLine());
-    necromancer.TakeDamage(value);
-    necromancer.ReportStatus();
+    unit.TakeDamage(value);
+    unit.ReportStatus();
 }
 
 /*Testing Finalizer

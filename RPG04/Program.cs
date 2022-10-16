@@ -91,6 +91,9 @@ bool gameOver = false;
 
 while (gameOver == false)
 {
+    //Spawn Hero
+    Hero hero = new Hero(Hero.name, Hero.maxHealth);
+    Console.WriteLine("A Hero has spawned !");
 
     for (int i = 0; i < 3; i++)
     {

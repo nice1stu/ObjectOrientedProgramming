@@ -112,14 +112,7 @@ for (int i = 0; i < 3; i++)
         }
     }
 }
-/*unit = new Unit(enemyNames[2], maxHealthTable[2]);
-while (unit.IsAlive)
-{
-    Console.WriteLine($"How much damage do you want to deal to {unit}?");
-    int value = Convert.ToInt32(Console.ReadLine());
-    unit.TakeDamage(value);
-    unit.ReportStatus();
-}*/
+Console.WriteLine("Game Over");
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)

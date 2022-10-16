@@ -87,7 +87,7 @@ Unit unit;
 for (int i = 0; i < 3; i++)
 {
     Random random = new Random();
-    int number = random.Next(0, 2);
+    int number = random.Next(0, 10);
     if (number > 0)
     {
         Random rnd = new Random();
@@ -106,6 +106,10 @@ for (int i = 0; i < 3; i++)
         int value = Convert.ToInt32(Console.ReadLine());
         unit.TakeDamage(value);
         unit.ReportStatus();
+        if (unit.IsDead)
+        {
+            Console.WriteLine($"{unit} has Died");
+        }
     }
 }
 /*unit = new Unit(enemyNames[2], maxHealthTable[2]);

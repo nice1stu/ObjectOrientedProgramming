@@ -20,7 +20,7 @@ public class Necromancer : Unit
     {
         if (IsDead && !hasResurrected)
         {
-            Console.WriteLine("I am born again!");
+            Console.WriteLine("Necromancer is born again!");
             Health = (int)(maxHealth * .5);
             hasResurrected = true;
         }

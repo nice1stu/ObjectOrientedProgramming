@@ -1,11 +1,19 @@
-class Unit
+/*Rename the Damage-Method to TakeDamage.
+Methods should always describe an Action (something that can be done)
+And Damage can either be a Verb (to damage) or a Noun (the damage)
+TakeDamage more specifically describes, what the method does
+
+Introduce a new Property IsDead of type bool to the Unit
+Have it return true, if the Unit is not IsAlive and false, if the unit IsAlive*/
+
+public class Unit
 {
     private int id;
     private static int nextId;
     private int health;
-    private int maxHealth;
+    protected int maxHealth;
 
-    public void Damage(int value)
+    public virtual void TakeDamage(int value)
     {
         Health -= value;
     }
@@ -17,7 +25,6 @@ class Unit
             {
                 return true;
             }
-
             return false;
         }
     }

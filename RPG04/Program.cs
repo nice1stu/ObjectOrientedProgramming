@@ -93,7 +93,9 @@ while (gameOver == false)
 {
     //Spawn Hero
     Hero hero = new Hero(Hero.name, Hero.maxHealth);
+    Console.ForegroundColor = ConsoleColor.Blue;
     Console.WriteLine("A Hero has spawned !");
+    Console.ResetColor();
 
     for (int i = 0; i < 3; i++)
     {
@@ -101,6 +103,7 @@ while (gameOver == false)
         Random random = new Random();
         int number = random.Next(0, 3);
         Unit unit;
+        Console.ForegroundColor = ConsoleColor.Red;
         if (number == 0)
         {
             unit = new Bomb(Bomb.name, Bomb.maxHealth);
@@ -121,26 +124,32 @@ while (gameOver == false)
             unit = new Necromancer(Necromancer.name, Necromancer.maxHealth);
             Console.WriteLine($"A {Necromancer.name} has spawned");
         }
-        
+        Console.ResetColor();
         while (unit.IsAlive)
         {
             //doDamage
             Console.WriteLine($"How much damage do you want to deal to {unit}?");
             int value = Convert.ToInt32(Console.ReadLine());
             unit.TakeDamage(value);
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Our Hero has taken 89 points of Damage");
             hero.TakeDamage(89);
-            Console.WriteLine(hero.Health);
+            //Console.WriteLine($"{hero.Health} Health points remain");
             Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
+            Console.ResetColor();
             unit.ReportStatus();
             if (hero.IsDead)
             {
+                Console.ForegroundColor = ConsoleColor.Blue;
                 Console.WriteLine($"{hero} has Died");
                 gameOver = true;
+                Console.ResetColor();
             }
             if (unit.IsDead)
             {
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine($"{unit} has Died");
+                Console.ResetColor();
             }
             count++;
             currentRound = count;
@@ -148,7 +157,9 @@ while (gameOver == false)
         }
     }
 
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("Game Over");
+    Console.ResetColor();
     gameOver = true;
 
 /*Testing Finalizer

@@ -2,6 +2,8 @@
 
 public class Skeleton : Unit
 {
+    private static string name = "Skeleton";
+    private static int maxHealth = 250;
     public Skeleton(string name, int maxHealth) : base(name, maxHealth)
     {
     }

@@ -8,12 +8,18 @@ And map each of these numbers to a Unit that is then created*/
 
 public class Bomb:Unit
 {
-    private int countdown = 5;
+    internal static string name = "Bomb";
+    internal static int maxHealth = 500;
+    private int timer;
     public Bomb(string name, int maxHealth) : base(name, maxHealth)
     {
     }
-    public void Countdown()
+    /*public void SelfDestruct()
     {
-        
-    }
+        timer = currentRound;
+        if (currentRound - time = 5)
+        {
+            Health = 0;
+        }
+    }*/
 }

@@ -99,15 +99,13 @@ while (gameOver == false)
         Unit unit;
         if (number > 0)
         {
-            Random rnd = new Random();
-            int random2 = rnd.Next(0, 3);
-            unit = new Bomb(enemyNames[3], maxHealthTable[3]);
-            Console.WriteLine($"A {enemyNames[3]} has spawned");
+            unit = new Bomb(Bomb.name, Bomb.maxHealth);
+            Console.WriteLine($"A {Bomb.name} has spawned");
         }
         else
         {
-            unit = new Necromancer(enemyNames[4], maxHealthTable[4]);
-            Console.WriteLine($"A {enemyNames[4]} has spawned");
+            unit = new Necromancer(Necromancer.name, Necromancer.maxHealth);
+            Console.WriteLine($"A {Necromancer.name} has spawned");
         }
 
         while (unit.IsAlive)

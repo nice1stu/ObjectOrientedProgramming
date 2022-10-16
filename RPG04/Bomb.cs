@@ -16,5 +16,6 @@ public class Bomb:Unit
     }
     public void SelfDestruct()
     {
+        //goes boom ! fater 5 rounds
     }
 }

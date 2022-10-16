@@ -128,7 +128,16 @@ while (gameOver == false)
             Console.WriteLine($"How much damage do you want to deal to {unit}?");
             int value = Convert.ToInt32(Console.ReadLine());
             unit.TakeDamage(value);
+            Console.WriteLine("Our Hero has taken 89 points of Damage");
+            hero.TakeDamage(89);
+            Console.WriteLine(hero.Health);
+            Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
             unit.ReportStatus();
+            if (hero.IsDead)
+            {
+                Console.WriteLine($"{hero} has Died");
+                gameOver = true;
+            }
             if (unit.IsDead)
             {
                 Console.WriteLine($"{unit} has Died");

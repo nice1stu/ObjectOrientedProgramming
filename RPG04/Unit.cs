@@ -69,6 +69,7 @@ public class Unit
     // Make sure, that this is the last line of the constructor:
     public void ReportStatus()
     {
+        //Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
         Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");
     }
 }

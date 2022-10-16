@@ -27,7 +27,7 @@ public class Necromancer : Unit
     }
     
     public Necromancer(string name, int maxHealth) : base(name, maxHealth){}
-    public override void Damage(int value)
+    public override void TakeDamage(int value)
     {
         Health -= value;
         HasResurrected();

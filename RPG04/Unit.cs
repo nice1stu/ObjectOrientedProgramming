@@ -1,3 +1,8 @@
+/*Rename the Damage-Method to TakeDamage.
+Methods should always describe an Action (something that can be done)
+And Damage can either be a Verb (to damage) or a Noun (the damage)
+TakeDamage more specifically describes, what the method does*/
+
 public class Unit
 {
     private int id;
@@ -5,7 +10,7 @@ public class Unit
     private int health;
     protected int maxHealth;
 
-    public virtual void Damage(int value)
+    public virtual void TakeDamage(int value)
     {
         Health -= value;
     }

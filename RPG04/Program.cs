@@ -85,7 +85,7 @@ while (necromancer.IsAlive)
 {
     Console.WriteLine($"How much damage do you want to deal to {necromancer}?");
     int value = Convert.ToInt32(Console.ReadLine());
-    necromancer.Damage(value);
+    necromancer.TakeDamage(value);
     necromancer.ReportStatus();
 }
 

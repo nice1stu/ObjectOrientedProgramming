@@ -29,6 +29,17 @@ public class Unit
         }
     }
 
+    public bool IsDead
+    {
+        get
+        {
+            if (health <= 0)
+            {
+                return true;
+            }
+            return false;
+        }
+    }
     public string Name { get; }
 
     public Unit(string name, int maxHealth)

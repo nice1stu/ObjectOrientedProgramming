@@ -18,7 +18,7 @@ public class Necromancer : Unit
 
     private void HasResurrected()
     {
-        if (Health <= 0 && hasResurrected == false)
+        if (IsDead && !hasResurrected)
         {
             Console.WriteLine("I am born again!");
             Health = (int)(maxHealth * .5);

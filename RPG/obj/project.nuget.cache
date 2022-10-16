@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0weS4PdT9t+u+GR0EBLnQjiduKuXAGwr4mRTNbZR5XqDRGfsg5u7u+gvTz154+PLiiV5FgMUwga0wJBy6u8DUA==",
+  "dgSpecHash": "ObXZFDHdSRB5CdjAj606xzv/xQ4Ky98RScy8FurGk4BdtbQ6fESkHnD9YlZrek6PycZ/tQ/iILIug+ZXlCIjJA==",
   "success": true,
-  "projectFilePath": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG04\\RPG04.csproj",
+  "projectFilePath": "C:\\Unity Projects\\104-csharp-oop-nice1stu\\RPG\\RPG.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

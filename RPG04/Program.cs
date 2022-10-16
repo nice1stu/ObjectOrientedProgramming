@@ -78,22 +78,25 @@ And then calls the Damage-Method with that value
 
 Update the Game Loop, so randomly, either a Unit or a Necromancer is spawned.
 After the Unit or Necromancer dies, a new one is spawned.
-Until a total of three monsters have been killed.*/
+Until a total of three monsters have been killed.
 
-string[] enemyNames = new[] { "Zombie", "Skeleton", "Leet", "LivingHand", "Necromancer" };
-int[] maxHealthTable = new[] { 100, 200, 1337, 400, 300 };
+Make the Unit-class abstract by using the abstract-keyword before the class-keyword
+Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromancer*/
 
-Unit unit;
+string[] enemyNames = new[] { "Zombie", "Hedgehog", "Skeleton", "Leet", "LivingHand", "Necromancer" };
+int[] maxHealthTable = new[] { 100, 200, 250, 1337, 400, 300 };
+
 for (int i = 0; i < 3; i++)
 {
     Random random = new Random();
-    int number = random.Next(0, 10);
+    int number = random.Next(0, 20);
+    Unit unit;
     if (number > 0)
     {
         Random rnd = new Random();
         int random2 = rnd.Next(0, 3);
-        unit = new Unit(enemyNames[random2], maxHealthTable[random2]);
-        Console.WriteLine($"A {enemyNames[random2]} has spawned");
+        unit = new Hedgehog(enemyNames[1], maxHealthTable[1]);
+        Console.WriteLine($"A {enemyNames[1]} has spawned");
     }
     else
     {

@@ -4,7 +4,9 @@
     <projectFile>RPG.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a1e04084-c6ca-4e14-b61c-878584bb8495" name="Changes" comment="" />
+    <list default="true" id="a1e04084-c6ca-4e14-b61c-878584bb8495" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RPG.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RPG.dir/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,6 +61,8 @@
       <workItem from="1665805104651" duration="9000" />
       <workItem from="1665805127368" duration="81000" />
       <workItem from="1665805245494" duration="5000" />
+      <workItem from="1665899773996" duration="42000" />
+      <workItem from="1665899866877" duration="24000" />
     </task>
     <servers />
   </component>

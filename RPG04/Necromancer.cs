@@ -16,5 +16,11 @@ public class Necromancer : Unit
     public override void Damage(int value)
     {
         Health -= value;
+        if (Health <= 0 && hasResurrected == false)
+        {
+            Console.WriteLine("I am born again!");
+            Health = (int)(maxHealth * .5);
+            hasResurrected = true;
+        }
     }
 }

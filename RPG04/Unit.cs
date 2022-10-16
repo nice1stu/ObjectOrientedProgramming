@@ -3,7 +3,7 @@ public class Unit
     private int id;
     private static int nextId;
     private int health;
-    private int maxHealth;
+    protected int maxHealth;
 
     public virtual void Damage(int value)
     {

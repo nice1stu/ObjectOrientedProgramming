@@ -140,8 +140,7 @@ class Program
                     hero.Attack(target);
                     target.Attack(hero);
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine("Our Hero has taken 89 points of Damage");
-                    hero.TakeDamage(89);
+                    Console.WriteLine($"Our Hero has taken {target.Power} points of Damage");
                     //Console.WriteLine($"{hero.Health} Health points remain");
                     Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
                     Console.ResetColor();

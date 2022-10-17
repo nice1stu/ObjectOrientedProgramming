@@ -4,7 +4,8 @@ public class Skeleton : Unit
 {
     internal static string name = "Skeleton";
     internal static int maxHealth = 250;
-    public Skeleton(string name, int maxHealth) : base(name, maxHealth)
+    internal static int power = 46;
+    public Skeleton(string name, int maxHealth, int power) : base(name, maxHealth, power)
     {
     }
 }

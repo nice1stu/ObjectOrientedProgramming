@@ -89,16 +89,15 @@ class Program
 {
     public static void Main(string[] args)
     {
-        int currentRound;
-        int count = 0;
         bool gameOver = false;
         
         //Game Controller
         while (gameOver == false)
         {
             //Spawn Hero
-            Hero hero = new Hero(Hero.name, Hero.maxHealth);
+            Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.power);
             Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(Hero.power);
             Console.WriteLine("A Hero has spawned !");
             Console.ResetColor();
 
@@ -111,23 +110,23 @@ class Program
                 Console.ForegroundColor = ConsoleColor.Red;
                 if (number == 0)
                 {
-                    unit = new Bomb(Bomb.name, Bomb.maxHealth);
+                    unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.power);
                     Console.WriteLine($"A {Bomb.name} has spawned");
 
                 }
                 else if (number == 1)
                 {
-                    unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth);
+                    unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.power);
                     Console.WriteLine($"A {Hedgehog.name} has spawned");
                 }
                 else if (number == 2)
                 {
-                    unit = new Skeleton(Skeleton.name, Skeleton.maxHealth);
+                    unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.power);
                     Console.WriteLine($"A {Skeleton.name} has spawned");
                 }
                 else
                 {
-                    unit = new Necromancer(Necromancer.name, Necromancer.maxHealth);
+                    unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.power);
                     Console.WriteLine($"A {Necromancer.name} has spawned");
                 }
                 Console.ResetColor();
@@ -157,14 +156,11 @@ class Program
                         Console.WriteLine($"{unit} has Died");
                         Console.ResetColor();
                     }
-                    count++;
-                    currentRound = count;
-                    Console.WriteLine(currentRound);
                 }
             }
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Game Over");
+            Console.WriteLine("Game Over. You Win!");
             Console.ResetColor();
             gameOver = true;
 

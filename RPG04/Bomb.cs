@@ -10,9 +10,10 @@ public class Bomb:Unit
 {
     internal static string name = "Bomb";
     internal static int maxHealth = 500;
+    internal static int power = 0;
     private int count2Five;
 
-    public Bomb(string name, int maxHealth) : base(name, maxHealth)
+    public Bomb(string name, int maxHealth, int power) : base(name, maxHealth, power)
     {}
     public override void TakeDamage(int value)
     {

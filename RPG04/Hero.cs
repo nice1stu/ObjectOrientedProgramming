@@ -10,7 +10,21 @@ public class Hero : Unit
 {
     internal static string name = "Hero";
     internal static int maxHealth = 1000;
-    public Hero(string name, int maxHealth) : base(name, maxHealth)
+    internal static int power = 66;
+    public Hero(string name, int maxHealth, int power) : base(name, maxHealth, power)
     {
+    }
+    public override bool IsDead
+    {
+        get
+        {
+            if (health <= 0)
+            {
+                Console.WriteLine("Game Over. You lose");
+                //gameOver = true;
+                return true;
+            }
+            return false;
+        }
     }
 }

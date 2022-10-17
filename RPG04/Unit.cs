@@ -30,7 +30,7 @@ public class Unit
 
     public void Attack(Unit target)
     {
-        TakeDamage(Hero.power);
+        TakeDamage(target.Power);
     }
 
     public virtual void TakeDamage(int value)

@@ -87,10 +87,21 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
+    
+
+
     public static void Main(string[] args)
     {
+
         bool gameOver = false;
         
+        void GameOver()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Game Over. You Win!");
+            Console.ResetColor();
+            gameOver = true;
+        }
         //Game Controller
         while (gameOver == false)
         {
@@ -160,11 +171,9 @@ class Program
                     }
                 }
             }
+            GameOver();
 
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Game Over. You Win!");
-            Console.ResetColor();
-            gameOver = true;
+            //gameOver = true;
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)

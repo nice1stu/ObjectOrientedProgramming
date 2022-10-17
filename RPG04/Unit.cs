@@ -28,6 +28,11 @@ public class Unit
 
     public int Power { get; }
 
+    public void Attack(Unit target)
+    {
+        TakeDamage(Hero.power);
+    }
+
     public virtual void TakeDamage(int value)
     {
         Health -= value;

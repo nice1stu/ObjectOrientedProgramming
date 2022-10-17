@@ -130,12 +130,15 @@ class Program
                     Console.WriteLine($"A {Necromancer.name} has spawned");
                 }
                 Console.ResetColor();
+                Unit target = unit;
+                
                 while (unit.IsAlive)
                 {
                     //doDamage
-                    Console.WriteLine($"How much damage do you want to deal to {unit}?");
-                    int value = Convert.ToInt32(Console.ReadLine());
-                    unit.TakeDamage(value);
+                    Console.WriteLine("The fight continues... (Press any key.)");
+                    Console.ReadKey();
+                    hero.Attack(target);
+                    target.Attack(hero);
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Our Hero has taken 89 points of Damage");
                     hero.TakeDamage(89);

@@ -173,8 +173,6 @@ class Program
             }
             GameOver();
 
-            //gameOver = true;
-
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)
 {

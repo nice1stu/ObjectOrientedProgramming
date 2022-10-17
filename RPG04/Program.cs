@@ -108,7 +108,6 @@ class Program
             //Spawn Hero
             Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.power);
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine(Hero.power);
             Console.WriteLine("A Hero has spawned !");
             Console.ResetColor();
 

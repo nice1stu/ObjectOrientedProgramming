@@ -28,9 +28,10 @@ public abstract class Weapon
     private int CursedStaff = 32;
     private int Unarmed = 0;
     private int Spike = 27;
+    
     private int Power { get; }
 
-    public Weapon(int power)
+    public Weapon(int Power)
     {
         
     }

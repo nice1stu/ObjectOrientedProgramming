@@ -85,82 +85,92 @@ Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromanc
 
 using System.Security.Cryptography.X509Certificates;
 
-int currentRound = 0;
-int count = 0;
-bool gameOver = false;
-
-while (gameOver == false)
+class Program
 {
-    //Spawn Hero
-    Hero hero = new Hero(Hero.name, Hero.maxHealth);
-    Console.ForegroundColor = ConsoleColor.Blue;
-    Console.WriteLine("A Hero has spawned !");
-    Console.ResetColor();
+    
 
-    for (int i = 0; i < 3; i++)
+
+    public static void Main(string[] args)
     {
-        //enemySpawner
-        Random random = new Random();
-        int number = random.Next(0, 3);
-        Unit unit;
-        Console.ForegroundColor = ConsoleColor.Red;
-        if (number == 0)
-        {
-            unit = new Bomb(Bomb.name, Bomb.maxHealth);
-            Console.WriteLine($"A {Bomb.name} has spawned");
-        }
-        else if (number == 1)
-        {
-            unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth);
-            Console.WriteLine($"A {Hedgehog.name} has spawned");
-        }
-        else if (number == 2)
-        {
-            unit = new Skeleton(Skeleton.name, Skeleton.maxHealth);
-            Console.WriteLine($"A {Skeleton.name} has spawned");
-        }
-        else
-        {
-            unit = new Necromancer(Necromancer.name, Necromancer.maxHealth);
-            Console.WriteLine($"A {Necromancer.name} has spawned");
-        }
-        Console.ResetColor();
-        while (unit.IsAlive)
-        {
-            //doDamage
-            Console.WriteLine($"How much damage do you want to deal to {unit}?");
-            int value = Convert.ToInt32(Console.ReadLine());
-            unit.TakeDamage(value);
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Our Hero has taken 89 points of Damage");
-            hero.TakeDamage(89);
-            //Console.WriteLine($"{hero.Health} Health points remain");
-            Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
-            Console.ResetColor();
-            unit.ReportStatus();
-            if (hero.IsDead)
-            {
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine($"{hero} has Died");
-                gameOver = true;
-                Console.ResetColor();
-            }
-            if (unit.IsDead)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine($"{unit} has Died");
-                Console.ResetColor();
-            }
-            count++;
-            currentRound = count;
-            Console.WriteLine(currentRound);
-        }
-    }
 
-    Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine("Game Over");
-    Console.ResetColor();
-    gameOver = true;
+        bool gameOver = false;
+        
+        void GameOver()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Game Over. You Win!");
+            Console.ResetColor();
+            gameOver = true;
+        }
+        //Game Controller
+        while (gameOver == false)
+        {
+            //Spawn Hero
+            Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.power);
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("A Hero has spawned !");
+            Console.ResetColor();
+
+            for (int i = 0; i < 3; i++)
+            {
+                //enemySpawner
+                Random random = new Random();
+                int number = random.Next(0, 3);
+                Unit unit;
+                Console.ForegroundColor = ConsoleColor.Red;
+                if (number == 0)
+                {
+                    unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.power);
+                    Console.WriteLine($"A {Bomb.name} has spawned");
+
+                }
+                else if (number == 1)
+                {
+                    unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.power);
+                    Console.WriteLine($"A {Hedgehog.name} has spawned");
+                }
+                else if (number == 2)
+                {
+                    unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.power);
+                    Console.WriteLine($"A {Skeleton.name} has spawned");
+                }
+                else
+                {
+                    unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.power);
+                    Console.WriteLine($"A {Necromancer.name} has spawned");
+                }
+                Console.ResetColor();
+                Unit target = unit;
+                
+                while (unit.IsAlive)
+                {
+                    //doDamage
+                    Console.WriteLine("The fight continues... (Press any key.)");
+                    Console.ReadKey();
+                    hero.Attack(target);
+                    target.Attack(hero);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"Our Hero has taken {target.Power} points of Damage");
+                    //Console.WriteLine($"{hero.Health} Health points remain");
+                    Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
+                    Console.ResetColor();
+                    unit.ReportStatus();
+                    if (hero.IsDead)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.WriteLine($"{hero} has Died");
+                        gameOver = true;
+                        Console.ResetColor();
+                    }
+                    if (unit.IsDead)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine($"{unit} has Died");
+                        Console.ResetColor();
+                    }
+                }
+            }
+            GameOver();
 
 /*Testing Finalizer
 for(int i = 0; i < 2; i++)
@@ -168,4 +178,6 @@ for(int i = 0; i < 2; i++)
     Unit unit = new Unit("LivingHand");
     GC.Collect();
 }*/
+        }
+    }
 }

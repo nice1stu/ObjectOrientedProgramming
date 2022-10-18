@@ -10,12 +10,19 @@ public class Bomb:Unit
 {
     internal static string name = "Bomb";
     internal static int maxHealth = 500;
+    internal static int power = 0;
+    private int count2Five;
 
-    public Bomb(string name, int maxHealth) : base(name, maxHealth)
+    public Bomb(string name, int maxHealth, int power) : base(name, maxHealth, power)
+    {}
+    public override void TakeDamage(int value)
     {
-    }
-    public void SelfDestruct()
-    {
-        //goes boom ! fater 5 rounds
+        if (count2Five == 4)
+        {
+            Health = 0;
+            Console.WriteLine("*** BOOM! *** Bomb has exploded");
+        }
+        Health -= value;
+        count2Five++;
     }
 }

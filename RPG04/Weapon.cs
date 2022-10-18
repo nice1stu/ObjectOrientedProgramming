@@ -23,7 +23,7 @@ Add a new Message to Attacks that looks like this: Unit #3: Hero uses TrainingWe
 */
 public abstract class Weapon
 {
-    private int Power { get; }
+    internal int Power { get; }
 
     public Weapon(int power)
     {
@@ -33,4 +33,24 @@ public abstract class Weapon
 public class TrainingWeapon : Weapon
 {
     public TrainingWeapon() : base(66){}
+}
+
+public class BoneSword : Weapon
+{
+    public BoneSword() : base(46){}
+}
+
+public class CursedStaff : Weapon
+{
+    public CursedStaff() : base(32){}
+}
+
+public class Unarmed : Weapon
+{
+    public Unarmed() : base(0){}
+}
+
+public class Spike : Weapon
+{
+    public Spike() : base(27){}
 }

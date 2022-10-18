@@ -10,11 +10,13 @@ public class Bomb:Unit
 {
     internal static string name = "Bomb";
     internal static int maxHealth = 500;
-    internal static int power = 0;
+    //internal static int power = 0;
     private int count2Five;
 
-    public Bomb(string name, int maxHealth, int power) : base(name, maxHealth, power)
-    {}
+    public Bomb(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon)
+    {
+        Unarmed unarmed = new Unarmed();
+    }
     public override void TakeDamage(int value)
     {
         if (count2Five == 4)

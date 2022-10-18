@@ -87,21 +87,49 @@ using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
-    
-
-
     public static void Main(string[] args)
     {
-
+        //initialize variables
+        Unit unit = null;
         bool gameOver = false;
+
+        void EnemySpawner()
+        {
+            Random random = new Random();
+            int number = random.Next(0, 3);
+            Console.ForegroundColor = ConsoleColor.Red;
+            if (number == 0)
+            {
+                unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.power);
+                Console.WriteLine($"A {Bomb.name} has spawned");
+
+            }
+            else if (number == 1)
+            {
+                unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.power);
+                Console.WriteLine($"A {Hedgehog.name} has spawned");
+            }
+            else if (number == 2)
+            {
+                unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.power);
+                Console.WriteLine($"A {Skeleton.name} has spawned");
+            }
+            else
+            {
+                unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.power);
+                Console.WriteLine($"A {Necromancer.name} has spawned");
+            }
+            Console.ResetColor();
+        }
         
         void GameOver()
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Game Over. You Win!");
+            Console.WriteLine("Game Over.");
             Console.ResetColor();
-            gameOver = true;
+            Environment.Exit(1);
         }
+        
         //Game Controller
         while (gameOver == false)
         {
@@ -113,63 +141,44 @@ class Program
 
             for (int i = 0; i < 3; i++)
             {
-                //enemySpawner
-                Random random = new Random();
-                int number = random.Next(0, 3);
-                Unit unit;
-                Console.ForegroundColor = ConsoleColor.Red;
-                if (number == 0)
-                {
-                    unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.power);
-                    Console.WriteLine($"A {Bomb.name} has spawned");
-
-                }
-                else if (number == 1)
-                {
-                    unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.power);
-                    Console.WriteLine($"A {Hedgehog.name} has spawned");
-                }
-                else if (number == 2)
-                {
-                    unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.power);
-                    Console.WriteLine($"A {Skeleton.name} has spawned");
-                }
-                else
-                {
-                    unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.power);
-                    Console.WriteLine($"A {Necromancer.name} has spawned");
-                }
-                Console.ResetColor();
+                EnemySpawner();
                 Unit target = unit;
-                
+
                 while (unit.IsAlive)
                 {
-                    //doDamage
-                    Console.WriteLine("The fight continues... (Press any key.)");
-                    Console.ReadKey();
-                    hero.Attack(target);
-                    target.Attack(hero);
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine($"Our Hero has taken {target.Power} points of Damage");
-                    //Console.WriteLine($"{hero.Health} Health points remain");
-                    Console.WriteLine($"Hero - {hero.Health}/{Hero.maxHealth} Health");
-                    Console.ResetColor();
-                    unit.ReportStatus();
                     if (hero.IsDead)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
                         Console.WriteLine($"{hero} has Died");
-                        gameOver = true;
+                        GameOver();
                         Console.ResetColor();
+                        break;
                     }
-                    if (unit.IsDead)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine($"{unit} has Died");
-                        Console.ResetColor();
-                    }
+
+                    //doDamage
+                    Console.WriteLine("The fight continues... (Press any key.)");
+                    Console.ReadKey();
+                    Console.Clear();
+                    hero.Attack(target);
+                    target.Attack(hero);
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine($"Our Hero has taken {target.Power} points of Damage");
+                    hero.ReportStatus();
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"The {target} has taken {hero.Power} points of Damage");
+                    unit.ReportStatus();
+                    Console.ResetColor();
                 }
+                if (unit.IsDead)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine($"{unit} has Died");
+                    Console.ResetColor();
+                    //GameOver();
+                }
+
             }
+            Console.WriteLine($"{hero} has WON !");
             GameOver();
 
 /*Testing Finalizer

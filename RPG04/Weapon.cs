@@ -31,15 +31,6 @@ public abstract class Weapon
     }
 }
 public class TrainingWeapon : Weapon
-{ public TrainingWeapon() : base(66) { } }
-
-public class BoneSword : Weapon
-{ public BoneSword() : base(46) { } }
-
-public class CursedStaff : Weapon
-{ public CursedStaff() : base(32) { } }
-
-public class UnArmed : Weapon
-{ public UnArmed() : base(0) { } }
-public class Spike : Weapon
-{ public Spike() : base(27) { } }
+{
+    public TrainingWeapon() : base(66){}
+}

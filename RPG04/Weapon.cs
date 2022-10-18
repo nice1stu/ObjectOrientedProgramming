@@ -1,5 +1,5 @@
 /*Introduce a new abstract class Weapon
-Weapon has a read-only Propery named Power of type int
+Weapon has a read-only Property named Power of type int
 And a Constructor that requires a Parameter named power of type int, which is then assigned to the Power-Property
 Introduce the following Weapons:
 TrainingWeapon with 66 power
@@ -21,7 +21,17 @@ Hedgehog: new Spike()
 Modify the Attack-Method, so it does not pass Power into the TakeDamage-Method, but Weapon.Power instead.
 Add a new Message to Attacks that looks like this: Unit #3: Hero uses TrainingWeapon to attack Unit #4: Necromancer for 66 Damage.
 */
-public class Weapon
+public abstract class Weapon
 {
-    
+    private int TrainingWeapon = 66;
+    private int BoneSword = 46;
+    private int CursedStaff = 32;
+    private int Unarmed = 0;
+    private int Spike = 27;
+    private int Power { get; }
+
+    public Weapon(int power)
+    {
+        
+    }
 }

@@ -10,9 +10,14 @@ public class Hero : Unit
 {
     internal static string name = "Hero";
     internal static int maxHealth = 1000;
-    internal static int power = 66;
-    public Hero(string name, int maxHealth, int power) : base(name, maxHealth, power)
+    //internal static int power = 66;
+    internal static Weapon weapon = new Weapon(66, "Training Sword");
+    
+    public Weapon Weapon { get; private set; }
+
+    public Hero(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon)
     {
+        Weapon = weapon;
     }
     public override bool IsDead
     {

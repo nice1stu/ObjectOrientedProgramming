@@ -16,7 +16,8 @@ public class Necromancer : Unit
 {
     internal static string name = "Necromancer";
     internal static int maxHealth = 300;
-    internal static int power = 32;
+    //internal static int power = 32;
+    internal static Weapon weapon = new Weapon(66, "Training Sword");
     bool hasResurrected = false;
 
     private void HasResurrected()
@@ -29,7 +30,7 @@ public class Necromancer : Unit
         }
     }
     
-    public Necromancer(string name, int maxHealth, int power) : base(name, maxHealth, power){}
+    public Necromancer(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon){}
     public override void TakeDamage(int value)
     {
         Health -= value;

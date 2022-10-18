@@ -21,22 +21,14 @@ Hedgehog: new Spike()
 Modify the Attack-Method, so it does not pass Power into the TakeDamage-Method, but Weapon.Power instead.
 Add a new Message to Attacks that looks like this: Unit #3: Hero uses TrainingWeapon to attack Unit #4: Necromancer for 66 Damage.
 */
-public abstract class Weapon
+public class Weapon
 {
-    /*private int TrainingWeapon = 66;
-    private int BoneSword = 46;
-    private int CursedStaff = 32;
-    private int Unarmed = 0;
-    private int Spike = 27;*/
-    private int weapon = 66;
-    
-    private int Power
-    {
-        get;
-    }
+    private int Power { get; }
+    public string Name { get; }
 
-    public Weapon(int Power)
+    public Weapon(int power, string name)
     {
-        this.Power = weapon;
+        Power = power;
+        Name = name;
     }
 }

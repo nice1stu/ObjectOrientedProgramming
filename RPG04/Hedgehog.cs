@@ -10,10 +10,9 @@ public class Hedgehog : Unit
 {
     internal static string name = "Hedgehog";
     internal static int maxHealth = 200;
-    //internal static int power = 27;
-    internal static Weapon weapon = new Weapon(66, "Training Sword");
+    internal static int power = 27;
     private int tookDamage;
-    public Hedgehog(string name, int maxHealth,Weapon weapon) : base(name, maxHealth, weapon)
+    public Hedgehog(string name, int maxHealth,int power) : base(name, maxHealth, power)
     {
     }
     public override void TakeDamage(int value)

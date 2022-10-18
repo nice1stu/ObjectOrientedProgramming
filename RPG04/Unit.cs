@@ -26,12 +26,11 @@ public class Unit
     internal int health;
     protected int maxHealth;
 
-    //public int Power { get; }
-    public Weapon Weapon { get; }
+    public int Power { get; }
 
     public void Attack(Unit target)
     {
-        TakeDamage(target.Weapon);
+        TakeDamage(target.Power);
     }
 
     public virtual void TakeDamage(int value)
@@ -63,11 +62,11 @@ public class Unit
     }
     public string Name { get; }
 
-    public Unit(string name, int maxHealth, Weapon weapon)
+    public Unit(string name, int maxHealth, int power)
     {
         this.Name = name;
         this.maxHealth = maxHealth;
-        //this.Power = power;
+        this.Power = power;
         health = maxHealth;
         id = nextId;
         nextId++;

@@ -26,9 +26,8 @@ public class Weapon
     private int Power { get; }
     public string Name { get; }
 
-    public Weapon(int power, string name)
+    public Weapon(int power)
     {
         Power = power;
-        Name = name;
     }
 }

@@ -100,23 +100,23 @@ class Program
             Console.ForegroundColor = ConsoleColor.Red;
             if (number == 0)
             {
-                unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.weapon);
+                unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.power);
                 Console.WriteLine($"A {Bomb.name} has spawned");
 
             }
             else if (number == 1)
             {
-                unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.weapon);
+                unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.power);
                 Console.WriteLine($"A {Hedgehog.name} has spawned");
             }
             else if (number == 2)
             {
-                unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.weapon);
+                unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.power);
                 Console.WriteLine($"A {Skeleton.name} has spawned");
             }
             else
             {
-                unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.weapon);
+                unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.power);
                 Console.WriteLine($"A {Necromancer.name} has spawned");
             }
             Console.ResetColor();
@@ -134,7 +134,7 @@ class Program
         while (gameOver == false)
         {
             //Spawn Hero
-            Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.weapon);
+            Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.power);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("A Hero has spawned !");
             Console.ResetColor();
@@ -158,7 +158,7 @@ class Program
                     //doDamage
                     Console.WriteLine("The fight continues... (Press any key.)");
                     Console.ReadKey();
-                    //Console.Clear();
+                    Console.Clear();
                     hero.Attack(target);
                     target.Attack(hero);
                     Console.ForegroundColor = ConsoleColor.Blue;

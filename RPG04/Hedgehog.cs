@@ -19,8 +19,10 @@ public class Hedgehog : Unit
     {
         if (tookDamage < 2)
         {
-            Console.WriteLine("Hedgehog in Defense Mode");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("*** Hedgehog in Defense Mode ***");
             tookDamage++;
+            Console.ResetColor();
             return;
         }
         Health -= value;

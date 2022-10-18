@@ -21,10 +21,15 @@ public class Hero : Unit
             if (health <= 0)
             {
                 Console.WriteLine("Game Over. You lose");
-                //gameOver = true;
                 return true;
             }
             return false;
         }
+    }
+    public void ReportStatus()
+    {
+        //Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"Hero - {health}/{maxHealth} Health");
+        //Console.ResetColor();
     }
 }

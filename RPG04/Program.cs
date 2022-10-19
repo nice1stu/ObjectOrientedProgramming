@@ -83,45 +83,29 @@ Until a total of three monsters have been killed.
 Make the Unit-class abstract by using the abstract-keyword before the class-keyword
 Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromancer*/
 
-using System.Security.Cryptography.X509Certificates;
-
 class Program
 {
     public static void Main(string[] args)
     {
         //initialize variables
-        Unit unit = null;
         bool gameOver = false;
         
-        //For Testing
-        
-        void EnemySpawner()
+        Unit EnemySpawner()
         {
             Random random = new Random();
             int number = random.Next(0, 3);
             Console.ForegroundColor = ConsoleColor.Red;
-            if (number == 0)
+            switch (number)
             {
-                unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.weapon);
-                Console.WriteLine($"A {Bomb.name} has spawned");
-
+                case 0:
+                    return new Bomb("Bomb", 500, new Unarmed());
+                case 1:
+                    return new Hedgehog("Hedgehog", 200, new Spike(27));
+                case 2:
+                    return new Skeleton("Skeleton", 250, new BoneSword(46));
+                default:
+                    return new Necromancer("Necromancer", 300, new CursedStaff(32));
             }
-            else if (number == 1)
-            {
-                unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.weapon);
-                Console.WriteLine($"A {Hedgehog.name} has spawned");
-            }
-            else if (number == 2)
-            {
-                unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.weapon);
-                Console.WriteLine($"A {Skeleton.name} has spawned");
-            }
-            else
-            {
-                unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.weapon);
-                Console.WriteLine($"A {Necromancer.name} has spawned");
-            }
-            Console.ResetColor();
         }
         
         void GameOver()
@@ -129,24 +113,21 @@ class Program
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Game Over.");
             Console.ResetColor();
-            Environment.Exit(1);
+            gameOver = true;
+            //Environment.Exit(1);
         }
         
         //Game Controller
-        while (gameOver == false)
+        while (!gameOver)
         {
             //Spawn Hero
-            Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.weapon);
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("A Hero has spawned !");
-            Console.ResetColor();
+            Hero hero = new Hero("Hero", 1000, new TrainingWeapon(66));
 
             for (int i = 0; i < 3; i++)
             {
-                EnemySpawner();
-                Unit target = unit;
+                var target = EnemySpawner();
 
-                while (unit.IsAlive)
+                while (!target.IsDead)
                 {
                     if (hero.IsDead)
                     {
@@ -164,17 +145,17 @@ class Program
                     hero.Attack(target);
                     target.Attack(hero);
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine($"Our Hero has taken {target.weapon} points of Damage");
+                    Console.WriteLine($"Our Hero has taken {target.Weapon.Power} points of Damage");
                     hero.ReportStatus();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"The {target} has taken {Hero.weapon} points of Damage");
-                    unit.ReportStatus();
+                    Console.WriteLine($"The {target} has taken {hero.Weapon.Power} points of Damage");
+                    target.ReportStatus();
                     Console.ResetColor();
                 }
-                if (unit.IsDead)
+                if (target.IsDead)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"{unit} has Died");
+                    Console.WriteLine($"{target} has Died");
                     Console.ResetColor();
                     //GameOver();
                 }

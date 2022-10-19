@@ -25,33 +25,28 @@ public class Unit
     private static int nextId;
     internal int health;
     protected int maxHealth;
-    //public int Power { get; }
-    //public static Weapon weapon { get; }
-    public int Weapon { get; }
+
+    public int Health
+    {
+        protected set
+        {
+            health = value;
+            health = Math.Clamp(health, 0, maxHealth);
+        }
+        get { return health; }
+    }
+    public Weapon Weapon { get; }
     public string Name { get; }
-    public int weapon { get; }
+
 
     public void Attack(Unit target)
     {
-        TakeDamage(target.Weapon);
+        TakeDamage(target.Weapon.Power, this);
     }
-
-    public virtual void TakeDamage(int value)
+    public virtual void TakeDamage(int value, Unit opponent)
     {
         Health -= value;
     }
-    public bool IsAlive
-    {
-        get
-        {
-            if (health > 0)
-            {
-                return true;
-            }
-            return false;
-        }
-    }
-
     public virtual bool IsDead
     {
         get
@@ -63,35 +58,19 @@ public class Unit
             return false;
         }
     }
-
     public Unit(string name, int maxHealth, Weapon weapon)
     {
         this.Name = name;
         this.maxHealth = maxHealth;
         this.Weapon = weapon;
-        //this.Power = power;
         health = maxHealth;
-        id = nextId;
-        nextId++;
+        id = nextId++;
+        Console.WriteLine($"A {Name} has spawned");
     }
-
-    protected internal int Health
-    {
-        set
-        {
-            health = value;
-            health = Math.Clamp(health, 0, maxHealth);
-        }
-        get { return health; }
-    }
-
-
-
     ~Unit()//Finalizer
     {
         Console.WriteLine($"Unit #{id}: {Name} got finalized.");
     }
-
     // Make sure, that this is the last line of the constructor:
     public void ReportStatus()
     {

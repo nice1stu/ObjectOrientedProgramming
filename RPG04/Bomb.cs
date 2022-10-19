@@ -8,22 +8,17 @@ And map each of these numbers to a Unit that is then created*/
 
 public class Bomb:Unit
 {
-    internal static string name = "Bomb";
-    internal static int maxHealth = 500;
-    //internal static int power = 0;
-    public static Weapon weapon { get; }
     private int count2Five;
 
-    public Bomb(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon)
-    {
-        Unarmed unarmed = new Unarmed();
-    }
-    public override void TakeDamage(int value)
+    public Bomb(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
+    public override void TakeDamage(int value, Unit opponent)
     {
         if (count2Five == 4)
         {
             Health = 0;
             Console.WriteLine("*** BOOM! *** Bomb has exploded");
+            opponent.TakeDamage(500, this);
+            return;
         }
         Health -= value;
         count2Five++;

@@ -8,16 +8,21 @@ Print Game Over. You Win.*/
 
 public class Hero : Unit
 {
-    internal static string name = "Hero";
-    internal static int maxHealth = 1000;
-    //internal static int power = 66;
-    public static Weapon weapon { get; }
-    
-    public Hero(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon)
+    /*public string name
     {
-        TrainingWeapon trainingWeapon = new TrainingWeapon();
+        get;
+        private set;
     }
-    public override bool IsDead
+
+    public int maxHealth
+    {
+        get;
+        private set;
+    }
+    public Weapon weapon { get; }*/
+    
+    public Hero(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) { }
+    /*public override bool IsDead
     {
         get
         {
@@ -28,7 +33,7 @@ public class Hero : Unit
             }
             return false;
         }
-    }
+    }*/
     public void ReportStatus()
     {
         //Console.ForegroundColor = ConsoleColor.Blue;

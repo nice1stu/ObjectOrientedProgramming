@@ -14,9 +14,6 @@ Call this Method from within the Necromancer's Damage-Method instead of the two 
 
 public class Necromancer : Unit
 {
-    internal static string name = "Necromancer";
-    internal static int maxHealth = 300;
-    //internal static int power = 32;
     public static Weapon weapon { get; }
     bool hasResurrected = false;
 
@@ -30,11 +27,8 @@ public class Necromancer : Unit
         }
     }
 
-    public Necromancer(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon)
-    {
-        CursedStaff cursedStaff = new CursedStaff();
-    }
-    public override void TakeDamage(int value)
+    public Necromancer(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
+    public override void TakeDamage(int value, Unit opponent)
     {
         Health -= value;
         HasResurrected();

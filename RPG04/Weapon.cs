@@ -23,26 +23,27 @@ Add a new Message to Attacks that looks like this: Unit #3: Hero uses TrainingWe
 */
 public abstract class Weapon
 {
-    private int Power { get; }
+    public int Power { get; }
 
     public Weapon(int power)
     {
         this.Power = power;
     }
 }
+
 public class TrainingWeapon : Weapon
 {
-    public TrainingWeapon() : base(66){}
+    public TrainingWeapon(int power) : base(power){}
 }
 
 public class BoneSword : Weapon
 {
-    public BoneSword() : base(46){}
+    public BoneSword(int power) : base(power){}
 }
 
 public class CursedStaff : Weapon
 {
-    public CursedStaff() : base(32){}
+    public CursedStaff(int power) : base(power){}
 }
 
 public class Unarmed : Weapon
@@ -52,5 +53,5 @@ public class Unarmed : Weapon
 
 public class Spike : Weapon
 {
-    public Spike() : base(27){}
+    public Spike(int power) : base(power){}
 }

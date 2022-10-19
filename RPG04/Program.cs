@@ -88,8 +88,6 @@ class Program
     private static Unit hero;
     public static void Main(string[] args)
     {
-        //initialize variables
-
         hero = new Hero("Hero", 1000, new TrainingWeapon(66));
         
         //Game Controller
@@ -97,6 +95,7 @@ class Program
         for (int i = 0; i < 3; i++)
         {
             var target = SpawnRandomEnemy();
+            Console.ResetColor();
             FaceEnemy(target);
             
             if(hero.IsDead)
@@ -152,6 +151,7 @@ class Program
             2 => new Skeleton("Skeleton", 250, new BoneSword(46)),
             _ => new Necromancer("Necromancer", 300, new CursedStaff(32))
         };
+
     }
     
     static void OnHeroDeath()
@@ -161,13 +161,10 @@ class Program
         Console.ResetColor();
         GameOver();
     }
-    
     static void GameOver()
     {
         Console.ForegroundColor = ConsoleColor.Green;
         Console.WriteLine("Game Over.");
         Console.ResetColor();
     }
-
-    
 }

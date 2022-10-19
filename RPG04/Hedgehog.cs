@@ -8,9 +8,6 @@ Print Unit #3: Hedgehog was hit while in Defense Mode!*/
 
 public class Hedgehog : Unit
 {
-
-    public static Weapon weapon { get; }
-    
     private int tookDamage;
     public Hedgehog(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
     public override void TakeDamage(int value, Unit opponent)
@@ -23,6 +20,7 @@ public class Hedgehog : Unit
             Console.ResetColor();
             return;
         }
-        Health -= value;
+        
+        base.TakeDamage(value, opponent);
     }
 }

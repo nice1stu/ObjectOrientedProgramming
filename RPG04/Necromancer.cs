@@ -14,9 +14,15 @@ Call this Method from within the Necromancer's Damage-Method instead of the two 
 
 public class Necromancer : Unit
 {
-    public static Weapon weapon { get; }
     bool hasResurrected = false;
 
+    public Necromancer(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
+    public override void TakeDamage(int value, Unit opponent)
+    {
+        base.TakeDamage(value, opponent);
+        HasResurrected();
+    }
+    
     private void HasResurrected()
     {
         if (IsDead && !hasResurrected)
@@ -25,12 +31,5 @@ public class Necromancer : Unit
             Health = (int)(maxHealth * .5);
             hasResurrected = true;
         }
-    }
-
-    public Necromancer(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
-    public override void TakeDamage(int value, Unit opponent)
-    {
-        Health -= value;
-        HasResurrected();
     }
 }

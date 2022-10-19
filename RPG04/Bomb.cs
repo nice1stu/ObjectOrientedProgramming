@@ -6,21 +6,23 @@ Add these three new monsters to your SpawnNewUnit-Method
 extend the Random Number to give results between 0 and 2
 And map each of these numbers to a Unit that is then created*/
 
-public class Bomb:Unit
+public class Bomb : Unit
 {
     private int count2Five;
 
     public Bomb(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
     public override void TakeDamage(int value, Unit opponent)
     {
-        if (count2Five == 4)
+        base.TakeDamage(value, opponent);
+        
+        if (count2Five >= 4)
         {
             Health = 0;
             Console.WriteLine("*** BOOM! *** Bomb has exploded");
             opponent.TakeDamage(500, this);
             return;
         }
-        Health -= value;
+        
         count2Five++;
     }
 }

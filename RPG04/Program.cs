@@ -85,91 +85,89 @@ Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromanc
 
 class Program
 {
+    private static Unit hero;
     public static void Main(string[] args)
     {
         //initialize variables
-        bool gameOver = false;
-        
-        Unit EnemySpawner()
-        {
-            Random random = new Random();
-            int number = random.Next(0, 3);
-            Console.ForegroundColor = ConsoleColor.Red;
-            switch (number)
-            {
-                case 0:
-                    return new Bomb("Bomb", 500, new Unarmed());
-                case 1:
-                    return new Hedgehog("Hedgehog", 200, new Spike(27));
-                case 2:
-                    return new Skeleton("Skeleton", 250, new BoneSword(46));
-                default:
-                    return new Necromancer("Necromancer", 300, new CursedStaff(32));
-            }
-        }
-        
-        void GameOver()
-        {
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Game Over.");
-            Console.ResetColor();
-            gameOver = true;
-            //Environment.Exit(1);
-        }
+
+        hero = new Hero("Hero", 1000, new TrainingWeapon(66));
         
         //Game Controller
-        while (!gameOver)
+        
+        for (int i = 0; i < 3; i++)
         {
-            //Spawn Hero
-            Hero hero = new Hero("Hero", 1000, new TrainingWeapon(66));
-
-            for (int i = 0; i < 3; i++)
-            {
-                var target = EnemySpawner();
-
-                while (!target.IsDead)
-                {
-                    if (hero.IsDead)
-                    {
-                        Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.WriteLine($"{hero} has Died");
-                        GameOver();
-                        Console.ResetColor();
-                        break;
-                    }
-
-                    //doDamage
-                    Console.WriteLine("The fight continues... (Press any key.)");
-                    Console.ReadKey();
-                    Console.Clear();
-                    hero.Attack(target);
-                    target.Attack(hero);
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine($"Our Hero has taken {target.Weapon.Power} points of Damage");
-                    hero.ReportStatus();
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"The {target} has taken {hero.Weapon.Power} points of Damage");
-                    target.ReportStatus();
-                    Console.ResetColor();
-                }
-                if (target.IsDead)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"{target} has Died");
-                    Console.ResetColor();
-                    //GameOver();
-                }
-
-            }
+            var target = SpawnRandomEnemy();
+            FaceEnemy(target);
+            
+            if(hero.IsDead)
+                break;
+        }
+        if(!hero.IsDead)
             Console.WriteLine($"{hero} has WON !");
-            GameOver();
 
-/*Testing Finalizer
-for(int i = 0; i < 2; i++)
-{
-    Unit unit = new Unit("LivingHand");
-    GC.Collect();
-}*/
+        GameOver();
+    }
+    
+    static void FaceEnemy(Unit target)
+    {
+        while (!target.IsDead)
+        {
+            Console.WriteLine("The fight continues... (Press any key.)");
+            Console.ReadKey();
+
+            hero.Attack(target);
+            if(hero.IsDead)
+            {
+                OnHeroDeath();
+                break;
+            }
+
+            if (target.IsDead)
+            {
+                Console.WriteLine($"{target.Name} is dead");
+                break;
+            }
+
+            target.Attack(hero);
+            if(hero.IsDead)
+            {
+                OnHeroDeath();
+                break;
+            }
+                
+            hero.ReportStatus();
+            target.ReportStatus();
         }
     }
+        
+    static Unit SpawnRandomEnemy()
+    {
+        Random random = new Random();
+        int number = random.Next(0, 3);
+        Console.ForegroundColor = ConsoleColor.Red;
+        return number switch
+        {
+            0 => new Bomb("Bomb", 500, new Unarmed()),
+            1 => new Hedgehog("Hedgehog", 200, new Spike(27)),
+            2 => new Skeleton("Skeleton", 250, new BoneSword(46)),
+            _ => new Necromancer("Necromancer", 300, new CursedStaff(32))
+        };
+    }
+    
+    static void OnHeroDeath()
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"{hero.Name} has Died");
+        Console.ResetColor();
+        GameOver();
+    }
+    
+    static void GameOver()
+    {
+        Console.ForegroundColor = ConsoleColor.Green;
+        Console.WriteLine("Game Over.");
+        Console.ResetColor();
+    }
+
+    
 }

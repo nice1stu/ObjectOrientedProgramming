@@ -8,36 +8,12 @@ Print Game Over. You Win.*/
 
 public class Hero : Unit
 {
-    /*public string name
-    {
-        get;
-        private set;
-    }
-
-    public int maxHealth
-    {
-        get;
-        private set;
-    }
-    public Weapon weapon { get; }*/
-    
     public Hero(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) { }
-    /*public override bool IsDead
+
+    public override void ReportStatus()
     {
-        get
-        {
-            if (health <= 0)
-            {
-                Console.WriteLine("Game Over. You lose");
-                return true;
-            }
-            return false;
-        }
-    }*/
-    public void ReportStatus()
-    {
-        //Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine($"Hero - {health}/{maxHealth} Health");
-        //Console.ResetColor();
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"Hero - {Health}/{maxHealth} Health");
+        Console.ResetColor();
     }
 }

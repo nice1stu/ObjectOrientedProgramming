@@ -23,41 +23,20 @@ public class Unit
 {
     private int id;
     private static int nextId;
-    internal int health;
+    private int health;
     protected int maxHealth;
 
     public int Health
     {
-        protected set
-        {
-            health = value;
-            health = Math.Clamp(health, 0, maxHealth);
-        }
-        get { return health; }
+        get => health;
+        protected set => health = Math.Clamp(value, 0, maxHealth);
     }
+
     public Weapon Weapon { get; }
     public string Name { get; }
+    
+    public bool IsDead => health <= 0;
 
-
-    public void Attack(Unit target)
-    {
-        TakeDamage(target.Weapon.Power, this);
-    }
-    public virtual void TakeDamage(int value, Unit opponent)
-    {
-        Health -= value;
-    }
-    public virtual bool IsDead
-    {
-        get
-        {
-            if (health <= 0)
-            {
-                return true;
-            }
-            return false;
-        }
-    }
     public Unit(string name, int maxHealth, Weapon weapon)
     {
         this.Name = name;
@@ -67,15 +46,28 @@ public class Unit
         id = nextId++;
         Console.WriteLine($"A {Name} has spawned");
     }
-    ~Unit()//Finalizer
+    
+    public void Attack(Unit target)
     {
-        Console.WriteLine($"Unit #{id}: {Name} got finalized.");
+        TakeDamage(target.Weapon.Power, target);
     }
+    
+    public virtual void TakeDamage(int value, Unit opponent)
+    {
+        Health -= value;
+        Console.WriteLine($"The {this.Name} has taken {value} points of Damage from {opponent.Name}");
+    }
+
     // Make sure, that this is the last line of the constructor:
-    public void ReportStatus()
+    public virtual void ReportStatus()
     {
         Console.ForegroundColor = ConsoleColor.Red;
         Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");
         Console.ResetColor();
+    }
+    
+    ~Unit()//Finalizer
+    {
+        Console.WriteLine($"Unit #{id}: {Name} got finalized.");
     }
 }

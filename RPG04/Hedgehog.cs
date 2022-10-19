@@ -11,6 +11,8 @@ public class Hedgehog : Unit
     internal static string name = "Hedgehog";
     internal static int maxHealth = 200;
     //internal static int power = 27;
+    public static Weapon weapon { get; }
+    
     private int tookDamage;
     public Hedgehog(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon)
     {

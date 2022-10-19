@@ -25,13 +25,15 @@ public class Unit
     private static int nextId;
     internal int health;
     protected int maxHealth;
-
     //public int Power { get; }
-    public Weapon Weapon { get; }
+    //public static Weapon weapon { get; }
+    public int Weapon { get; }
+    public string Name { get; }
+    public int weapon { get; }
 
     public void Attack(Unit target)
     {
-        TakeDamage(Weapon.Power);
+        TakeDamage(target.Weapon);
     }
 
     public virtual void TakeDamage(int value)
@@ -61,7 +63,6 @@ public class Unit
             return false;
         }
     }
-    public string Name { get; }
 
     public Unit(string name, int maxHealth, Weapon weapon)
     {
@@ -83,7 +84,9 @@ public class Unit
         }
         get { return health; }
     }
-    
+
+
+
     ~Unit()//Finalizer
     {
         Console.WriteLine($"Unit #{id}: {Name} got finalized.");

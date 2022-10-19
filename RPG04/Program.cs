@@ -102,23 +102,23 @@ class Program
             Console.ForegroundColor = ConsoleColor.Red;
             if (number == 0)
             {
-                unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.power);
+                unit = new Bomb(Bomb.name, Bomb.maxHealth, Bomb.weapon);
                 Console.WriteLine($"A {Bomb.name} has spawned");
 
             }
             else if (number == 1)
             {
-                unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.power);
+                unit = new Hedgehog(Hedgehog.name, Hedgehog.maxHealth, Hedgehog.weapon);
                 Console.WriteLine($"A {Hedgehog.name} has spawned");
             }
             else if (number == 2)
             {
-                unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.power);
+                unit = new Skeleton(Skeleton.name, Skeleton.maxHealth, Skeleton.weapon);
                 Console.WriteLine($"A {Skeleton.name} has spawned");
             }
             else
             {
-                unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.power);
+                unit = new Necromancer(Necromancer.name, Necromancer.maxHealth, Necromancer.weapon);
                 Console.WriteLine($"A {Necromancer.name} has spawned");
             }
             Console.ResetColor();
@@ -136,7 +136,7 @@ class Program
         while (gameOver == false)
         {
             //Spawn Hero
-            Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.power);
+            Hero hero = new Hero(Hero.name, Hero.maxHealth, Hero.weapon);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("A Hero has spawned !");
             Console.ResetColor();
@@ -164,10 +164,10 @@ class Program
                     hero.Attack(target);
                     target.Attack(hero);
                     Console.ForegroundColor = ConsoleColor.Blue;
-                    Console.WriteLine($"Our Hero has taken {target.Power} points of Damage");
+                    Console.WriteLine($"Our Hero has taken {target.weapon} points of Damage");
                     hero.ReportStatus();
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine($"The {target} has taken {hero.Power} points of Damage");
+                    Console.WriteLine($"The {target} has taken {Hero.weapon} points of Damage");
                     unit.ReportStatus();
                     Console.ResetColor();
                 }

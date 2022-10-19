@@ -17,6 +17,7 @@ public class Necromancer : Unit
     internal static string name = "Necromancer";
     internal static int maxHealth = 300;
     //internal static int power = 32;
+    public static Weapon weapon { get; }
     bool hasResurrected = false;
 
     private void HasResurrected()

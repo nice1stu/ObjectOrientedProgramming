@@ -23,11 +23,11 @@ Add a new Message to Attacks that looks like this: Unit #3: Hero uses TrainingWe
 */
 public abstract class Weapon
 {
-    internal int Power { get; }
+    private int Power { get; }
 
     public Weapon(int power)
     {
-        Power = power;
+        this.Power = power;
     }
 }
 public class TrainingWeapon : Weapon

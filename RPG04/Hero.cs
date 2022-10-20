@@ -16,4 +16,18 @@ public class Hero : Unit
         Console.WriteLine($"Hero - {Health}/{maxHealth} Health");
         Console.ResetColor();
     }
+    
+    public override void Attack(Unit target)
+    {
+        TakeDamage(target.Weapon.Power, target);
+        if (target is Skeleton)
+        {
+            Console.WriteLine("The Hero deals 10 extra Damage against the Skeleton's weak Bones!");
+        }
+
+        if (target is Ghost)
+        {
+            Console.WriteLine("The Hero is too scared to attack!");
+        }
+    }
 }

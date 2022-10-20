@@ -49,7 +49,7 @@ public class Unit
         Console.ResetColor();
     }
     
-    public void Attack(Unit target)
+    public virtual void Attack(Unit target)
     {
         TakeDamage(target.Weapon.Power, target);
     }

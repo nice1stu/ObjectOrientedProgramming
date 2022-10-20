@@ -86,6 +86,7 @@ Adjust the SpawnNewUnit-Method, so it can not spawn Unit anymore, only Necromanc
 class Program
 {
     private static Unit hero;
+    
     public static void Main(string[] args)
     {
         hero = new Hero("Hero", 1000, new TrainingWeapon(66));
@@ -118,12 +119,6 @@ class Program
             Console.ResetColor();
             Console.ReadKey();
 
-            /*if (target.IsDead)
-            {
-                Console.WriteLine($"{target.Name} is dead");
-                break;
-            }*/
-            
             hero.Attack(target);
             if(hero.IsDead)
             {
@@ -148,7 +143,7 @@ class Program
             }
         }
     }
-        
+    
     static Unit SpawnRandomEnemy()
     {
         Random random = new Random();
@@ -171,6 +166,7 @@ class Program
         Console.WriteLine($"{hero.Name} has Died");
         Console.ResetColor();
     }
+    
     static void GameOver()
     {
         Console.ForegroundColor = ConsoleColor.Green;

@@ -4,7 +4,9 @@ When exploding, the Bomb's Health is set to 0
 Print Unit #3: Bomb has exploded!
 Add these three new monsters to your SpawnNewUnit-Method
 extend the Random Number to give results between 0 and 2
-And map each of these numbers to a Unit that is then created*/
+And map each of these numbers to a Unit that is then created
+
+Implement the Bomb's Explosion Feature fully: When it explodes after 5 rounds, it deals 500 Damage to the Player.*/
 
 public class Bomb : Unit
 {

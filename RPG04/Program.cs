@@ -152,13 +152,14 @@ class Program
     static Unit SpawnRandomEnemy()
     {
         Random random = new Random();
-        int number = random.Next(0, 3);
+        int number = random.Next(0, 4);
         Console.ForegroundColor = ConsoleColor.Red;
         return number switch
         {
             0 => new Bomb("Bomb", 500, new Unarmed()),
-            1 => new Hedgehog("Hedgehog", 200, new Spike(27)),
-            2 => new Skeleton("Skeleton", 250, new BoneSword(46)),
+            1 => new Ghost("Ghost", 200, new Haunt(10)),
+            2 => new Hedgehog("Hedgehog", 200, new Spike(27)),
+            3 => new Skeleton("Skeleton", 250, new BoneSword(46)),
             _ => new Necromancer("Necromancer", 300, new CursedStaff(32))
         };
 

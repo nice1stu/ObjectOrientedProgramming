@@ -18,6 +18,7 @@ Skeleton: new BoneSword()
 Necromancer: new CursedStaff()
 Bomb: new Unarmed()
 Hedgehog: new Spike()
+The Ghost uses Haunt, a Weapon with 10 Damage
 Modify the Attack-Method, so it does not pass Power into the TakeDamage-Method, but Weapon.Power instead.
 Add a new Message to Attacks that looks like this: Unit #3: Hero uses TrainingWeapon to attack Unit #4: Necromancer for 66 Damage.
 */
@@ -54,4 +55,9 @@ public class Unarmed : Weapon
 public class Spike : Weapon
 {
     public Spike(int power) : base(power){}
+}
+
+public class Haunt : Weapon
+{
+    public Haunt(int power) : base(power){}
 }

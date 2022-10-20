@@ -58,7 +58,6 @@ public class Unit
     {
         Health -= value;
         Console.WriteLine($"The {this.Name} has taken {value} points of Damage from {opponent.Name}");
-
     }
 
     // Make sure, that this is the last line of the constructor:

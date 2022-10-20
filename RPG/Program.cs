@@ -106,7 +106,6 @@ class Program
             Console.WriteLine($"{hero} has WON !");
             Console.ResetColor();
         }
-
         GameOver();
     }
     
@@ -141,6 +140,12 @@ class Program
                 
             hero.ReportStatus();
             target.ReportStatus();
+            if (target.IsDead)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"{target.Name} is dead");
+                Console.ResetColor();
+            }
         }
     }
         

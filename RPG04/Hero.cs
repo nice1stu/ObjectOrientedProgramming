@@ -22,10 +22,11 @@ public class Hero : Unit
         TakeDamage(target.Weapon.Power, target);
         if (target is Skeleton)
         {
+            //Health -= (target.Weapon.Power+10);
             Console.WriteLine("The Hero deals 10 extra Damage against the Skeleton's weak Bones!");
         }
 
-        if (target is Ghost)
+        /*if (target is Ghost)
         {
             Random random = new Random();
             int chance = random.Next(99);
@@ -34,6 +35,6 @@ public class Hero : Unit
             {
                 Console.WriteLine("The Hero is too scared to attack!");
             }
-        }
+        }*/
     }
 }

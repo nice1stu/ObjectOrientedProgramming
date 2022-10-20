@@ -15,7 +15,7 @@ public class Skeleton : Unit
     
     public override void TakeDamage(int value, Unit opponent)
     {
-        Health -= (value+bonusDamage);
-        Console.WriteLine($"The {this.Name} has taken {value+bonusDamage} points of Damage from {opponent.Name}");
+        Health -= (value + bonusDamage);
+        Console.WriteLine($"The {this.Name} has taken {value + bonusDamage} points of Damage from {opponent.Name}");
     }
 }

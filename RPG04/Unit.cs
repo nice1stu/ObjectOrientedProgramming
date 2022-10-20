@@ -44,7 +44,9 @@ public class Unit
         this.Weapon = weapon;
         health = maxHealth;
         id = nextId++;
+        Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine($"A {Name} has spawned");
+        Console.ResetColor();
     }
     
     public void Attack(Unit target)
@@ -56,12 +58,17 @@ public class Unit
     {
         Health -= value;
         Console.WriteLine($"The {this.Name} has taken {value} points of Damage from {opponent.Name}");
+
     }
 
     // Make sure, that this is the last line of the constructor:
     public virtual void ReportStatus()
     {
         Console.ForegroundColor = ConsoleColor.Red;
+        if (this.IsDead)
+        {
+            Console.WriteLine($"{this.Name} is dead");
+        }
         Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");
         Console.ResetColor();
     }

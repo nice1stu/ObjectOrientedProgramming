@@ -18,7 +18,9 @@ public class Bomb : Unit
         if (count2Five >= 4)
         {
             Health = 0;
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("*** BOOM! *** Bomb has exploded");
+            Console.ResetColor();
             opponent.TakeDamage(500, this);
             return;
         }

@@ -12,7 +12,7 @@ public class Hero : Unit
 
     public override void ReportStatus()
     {
-        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
         Console.WriteLine($"Hero - {Health}/{maxHealth} Health");
         Console.ResetColor();
     }

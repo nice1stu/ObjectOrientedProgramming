@@ -91,18 +91,21 @@ class Program
         hero = new Hero("Hero", 1000, new TrainingWeapon(66));
         
         //Game Controller
-        
         for (int i = 0; i < 3; i++)
         {
             var target = SpawnRandomEnemy();
-            Console.ResetColor();
             FaceEnemy(target);
             
             if(hero.IsDead)
                 break;
         }
-        if(!hero.IsDead)
+
+        if (!hero.IsDead)
+        {
+            Console.ForegroundColor = ConsoleColor.DarkBlue;
             Console.WriteLine($"{hero} has WON !");
+            Console.ResetColor();
+        }
 
         GameOver();
     }
@@ -111,22 +114,24 @@ class Program
     {
         while (!target.IsDead)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("The fight continues... (Press any key.)");
+            Console.ResetColor();
             Console.ReadKey();
 
+            /*if (target.IsDead)
+            {
+                Console.WriteLine($"{target.Name} is dead");
+                break;
+            }*/
+            
             hero.Attack(target);
             if(hero.IsDead)
             {
                 OnHeroDeath();
                 break;
             }
-
-            if (target.IsDead)
-            {
-                Console.WriteLine($"{target.Name} is dead");
-                break;
-            }
-
+            
             target.Attack(hero);
             if(hero.IsDead)
             {
@@ -156,10 +161,9 @@ class Program
     
     static void OnHeroDeath()
     {
-        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.ForegroundColor = ConsoleColor.DarkBlue;
         Console.WriteLine($"{hero.Name} has Died");
         Console.ResetColor();
-        GameOver();
     }
     static void GameOver()
     {

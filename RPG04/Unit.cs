@@ -65,10 +65,6 @@ public class Unit
     public virtual void ReportStatus()
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        if (this.IsDead)
-        {
-            Console.WriteLine($"{this.Name} is dead");
-        }
         Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");
         Console.ResetColor();
     }

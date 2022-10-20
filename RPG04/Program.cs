@@ -141,6 +141,12 @@ class Program
                 
             hero.ReportStatus();
             target.ReportStatus();
+            if (target.IsDead)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine($"{target.Name} is dead");
+                Console.ResetColor();
+            }
         }
     }
         

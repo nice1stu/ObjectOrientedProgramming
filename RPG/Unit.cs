@@ -1,3 +1,24 @@
+/*Rename the Damage-Method to TakeDamage.
+Methods should always describe an Action (something that can be done)
+And Damage can either be a Verb (to damage) or a Noun (the damage)
+TakeDamage more specifically describes, what the method does
+
+Introduce a new Property IsDead of type bool to the Unit
+Have it return true, if the Unit is not IsAlive and false, if the unit IsAlive
+
+Add a read-only (only get;) Property Power of type int to the Unit-class.
+Require a new parameter in the Unit's constructor: power of type int
+Assign the power-argument's value to the Units Power-Property Now, let's make sure, that this power-argument is provided with all Units:
+The Hero has 66 power
+The Skeleton has 46 power
+The Necromancer has 32 power
+The Bomb has 0 power
+The Hedgehog has 27 power 
+Now, let's add an Attack-Method to the Unit, which allows a Unit to Attack any other Unit
+Add a new Method with no return type to the Unit class named Attack
+Attack takes one parameter named target of type Unit - this will be the Unit that we want to attack.
+Within the Attack-Method, we should call TakeDamage on the target-Unit and pass our own Power as an argument. Now, let's first Remove the Part in our Game Loop, where we ask the Player, how much Damage he wants to deal and replace it with the following Code-Sample:*/
+
 public class Unit
 {
     private int id;
@@ -23,7 +44,9 @@ public class Unit
         this.Weapon = weapon;
         health = maxHealth;
         id = nextId++;
+        Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine($"A {Name} has spawned");
+        Console.ResetColor();
     }
     
     public void Attack(Unit target)
@@ -35,12 +58,17 @@ public class Unit
     {
         Health -= value;
         Console.WriteLine($"The {this.Name} has taken {value} points of Damage from {opponent.Name}");
+
     }
 
     // Make sure, that this is the last line of the constructor:
     public virtual void ReportStatus()
     {
         Console.ForegroundColor = ConsoleColor.Red;
+        if (this.IsDead)
+        {
+            Console.WriteLine($"{this.Name} is dead");
+        }
         Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");
         Console.ResetColor();
     }

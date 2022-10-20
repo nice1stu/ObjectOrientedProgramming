@@ -106,7 +106,6 @@ class Program
             Console.WriteLine($"{hero} has WON !");
             Console.ResetColor();
         }
-
         GameOver();
     }
     

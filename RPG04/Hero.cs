@@ -27,7 +27,13 @@ public class Hero : Unit
 
         if (target is Ghost)
         {
-            Console.WriteLine("The Hero is too scared to attack!");
+            Random random = new Random();
+            int chance = random.Next(99);
+            Console.WriteLine(chance);
+            if (chance < 55)
+            {
+                Console.WriteLine("The Hero is too scared to attack!");
+            }
         }
     }
 }

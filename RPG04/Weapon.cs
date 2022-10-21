@@ -2,7 +2,23 @@ public abstract class Weapon : IWeapon
 {
     public int Power { get; }
 
-    public IHand EquippedTo { get; private set; }
+    public IHand EquippedTo
+    {
+        get { return null; } //The public get Accessor exists, so other classes can also see, what Hand a Weapon is currently equipped to.
+        private set //The private set Accessor will be used to change the Hand that the Weapon is currently equipped to
+        {
+            //On EquippedTo-Property, assign null to the Weapon Property
+        }
+    }
+
+    public void EquipTo(IHand hand)
+    {
+
+    }
+    public void UnEquip()
+    {
+        EquippedTo = null;
+    }
 
     public Weapon(int power)
     {

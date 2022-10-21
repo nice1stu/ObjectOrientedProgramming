@@ -4,7 +4,13 @@
     <projectFile>P4StaticClassMembers.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a72866c1-4e3b-4731-9f13-558999448a8f" name="Changes" comment="" />
+    <list default="true" id="a72866c1-4e3b-4731-9f13-558999448a8f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../RPG04/IHand.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../RPG04/IWeapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPG04/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RPG04/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPG04/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RPG04/Unit.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RPG04/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RPG04/Weapon.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

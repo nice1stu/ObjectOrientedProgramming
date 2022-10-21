@@ -2,6 +2,8 @@ public abstract class Weapon : IWeapon
 {
     public int Power { get; }
 
+    public IHand EquippedTo { get; private set; }
+
     public Weapon(int power)
     {
         this.Power = power;

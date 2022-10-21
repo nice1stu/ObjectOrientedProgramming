@@ -22,10 +22,9 @@ The Ghost uses Haunt, a Weapon with 10 Damage
 Modify the Attack-Method, so it does not pass Power into the TakeDamage-Method, but Weapon.Power instead.
 Add a new Message to Attacks that looks like this: Unit #3: Hero uses TrainingWeapon to attack Unit #4: Necromancer for 66 Damage.
 */
-public abstract class Weapon: IWeapon
+public abstract class Weapon
 {
     public int Power { get; }
-    public IHand EquipTo { get; }
 
     public Weapon(int power)
     {
@@ -61,18 +60,4 @@ public class Spike : Weapon
 public class Haunt : Weapon
 {
     public Haunt(int power) : base(power){}
-}
-
-interface IWeapon
-{
-    int Power { get; }
-    IHand EquipTo { get; }
-
-    void EquipTo(IHand ihand) { }
-    void UnEquip(IHand iHand) { }
-}
-
-public interface IHand
-{
-    IWeapon Weapon { get; set; }
 }

@@ -118,6 +118,7 @@ class Program
             Console.WriteLine("The fight continues... (Press any key.)");
             Console.ResetColor();
             Console.ReadKey();
+            Console.Clear();
 
             hero.Attack(target);
             if(hero.IsDead)

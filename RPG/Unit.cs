@@ -1,4 +1,4 @@
-public class Unit
+public class Unit : IHand
 {
     private int id;
     private static int nextId;
@@ -11,12 +11,16 @@ public class Unit
         set => health = Math.Clamp(value, 0, maxHealth);
     }
 
-    public Weapon Weapon { get; }
+    public IWeapon Weapon  //We will use it to keep track of what Weapon is currently equipped to this Hand
+    {
+        get;
+        set;
+    }
     public string Name { get; }
     
     public bool IsDead => health <= 0;
 
-    public Unit(string name, int maxHealth, Weapon weapon)
+    public Unit(string name, int maxHealth, IWeapon weapon)
     {
         this.Name = name;
         this.maxHealth = maxHealth;

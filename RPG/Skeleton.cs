@@ -1,3 +1,13 @@
+/*The Skeleton inherits from Unit, has 250 Health, the name "Skeleton"
+ 
+Make the Attack-Method on the Unit-class virtual, if you haven't done so already.
+This allows us to overload this method for some Units, giving them special Attack abilities.
+overload the Attack-Method on the Hero-class.
+First, call the base-Attack-Method.
+Then, check, if the target-Unit is a Skeleton
+If it is, then Deal 10 Damage extra.
+Print "The Hero deals 10 extra Damage against the Skeleton's weak Bones!"*/
+
 public class Skeleton : Unit
 {
     private int bonusDamage = 10;

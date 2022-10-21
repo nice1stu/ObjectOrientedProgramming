@@ -1,6 +1,4 @@
-﻿//Create a Console Project named RPG
-
-class Program
+﻿class Program
 {
     private static Unit hero;
     

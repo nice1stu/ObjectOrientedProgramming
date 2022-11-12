@@ -1,4 +1,12 @@
 public class AircraftCarrier : Ship
 {
-    int[,] aircraftCarrier = new int[5,5];
+    private int[,] aircraftCarrier =
+    {
+        { 0, 5 },
+        { 1, 5 },
+        { 2, 5 },
+        { 3, 5 },
+        { 4, 5 }
+    };
+
 }

@@ -37,4 +37,8 @@ public class Hero : Unit
             }
         }*/
     }
+    public class Hand : IHand
+    {
+        public IWeapon Weapon {get; set;}
+    }
 }

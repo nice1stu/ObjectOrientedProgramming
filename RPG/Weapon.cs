@@ -9,8 +9,13 @@ public abstract class Weapon : IWeapon
         
         private set         //The private set Accessor will be used to change the Hand that the Weapon is currently equipped to
         {
-            EquippedTo = null; //Assign null to the EquippedTo Property
+            value = null; //Assign null to the EquippedTo Property
         }
+    }
+
+    public void EquipTo(IHand hand)
+    {
+        
     }
 
     public void UnEquip()

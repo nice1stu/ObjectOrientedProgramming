@@ -5,4 +5,5 @@ public interface IHand // Classes that equip
     {
         weapon.EquipTo(this);
     }
+
 }

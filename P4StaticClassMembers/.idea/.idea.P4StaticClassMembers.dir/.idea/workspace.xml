@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a72866c1-4e3b-4731-9f13-558999448a8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RPG04/IHand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RPG04/IWeapon.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPG04/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RPG04/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPG04/Unit.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RPG04/Unit.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RPG04/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RPG04/Weapon.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../P3Classes/.idea/.idea.P3Classes.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../P3Classes/.idea/.idea.P3Classes.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/P4StaticClassMembers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/P4StaticClassMembers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/P4StaticClassMembers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/P4StaticClassMembers.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/P4StaticClassMembers.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/P4StaticClassMembers.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/P4StaticClassMembers.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/P4StaticClassMembers.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +64,7 @@
       <updated>1664483637266</updated>
       <workItem from="1664483641513" duration="9000" />
       <workItem from="1665681613134" duration="1969000" />
+      <workItem from="1668217399806" duration="33000" />
     </task>
     <servers />
   </component>

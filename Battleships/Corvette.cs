@@ -1,4 +1,4 @@
 public class Corvette : Ship
 {
-    private int shipLength = 2;
+    int[,] corvette = new int[2,2];
 }

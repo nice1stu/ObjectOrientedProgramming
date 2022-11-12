@@ -1,4 +1,4 @@
 public class Battelship : Ship
 {
-    private int shipLength = 4;
+    int[,] battleship = new int[4,4];
 }

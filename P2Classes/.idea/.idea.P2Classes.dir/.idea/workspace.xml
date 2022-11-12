@@ -4,9 +4,7 @@
     <projectFile>P2Classes.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="74314297-4c4e-4fea-9f05-5ea2fdeccb75" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../P3Classes/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../P3Classes/Program.cs" afterDir="false" />
-    </list>
+    <list default="true" id="74314297-4c4e-4fea-9f05-5ea2fdeccb75" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,6 +59,7 @@
       <workItem from="1664483594306" duration="8000" />
       <workItem from="1665628499015" duration="883000" />
       <workItem from="1665680495183" duration="20000" />
+      <workItem from="1668217293278" duration="13000" />
     </task>
     <servers />
   </component>

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RPG03": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

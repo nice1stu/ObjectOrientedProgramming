@@ -1,4 +1,5 @@
 ﻿Unit unit;
+
 for (int i = 0; i < 4; i++)
 {
     unit = new Unit(name: "LivingHand", i, 100);
@@ -10,12 +11,12 @@ unit.ReportStatus();
 
 while (unit.Health > 0)
 {
-    Console.WriteLine("How much damage do you want to deal to Leet?");
+    Console.WriteLine("How much damage do you want to deal to Leet??");
     string? userInput = Console.ReadLine();
     if (userInput != null)
     {
-        int damage = int.Parse(userInput);
-        unit.Damage(damage);
+        int damageDone = int.Parse(userInput);
+        unit.Damage(damageDone);
     }
     unit.ReportStatus();
 }
@@ -41,26 +42,31 @@ class Unit
     protected internal int Health
     {
         get => _health;
-        set => _health = Math.Min(Math.Max(0, value), _maxHealth);
+        private set
+        {
+            _health = Math.Min(Math.Max(0, value), _maxHealth);
+            if (!IsAlive)
+            {
+                _health = 0;
+            }
+        }
     }
 
-    public void Damage(int value)
+    public virtual void Damage(int value)
     {
-        Health = Health - value;
+        Health -= value;
     }
-
     bool IsAlive
     {
         get
         {
-            if(_health > 0) return true;
-            return false;
+            return _health > 0;
         }
     }
 
     public void ReportStatus()
     {
-        Console.WriteLine($"Unit #{_id}: {Name} - {_health}/{_maxHealth} Health" );
+        Console.WriteLine($"Unit #{_id}: {Name} - {Health}/{_maxHealth} Health" );
     }
     
     ~Unit()
@@ -68,4 +74,14 @@ class Unit
         Console.WriteLine($"Unit #{_id}: {Name} got finalized");
     }
     // Make sure, that this is the last line of the constructor:
+}
+
+class Necromancer : Unit
+{
+    bool hasResurrected = false;
+    public Necromancer(string name, int id, int maxHealth) : base(name, id, maxHealth) {}
+    public override void Damage(int value)
+    {
+        
+    }
 }

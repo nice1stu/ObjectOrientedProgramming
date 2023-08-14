@@ -6,6 +6,8 @@ Print Unit #3: Hedgehog stopped being into Defense Mode!
 While in Defense Mode, the Hedgehog does not take any Damage from the Player
 Print Unit #3: Hedgehog was hit while in Defense Mode!*/
 
+namespace RPG;
+
 public class Hedgehog : Unit
 {
     private int tookDamage;

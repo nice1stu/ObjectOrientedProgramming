@@ -1,3 +1,5 @@
+namespace RPG;
+
 public class Ghost : Unit
 {
     public Ghost(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon)

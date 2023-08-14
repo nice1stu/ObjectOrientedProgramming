@@ -6,6 +6,8 @@
     If the three monsters were killed before the Hero IsDead
 Print Game Over. You Win.*/
 
+namespace RPG;
+
 public class Hero : Unit
 {
     public Hero(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) { }
@@ -13,7 +15,7 @@ public class Hero : Unit
     public override void ReportStatus()
     {
         Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.WriteLine($"Hero - {Health}/{maxHealth} Health");
+        Console.WriteLine($"Hero - {Health}/{MaxHealth} Health");
         Console.ResetColor();
     }
     
@@ -27,18 +29,22 @@ public class Hero : Unit
         }
 
         /*if (target is Ghost)
+    {
+        Random random = new Random();
+        int chance = random.Next(99);
+        Console.WriteLine(chance);
+        if (chance < 55)
         {
-            Random random = new Random();
-            int chance = random.Next(99);
-            Console.WriteLine(chance);
-            if (chance < 55)
-            {
-                Console.WriteLine("The Hero is too scared to attack!");
-            }
-        }*/
+            Console.WriteLine("The Hero is too scared to attack!");
+        }
+    }*/
     }
     public class Hand : IHand
     {
         public IWeapon Weapon {get; set;}
+        public void EquippedTo(IWeapon weapon)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

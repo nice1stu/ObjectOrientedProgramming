@@ -8,6 +8,8 @@ And map each of these numbers to a Unit that is then created
 
 Implement the Bomb's Explosion Feature fully: When it explodes after 5 rounds, it deals 500 Damage to the Player.*/
 
+namespace RPG;
+
 public class Bomb : Unit
 {
     private int count2Five;

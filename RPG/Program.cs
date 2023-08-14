@@ -1,4 +1,6 @@
-﻿class Program
+﻿namespace RPG;
+
+class Program
 {
     private static Unit hero;
     

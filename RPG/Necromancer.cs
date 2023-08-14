@@ -12,6 +12,8 @@ Take the code that ressurects the Necromancer (set the health to 50% and change 
 And move it to its own private Method named Resurrect
 Call this Method from within the Necromancer's Damage-Method instead of the two lines of code that currently do so*/
 
+namespace RPG;
+
 public class Necromancer : Unit
 {
     bool hasResurrected = false;
@@ -28,7 +30,7 @@ public class Necromancer : Unit
         if (IsDead && !hasResurrected)
         {
             Console.WriteLine("Necromancer is born again!");
-            Health = (int)(maxHealth * .5);
+            Health = (int)(MaxHealth * .5);
             hasResurrected = true;
         }
     }

@@ -1,14 +1,16 @@
+namespace RPG;
+
 public class Unit : IHand
 {
-    private int id;
-    private static int nextId;
-    private int health;
-    protected int maxHealth;
+    private int _id;
+    private static int _nextId;
+    private int _health;
+    protected int MaxHealth;
 
     public int Health
     {
-        get => health;
-        set => health = Math.Clamp(value, 0, maxHealth);
+        get => _health;
+        set => _health = Math.Clamp(value, 0, MaxHealth);
     }
 
     public IWeapon Weapon  //We will use it to keep track of what Weapon is currently equipped to this Hand
@@ -16,20 +18,24 @@ public class Unit : IHand
         get;
         set;
     }
+
     public string Name { get; }
     
-    public bool IsDead => health <= 0;
+    public bool IsDead => _health <= 0;
 
     public Unit(string name, int maxHealth, IWeapon weapon)
     {
         this.Name = name;
-        this.maxHealth = maxHealth;
+        this.MaxHealth = maxHealth;
         this.Weapon = weapon;
-        health = maxHealth;
-        id = nextId++;
+        _health = maxHealth;
+        _id = _nextId++;
         Console.ForegroundColor = ConsoleColor.Magenta;
         Console.WriteLine($"A {Name} has spawned");
         Console.ResetColor();
+        
+        // Call EquipTo on the weapon argument, passing a reference to the Unit itself (this)
+        weapon.EquipTo(this);
     }
     
     public virtual void Attack(Unit target)
@@ -47,12 +53,12 @@ public class Unit : IHand
     public virtual void ReportStatus()
     {
         Console.ForegroundColor = ConsoleColor.Red;
-        Console.WriteLine($"Unit #{id}: {Name} - {health}/{maxHealth} Health");
+        Console.WriteLine($"Unit #{_id}: {Name} - {_health}/{MaxHealth} Health");
         Console.ResetColor();
     }
     
     ~Unit()//Finalizer
     {
-        Console.WriteLine($"Unit #{id}: {Name} got finalized.");
+        Console.WriteLine($"Unit #{_id}: {Name} got finalized.");
     }
 }

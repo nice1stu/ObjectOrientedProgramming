@@ -28,7 +28,6 @@ public class Bomb : Unit
             opponent.TakeDamage(500, this);
             return;
         }
-        
         count2Five++;
     }
 }

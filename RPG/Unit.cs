@@ -7,7 +7,7 @@ public class Unit : IHand
     private int _health;
     protected int MaxHealth;
     
-    public int Id // Public property for accessing the private _id field
+    public int Id
     {
         get => _id;
     }
@@ -18,7 +18,7 @@ public class Unit : IHand
         set => _health = Math.Clamp(value, 0, MaxHealth);
     }
 
-    public IWeapon Weapon  //We will use it to keep track of what Weapon is currently equipped to this Hand
+    public IWeapon Weapon
     {
         get;
         set;
@@ -39,23 +39,20 @@ public class Unit : IHand
         Console.WriteLine($"A {Name} has spawned");
         Console.ResetColor();
         
-        // Call EquipTo on the weapon argument, passing a reference to the Unit itself (this)
         weapon.EquipTo(this);
     }
     
     public virtual void Attack(Unit target)
     {
-        if (target.Weapon is MindControl)
+        if (Weapon is MindControl)
         {
-            target.Weapon.Attack(this, this); // Use the MindControl weapon's Attack method on the target
+            target.TakeDamage(0, this); // janky fix to make it so mind control weapon equipped class take no damage
         }
         else
         {
             TakeDamage(target.Weapon.Power, target);
         }
     }
-
-
 
     public virtual void TakeDamage(int value, Unit opponent)
     {

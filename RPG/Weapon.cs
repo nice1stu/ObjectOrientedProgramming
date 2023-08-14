@@ -10,18 +10,18 @@ public abstract class Weapon : IWeapon
     {
         if (EquippedTo != null)
         {
-            EquippedTo.Weapon = null; // Remove from the previously equipped hand
+            EquippedTo.Weapon = null;
         }
 
         EquippedTo = hand;
-        hand.Weapon = this; // Equip to the new hand
+        hand.Weapon = this;
     }
 
     public void UnEquip()
     {
         if (EquippedTo != null)
         {
-            EquippedTo.Weapon = null; // Remove from the equipped hand
+            EquippedTo.Weapon = null;
             EquippedTo = null;
         }
     }

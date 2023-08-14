@@ -71,10 +71,13 @@ public class Haunt : Weapon
 public class MindControl : Weapon
 {
     public MindControl() : base(0) { }
-
     public void Attack(Unit attacker, Unit target)
     {
         Console.WriteLine($"Unit #{attacker.Id}: {attacker.Name} uses {Name} on unit #{target.Id}");
-        target.Attack(target);
+        attacker.TakeDamage(target.Weapon.Power, attacker); // Reverse the attack by damaging the attacker
     }
+
 }
+
+
+

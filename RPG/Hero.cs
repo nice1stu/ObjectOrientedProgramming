@@ -1,11 +1,3 @@
-/*The Hero inherits from Unit, has 1000 Health and the name Hero
-    Create a Hero when the Game Starts, before the first Monster is spawned.
-    The Hero takes 89 Damage each round.
-    When the Hero IsDead, the Game is Over.
-    Print Game Over. You Lose.
-    If the three monsters were killed before the Hero IsDead
-Print Game Over. You Win.*/
-
 namespace RPG;
 
 public class Hero : Unit
@@ -21,24 +13,33 @@ public class Hero : Unit
     
     public override void Attack(Unit target)
     {
-        TakeDamage(target.Weapon.Power, target);
-        if (target is Skeleton)
+        if (target.Weapon is MindControl) // Handle MindControl weapon case
         {
-            //Health -= (target.Weapon.Power+10);
-            Console.WriteLine("The Hero deals 10 extra Damage against the Skeleton's weak Bones!");
+            target.Weapon.Attack(this, this); // Reverse the attack
+        }
+        
+        else if(target is Ghost)
+        {
+            Random random = new Random();
+            int chance = random.Next(99);
+            Console.WriteLine(chance);
+            if (chance < 55)
+            {
+                Console.WriteLine("The Hero is too scared to attack!");
+            }
+            
+        else
+        {
+            TakeDamage(target.Weapon.Power, target);
+            if (target is Skeleton)
+            {
+                Health -= (target.Weapon.Power+10);
+                Console.WriteLine("The Hero deals 10 extra Damage against the Skeleton's weak Bones!");
+            }
         }
 
-        /*if (target is Ghost)
-    {
-        Random random = new Random();
-        int chance = random.Next(99);
-        Console.WriteLine(chance);
-        if (chance < 55)
-        {
-            Console.WriteLine("The Hero is too scared to attack!");
-        }
-    }*/
     }
+}
     public class Hand : IHand
     {
         public IWeapon Weapon {get; set;}

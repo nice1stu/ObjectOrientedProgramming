@@ -65,7 +65,7 @@ class Program
     static Unit SpawnRandomEnemy()
     {
         Random random = new Random();
-        int number = random.Next(0, 5);
+        int number = random.Next(5, 5);
         Console.ForegroundColor = ConsoleColor.Red;
         return number switch
         {

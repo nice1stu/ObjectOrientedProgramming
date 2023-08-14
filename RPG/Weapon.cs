@@ -67,3 +67,14 @@ public class Haunt : Weapon
 {
     public Haunt(int power) : base(power){}
 }
+
+public class MindControl : Weapon
+{
+    public MindControl() : base(0) { }
+
+    public void Attack(Unit attacker, Unit target)
+    {
+        Console.WriteLine($"Unit #{attacker.Id}: {attacker.Name} uses {Name} on unit #{target.Id}");
+        target.Attack(target);
+    }
+}

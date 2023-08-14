@@ -65,7 +65,7 @@ class Program
     static Unit SpawnRandomEnemy()
     {
         Random random = new Random();
-        int number = random.Next(0, 4);
+        int number = random.Next(0, 5);
         Console.ForegroundColor = ConsoleColor.Red;
         return number switch
         {
@@ -73,7 +73,9 @@ class Program
             1 => new Ghost("Ghost", 200, new Haunt(10)),
             2 => new Hedgehog("Hedgehog", 200, new Spike(27)),
             3 => new Skeleton("Skeleton", 250, new BoneSword(46)),
-            _ => new Necromancer("Necromancer", 300, new CursedStaff(32))
+            4 => new Necromancer("Necromancer", 300, new CursedStaff(32)),
+            5 => new BigBrain("BigBrain", 100, new MindControl()),
+            _ => throw new InvalidOperationException("Invalid number generated")
         };
 
     }

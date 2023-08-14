@@ -6,6 +6,11 @@ public class Unit : IHand
     private static int _nextId;
     private int _health;
     protected int MaxHealth;
+    
+    public int Id // Public property for accessing the private _id field
+    {
+        get => _id;
+    }
 
     public int Health
     {

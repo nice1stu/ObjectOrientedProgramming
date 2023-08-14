@@ -31,7 +31,7 @@ public abstract class Weapon : IWeapon
         Power = power;
     }
     
-    public void Attack(Unit attacker, Unit target)
+    public virtual void Attack(Unit attacker, Unit target)
     {
         int damage = Power;
         target.TakeDamage(damage, attacker);
@@ -71,12 +71,12 @@ public class Haunt : Weapon
 public class MindControl : Weapon
 {
     public MindControl() : base(0) { }
-    public void Attack(Unit attacker, Unit target)
+    
+    public override void Attack(Unit attacker, Unit target)
     {
         Console.WriteLine($"Unit #{attacker.Id}: {attacker.Name} uses {Name} on unit #{target.Id}");
-        attacker.TakeDamage(target.Weapon.Power, attacker); // Reverse the attack by damaging the attacker
+        attacker.TakeDamage(attacker.Weapon.Power, attacker); // Reverse the attack by damaging the attacker
     }
-
 }
 
 

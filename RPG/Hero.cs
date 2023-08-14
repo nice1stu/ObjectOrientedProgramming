@@ -15,7 +15,7 @@ public class Hero : Unit
     {
         if (target.Weapon is MindControl) // Handle MindControl weapon case
         {
-            target.Weapon.Attack(this, this); // Reverse the attack
+            Weapon.Attack(this, this); // Reverse the attack
         }
         
         else if(target is Ghost)

@@ -45,15 +45,17 @@ public class Unit : IHand
     
     public virtual void Attack(Unit target)
     {
-        if (Weapon is MindControl)
+        if (target.Weapon is MindControl)
         {
-            Weapon.Attack(this, target); // Attack the target with the MindControl weapon, reversing the damage
+            target.Weapon.Attack(this, this); // Use the MindControl weapon's Attack method on the target
         }
         else
         {
             TakeDamage(target.Weapon.Power, target);
         }
     }
+
+
 
     public virtual void TakeDamage(int value, Unit opponent)
     {

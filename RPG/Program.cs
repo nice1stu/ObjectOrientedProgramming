@@ -2,11 +2,11 @@
 
 class Program
 {
-    private static Unit hero;
+    private static Unit _hero;
     
     public static void Main(string[] args)
     {
-        hero = new Hero("Hero", 1000, new TrainingWeapon(66));
+        _hero = new Hero("Hero", 1000, new TrainingWeapon(66));
         
         //Game Controller
         for (int i = 0; i < 3; i++)
@@ -14,14 +14,14 @@ class Program
             var target = SpawnRandomEnemy();
             FaceEnemy(target);
             
-            if(hero.IsDead)
+            if(_hero.IsDead)
                 break;
         }
 
-        if (!hero.IsDead)
+        if (!_hero.IsDead)
         {
             Console.ForegroundColor = ConsoleColor.DarkBlue;
-            Console.WriteLine($"{hero} has WON !");
+            Console.WriteLine($"{_hero} has WON !");
             Console.ResetColor();
         }
         GameOver();
@@ -37,21 +37,21 @@ class Program
             Console.ReadKey();
             Console.Clear();
 
-            hero.Attack(target);
-            if(hero.IsDead)
+            _hero.Attack(target);
+            if(_hero.IsDead)
             {
                 OnHeroDeath();
                 break;
             }
             
-            target.Attack(hero);
-            if(hero.IsDead)
+            target.Attack(_hero);
+            if(_hero.IsDead)
             {
                 OnHeroDeath();
                 break;
             }
                 
-            hero.ReportStatus();
+            _hero.ReportStatus();
             target.ReportStatus();
             if (target.IsDead)
             {
@@ -82,7 +82,7 @@ class Program
     static void OnHeroDeath()
     {
         Console.ForegroundColor = ConsoleColor.DarkBlue;
-        Console.WriteLine($"{hero.Name} has Died");
+        Console.WriteLine($"{_hero.Name} has Died");
         Console.ResetColor();
     }
     

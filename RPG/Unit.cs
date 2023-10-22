@@ -2,15 +2,12 @@ namespace RPG;
 
 public class Unit : IHand
 {
-    private int _id;
+    private readonly int _id;
     private static int _nextId;
     private int _health;
-    protected int MaxHealth;
+    protected readonly int MaxHealth;
     
-    public int Id
-    {
-        get => _id;
-    }
+    public int Id => _id;
 
     public int Health
     {
@@ -28,7 +25,7 @@ public class Unit : IHand
     
     public bool IsDead => _health <= 0;
 
-    public Unit(string name, int maxHealth, IWeapon weapon)
+    protected Unit(string name, int maxHealth, IWeapon weapon)
     {
         this.Name = name;
         this.MaxHealth = maxHealth;

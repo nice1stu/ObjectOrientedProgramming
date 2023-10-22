@@ -12,14 +12,14 @@ namespace RPG;
 
 public class Bomb : Unit
 {
-    private int count2Five;
+    private int _count2Five;
 
     public Bomb(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
     public override void TakeDamage(int value, Unit opponent)
     {
         base.TakeDamage(value, opponent);
         
-        if (count2Five >= 4)
+        if (_count2Five >= 4)
         {
             Health = 0;
             Console.ForegroundColor = ConsoleColor.Yellow;
@@ -28,6 +28,6 @@ public class Bomb : Unit
             opponent.TakeDamage(500, this);
             return;
         }
-        count2Five++;
+        _count2Five++;
     }
 }

@@ -16,7 +16,7 @@ namespace RPG;
 
 public class Necromancer : Unit
 {
-    bool hasResurrected = false;
+    bool _hasResurrected = false;
 
     public Necromancer(string name, int maxHealth, Weapon weapon) : base(name, maxHealth, weapon) {}
     public override void TakeDamage(int value, Unit opponent)
@@ -27,11 +27,11 @@ public class Necromancer : Unit
     
     private void HasResurrected()
     {
-        if (IsDead && !hasResurrected)
+        if (IsDead && !_hasResurrected)
         {
             Console.WriteLine("Necromancer is born again!");
             Health = (int)(MaxHealth * .5);
-            hasResurrected = true;
+            _hasResurrected = true;
         }
     }
 }
